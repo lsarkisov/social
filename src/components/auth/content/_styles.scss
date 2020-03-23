@@ -84,6 +84,8 @@
   }
 
   .carousel-fade {
+    background-color: $pink;
+
     .carousel-inner {
       .item {
         transition-property: opacity;
