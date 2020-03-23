@@ -1,6 +1,7 @@
 @media only screen and (min-width: 1140px) {
   .auth-navbar {
     position: relative;
+    z-index: 1000;
 
     @include media-breakpoint-up(lg) {
       position: absolute;
@@ -70,13 +71,13 @@
 
     &__social {
       position: absolute;
-      bottom: 5%;
-      right: 25%;
+      bottom: 7%;
+      right: 30%;
       z-index: 100;
 
       svg {
         display: block;
-        margin-top: 20px;
+        margin-top: 30px;
         color: $pink;
       }
     }

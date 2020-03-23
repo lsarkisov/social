@@ -1,0 +1,9 @@
+@media only screen and (min-width: 1140px) {
+  .auth-content {
+    @include media-breakpoint-up(lg) {
+      &__form {
+        margin-left: 33%;
+      }
+    }
+  }
+}
