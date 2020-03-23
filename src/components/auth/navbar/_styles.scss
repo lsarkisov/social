@@ -1,99 +1,84 @@
-.auth-navbar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: $navbar-width-md;
-  z-index: 100;
-  background-color: white;
-  transform: skewX(-1deg) translateX(-5%);
+@media only screen and (min-width: 1140px) {
+  .auth-navbar {
+    position: relative;
 
-  @include media-breakpoint-up(md) {
-    width: $navbar-width-lg;
-  }
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      height: 100%;
+      width: 14%;
+    }
 
-  @include media-breakpoint-down(md) {
-    transform: skewX(0) translateX(0);
-  }
-
-  &::before {
-    content: '';
-    background-color: $pink;
-    position: absolute;
-    height: 100%;
-    width: 3.125rem;
-    transform-origin: bottom left;
-    background-color: $pink;
-
-    @include media-breakpoint-up(md) {
-      width: 11rem;
-      right: 55px;
+    &::before {
+      content: '';
+      background-color: $pink;
+      position: absolute;
+      left: -10%;
+      height: 100%;
+      width: 71%;
+      transform-origin: bottom left;
+      background-color: $pink;
       transform: skewX(-4.8deg) translateX(-30%);
     }
-  }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $pink;
-    opacity: 0.35;
-  }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: calc(100% - 1rem);
+      background-color: $pink;
+      opacity: 0.35;
+      transform: skewX(-1deg) translateX(0);
+    }
 
-  &__link {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 3.125rem;
-    height: 100%;
-    z-index: 100;
-    writing-mode: vertical-rl;
-    transform: rotate(-180deg);
-    padding: 0 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 1.5rem;
-    min-height: 37.5rem;
+    &__link {
+      position: absolute;
+      left: 20%;
+      bottom: 5%;
+      height: 100%;
+      z-index: 100;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.73px;
+      font-weight: bold;
 
-    a {
-      padding: 4% 0;
-      position: relative;
+      a {
+        margin-bottom: 2.8rem;
+        padding-bottom: 2.8rem;
+        position: relative;
 
-      &::before {
-        content: '';
-        position: absolute;
-        right: 0.4375rem;
-        bottom: 0;
-        height: 0.125rem;
-        width: 0.625rem;
-        background-color: white;
-      }
-
-      &:last-child {
         &::before {
-          background-color: transparent;
+          content: '';
+          position: absolute;
+          right: 0.25rem;
+          bottom: 0;
+          height: 0.125rem;
+          width: 0.8125rem;
+          background-color: white;
+        }
+
+        &:last-child {
+          &::before {
+            background-color: transparent;
+          }
         }
       }
     }
-  }
 
-  &__social {
-    position: absolute;
-    bottom: 50px;
-    left: 95px;
-    z-index: 100;
+    &__social {
+      position: absolute;
+      bottom: 5%;
+      right: 25%;
+      z-index: 100;
 
-    @include media-breakpoint-down(sm) {
-      left: 3.5rem;
-    }
-
-    svg {
-      display: block;
-      margin-top: 20px;
-      color: $pink;
+      svg {
+        display: block;
+        margin-top: 20px;
+        color: $pink;
+      }
     }
   }
 }

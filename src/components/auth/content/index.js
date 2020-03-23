@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Carousel } from 'react-bootstrap'
+import { Row, Col, Carousel } from 'react-bootstrap'
 import AuthNavbar from '../navbar'
 import { REACT_APP_IMAGES_HOSTING } from '../../../const/api'
 
@@ -29,21 +29,25 @@ export default function AuthContent(props) {
   }, [])
 
   return (
-    <div className="auth-content ">
+    <Row className="auth-content">
       <AuthNavbar />
 
-      <div className="auth-content__form">{props.children}</div>
+      <Col lg={5}>
+        <div className="auth-content__form">{props.children}</div>
+      </Col>
 
-      <Carousel className="carousel-fade" {...properties}>
-        {Array.from(Array(imgLen).keys()).map((i) => (
-          <Carousel.Item key={`carousel-img-${i}`}>
-            <CarouselItemImage
-              className="carousel__item-1"
-              src={`${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`}
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </div>
+      <Col lg={7}>
+        <Carousel className="carousel-fade" {...properties}>
+          {Array.from(Array(imgLen).keys()).map((i) => (
+            <Carousel.Item key={`carousel-img-${i}`}>
+              <CarouselItemImage
+                className="carousel__item-1"
+                src={`${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`}
+              />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </Col>
+    </Row>
   )
 }
