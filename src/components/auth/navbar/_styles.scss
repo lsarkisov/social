@@ -3,12 +3,17 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 5rem;
+  width: $navbar-width-md;
   z-index: 100;
   background-color: white;
+  transform: skewX(-1deg) translateX(-5%);
 
   @include media-breakpoint-up(md) {
-    width: 10.31rem;
+    width: $navbar-width-lg;
+  }
+
+  @include media-breakpoint-down(md) {
+    transform: skewX(0) translateX(0);
   }
 
   &::before {
@@ -36,10 +41,6 @@
     width: 100%;
     background-color: $pink;
     opacity: 0.35;
-
-    @include media-breakpoint-up(md) {
-      transform: skewX(-1deg) translateX(-5%);
-    }
   }
 
   &__link {
@@ -76,19 +77,6 @@
           background-color: transparent;
         }
       }
-
-      // @media only screen and (orientation: landscape) {
-      //   font-size: 0.5rem;
-      //   padding: 1rem 0;
-
-      //   &::before {
-      //     height: 1px;
-      //   }
-
-      //   &::before {
-      //     right: 0;
-      //   }
-      // }
     }
   }
 
@@ -107,13 +95,5 @@
       margin-top: 20px;
       color: $pink;
     }
-
-    // @media only screen and (orientation: landscape) {
-    //   bottom: 20px;
-
-    //   svg {
-    //     margin-top: 10px;
-    //   }
-    // }
   }
 }

@@ -13,6 +13,7 @@
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "husky": "^4.2.3",
+    "i18next": "^19.3.3",
     "lint-staged": "^10.0.8",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.1",

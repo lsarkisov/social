@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Carousel } from 'react-bootstrap'
+import AuthNavbar from '../navbar'
 import { REACT_APP_IMAGES_HOSTING } from '../../../const/api'
 
 const properties = {
@@ -29,6 +30,10 @@ export default function AuthContent(props) {
 
   return (
     <div className="auth-content ">
+      <AuthNavbar />
+
+      <div className="auth-content__form">{props.children}</div>
+
       <Carousel className="carousel-fade" {...properties}>
         {Array.from(Array(imgLen).keys()).map((i) => (
           <Carousel.Item key={`carousel-img-${i}`}>

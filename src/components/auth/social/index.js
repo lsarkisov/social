@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { REACT_APP_FACEBOOK_APP_ID } from '../../../const/api'
 import { logInAction } from '../../../actions/auth'
 import SocialButton from './button'
@@ -8,6 +9,7 @@ import SocialButton from './button'
 export default function AuthSocial(props) {
   const [success, setSuccess] = useState(false)
   const dispatch = useDispatch()
+  const { t } = useTranslation()
 
   const handleSocialLogin = (user) => {
     dispatch(logInAction.success({ user }))
@@ -24,8 +26,7 @@ export default function AuthSocial(props) {
 
   return (
     <div>
-      <h1>LOGIN</h1>
-      <Link to="/model/dashboard">Dashboard</Link>
+      <p>{t('Or register with')}</p>
       <SocialButton
         provider="facebook"
         appId={REACT_APP_FACEBOOK_APP_ID}
