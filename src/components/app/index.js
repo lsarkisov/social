@@ -1,11 +1,14 @@
-import React from "react";
-import { Container } from 'react-bootstrap';
-import LogIn from "../auth/login";
+import React from 'react'
+import { Container } from 'react-bootstrap'
+import Routes from '../../routes'
+
+import { REACT_APP_INSTAGRAM_CLIENT_ID } from '../../const/api'
 
 export default function App(props) {
+  console.log('TEST', REACT_APP_INSTAGRAM_CLIENT_ID)
   return (
-    <Container>
-      <LogIn />
+    <Container fluid>
+      <Routes />
     </Container>
-  );
+  )
 }

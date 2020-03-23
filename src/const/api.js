@@ -1,2 +1,3 @@
-//export const API_URL = 'http://localhost:8080/api/v1';
-export const API_URL = 'https://jsonplaceholder.typicode.com';
+export const REACT_APP_FACEBOOK_APP_ID = process.env.REACT_APP_FACEBOOK_APP_ID
+export const REACT_APP_INSTAGRAM_CLIENT_ID =
+  process.env.REACT_APP_INSTAGRAM_CLIENT_ID

@@ -1,0 +1,55 @@
+a {
+  color: $white;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Buttons
+----------------------------------------*/
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 0.73px;
+  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+.btn-sm {
+  box-shadow: none;
+}
+
+.btn-primary {
+  color: white !important;
+}
+
+.btn-secondary {
+  background-color: $gray-1 !important;
+  border-color: $gray-1 !important;
+}
+
+/* Navbar
+----------------------------------------*/
+.navbar__wrapper {
+  transform: skewX(10deg);
+}
+
+.navbar-brand {
+  transform: skewX(-10deg);
+  color: $white;
+}
+
+.navbar-light {
+  .navbar-brand {
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    color: white;
+  }
+}
+
+/* Forms
+----------------------------------------*/
+.form-control {
+  background-color: $gray-2;
+  border-color: $gray-2;
+  font-size: $font-size-sm;
+}

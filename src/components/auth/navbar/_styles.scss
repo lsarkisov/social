@@ -1,0 +1,119 @@
+.auth-navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5rem;
+  z-index: 100;
+  background-color: white;
+
+  @include media-breakpoint-up(md) {
+    width: 10.31rem;
+  }
+
+  &::before {
+    content: '';
+    background-color: $pink;
+    position: absolute;
+    height: 100%;
+    width: 3.125rem;
+    transform-origin: bottom left;
+    background-color: $pink;
+
+    @include media-breakpoint-up(md) {
+      width: 11rem;
+      right: 55px;
+      transform: skewX(-4.8deg) translateX(-30%);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $pink;
+    opacity: 0.35;
+
+    @include media-breakpoint-up(md) {
+      transform: skewX(-1deg) translateX(-5%);
+    }
+  }
+
+  &__link {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3.125rem;
+    height: 100%;
+    z-index: 100;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    padding: 0 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.5rem;
+    min-height: 37.5rem;
+
+    a {
+      padding: 4% 0;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0.4375rem;
+        bottom: 0;
+        height: 0.125rem;
+        width: 0.625rem;
+        background-color: white;
+      }
+
+      &:last-child {
+        &::before {
+          background-color: transparent;
+        }
+      }
+
+      // @media only screen and (orientation: landscape) {
+      //   font-size: 0.5rem;
+      //   padding: 1rem 0;
+
+      //   &::before {
+      //     height: 1px;
+      //   }
+
+      //   &::before {
+      //     right: 0;
+      //   }
+      // }
+    }
+  }
+
+  &__social {
+    position: absolute;
+    bottom: 50px;
+    left: 95px;
+    z-index: 100;
+
+    @include media-breakpoint-down(sm) {
+      left: 3.5rem;
+    }
+
+    svg {
+      display: block;
+      margin-top: 20px;
+      color: $pink;
+    }
+
+    // @media only screen and (orientation: landscape) {
+    //   bottom: 20px;
+
+    //   svg {
+    //     margin-top: 10px;
+    //   }
+    // }
+  }
+}

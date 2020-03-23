@@ -1,0 +1,50 @@
+/* Colors
+----------------------------------------*/
+$pink: #ff929c;
+$pink-light: #fab7bd;
+
+$gray-1: #cecece;
+$gray-2: #f5f5f5;
+
+/* Fonts
+----------------------------------------*/
+$px2: 0.125rem;
+$px4: 0.25rem;
+$px6: 0.375rem;
+$px7: 0.4375rem;
+$px9: 0.5625rem;
+$px10-5: 0.6562rem;
+$px18: 1.125rem;
+$px80: 5rem;
+
+$font-base: 1rem;
+$font-size-sm: 0.5312rem;
+
+/* Common
+----------------------------------------*/
+$primary: $pink;
+$border-radius: $px7;
+
+/* Buttons
+----------------------------------------*/
+$input-btn-padding-y-sm: $px2;
+$input-btn-padding-x-sm: $px18;
+$input-btn-font-size-sm: $px9;
+$border-radius-sm: $px80;
+
+$input-btn-padding-y: $px6;
+$input-btn-padding-x: $px18;
+$input-btn-font-size: $px10-5;
+$border-radius: $px7;
+
+/* Navbar
+----------------------------------------*/
+$navbar-padding-y: $font-base - $px4;
+$navbar-toggler-font-size: $font-size-sm !important;
+
+/* Forms
+----------------------------------------*/
+$input-padding-y: $px7;
+$input-padding-x: $px7;
+
+@import '~bootstrap/scss/bootstrap';

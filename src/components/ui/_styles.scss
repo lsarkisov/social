@@ -1,0 +1,13 @@
+.container-fluid {
+  height: 100%;
+}
+
+.ui {
+  &__row {
+    margin: 1.5rem 0;
+  }
+
+  .btn {
+    margin-right: 1rem;
+  }
+}
