@@ -1,6 +1,27 @@
-@media only screen and (min-width: 1140px) {
-  .auth-content {
-    position: relative;
+.auth-content {
+  position: relative;
+  height: 100%;
+
+  .row {
     height: 100%;
+  }
+
+  &__carousel {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .auth-content {
+    flex-wrap: nowrap;
+  }
+
+  .content-row {
+    order: 2;
+  }
+
+  .carousel-row {
+    order: 1;
   }
 }

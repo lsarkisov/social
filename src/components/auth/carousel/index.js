@@ -28,15 +28,17 @@ export default function AuthCarousel(props) {
   }, [])
 
   return (
-    <Carousel className="carousel-fade" {...properties}>
-      {Array.from(Array(imgLen).keys()).map((i) => (
-        <Carousel.Item key={`carousel-img-${i}`}>
-          <CarouselItemImage
-            className="carousel__item-1"
-            src={`${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`}
-          />
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <div className="auth-content__carousel">
+      <Carousel className="carousel-fade" {...properties}>
+        {Array.from(Array(imgLen).keys()).map((i) => (
+          <Carousel.Item key={`carousel-img-${i}`}>
+            <CarouselItemImage
+              className="carousel__item-1"
+              src={`${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`}
+            />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
   )
 }
