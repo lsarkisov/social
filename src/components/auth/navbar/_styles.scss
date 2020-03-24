@@ -4,6 +4,10 @@
     font-size: $px13;
     letter-spacing: 0.73px;
     font-weight: bold;
+
+    a {
+      color: white;
+    }
   }
 }
 @media only screen and (min-width: 1140px) {

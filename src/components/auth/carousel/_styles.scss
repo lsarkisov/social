@@ -49,6 +49,8 @@
 @include media-breakpoint-down(md) {
   .auth-content {
     &__carousel {
+      min-height: 15rem;
+
       &::after {
         top: auto;
         left: 0;

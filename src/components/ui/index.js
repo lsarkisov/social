@@ -72,6 +72,10 @@ export default function UIKit(props) {
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="name@example.com" />
           </Form.Group>
+          <Form.Group>
+            <Form.Label>Input lg</Form.Label>
+            <Form.Control size="lg" type="text" placeholder="user name" />
+          </Form.Group>
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Example select</Form.Label>
             <Form.Control as="select">

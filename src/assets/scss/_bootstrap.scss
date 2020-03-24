@@ -1,6 +1,4 @@
 a {
-  color: $white;
-
   &:hover {
     text-decoration: none;
   }
@@ -51,5 +49,4 @@ a {
 .form-control {
   background-color: $gray-2;
   border-color: $gray-2;
-  font-size: $font-size-sm;
 }

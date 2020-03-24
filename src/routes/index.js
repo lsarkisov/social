@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import NoMatch from '../components/no-match'
 import UIKit from '../components/ui'
+import AuthCompany from '../components/auth/company'
 import AuthModel from '../components/auth/model'
 import Dashboard from '../components/dashboard'
 
@@ -40,6 +41,9 @@ function Routes() {
       <Switch>
         <Route path="/auth/model">
           <AuthModel />
+        </Route>
+        <Route path="/auth/company">
+          <AuthCompany />
         </Route>
         <Route path="/ui">
           <UIKit />

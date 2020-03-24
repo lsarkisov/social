@@ -4,9 +4,8 @@ import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import AuthContent from '../content'
 import AuthForm from '../form'
-import AuthSocial from '../social'
 
-export default function AuthCompany(props) {
+export default function AuthModel(props) {
   const { t } = useTranslation()
 
   return (
@@ -18,7 +17,21 @@ export default function AuthCompany(props) {
             <Form.Control
               size="lg"
               type="text"
-              placeholder={t('auth.model.name')}
+              placeholder={t('auth.org.companyName')}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              size="lg"
+              type="text"
+              placeholder={t('auth.org.orgNumber')}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              size="lg"
+              type="text"
+              placeholder={t('auth.org.website')}
             />
           </Form.Group>
           <Form.Group>
@@ -50,9 +63,6 @@ export default function AuthCompany(props) {
           </Form.Group>
           <Form.Group className="text-sm">
             <Link to="">{t('auth.help')}</Link>
-          </Form.Group>
-          <Form.Group className="text-sm">
-            {t('auth.model.orSocial')} <AuthSocial />
           </Form.Group>
         </Form>
       </AuthForm>

@@ -3,8 +3,8 @@ import SocialLogin from 'react-social-login'
 
 function SocialButton(props) {
   return (
-    <div>
-      <button onClick={props.triggerLogin}>login</button>
+    <div {...props}>
+      <button onClick={props.triggerLogin}>{props.children}</button>
     </div>
   )
 }
