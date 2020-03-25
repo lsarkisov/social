@@ -15,6 +15,9 @@ export default function UIKit(props) {
         </div>
       </Row>
       <Row className="ui__row">
+        <i className="preloader" />
+      </Row>
+      <Row className="ui__row">
         <Button size="sm" variant="primary">
           Primary
         </Button>{' '}

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import AuthContent from '../content'
 import AuthForm from '../form'
+import { AuthMember, AuthNeedHelp } from '../utils'
 
 export default function AuthModel(props) {
   const { t } = useTranslation()
@@ -59,10 +59,10 @@ export default function AuthModel(props) {
             <Button variant="primary">{t('auth.register')}</Button>
           </Form.Group>
           <Form.Group className="text-sm">
-            {t('auth.link.question')} <Link to="">{t('auth.link.click')}</Link>
+            <AuthMember />
           </Form.Group>
           <Form.Group className="text-sm">
-            <Link to="">{t('auth.help')}</Link>
+            <AuthNeedHelp />
           </Form.Group>
         </Form>
       </AuthForm>

@@ -10,8 +10,13 @@ import {
 import NoMatch from '../components/no-match'
 import UIKit from '../components/ui'
 import AuthLogin from '../components/auth/login'
+import AuthLoginError from '../components/auth/login/error'
+import AuthLoginNewPassword from '../components/auth/login/new-password'
+import AuthLoginResetPassword from '../components/auth/login/reset-password'
+import AuthLoginCongratulations from '../components/auth/login/congratulations'
 import AuthCompany from '../components/auth/company'
 import AuthModel from '../components/auth/model'
+import AuthError from '../components/auth/form/error'
 import Dashboard from '../components/dashboard'
 
 function Routes() {
@@ -40,6 +45,18 @@ function Routes() {
   return (
     <Router>
       <Switch>
+        <Route path="/auth/login/error">
+          <AuthLoginError />
+        </Route>
+        <Route path="/auth/login/new-password">
+          <AuthLoginNewPassword />
+        </Route>
+        <Route path="/auth/login/reset-password">
+          <AuthLoginResetPassword />
+        </Route>
+        <Route path="/auth/login/congratulations">
+          <AuthLoginCongratulations />
+        </Route>
         <Route path="/auth/login">
           <AuthLogin />
         </Route>
@@ -48,6 +65,9 @@ function Routes() {
         </Route>
         <Route path="/auth/company">
           <AuthCompany />
+        </Route>
+        <Route path="/auth/error">
+          <AuthError />
         </Route>
         <Route path="/ui">
           <UIKit />

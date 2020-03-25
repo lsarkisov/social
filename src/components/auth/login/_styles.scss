@@ -1,0 +1,23 @@
+.auth-login__subtitle {
+  position: relative;
+  top: -1rem;
+  color: $primary;
+}
+
+.auth-login__subtitle-extra {
+  position: relative;
+  top: -1rem;
+  color: $gray-1;
+}
+
+.auth-login__congrat-button {
+  button {
+    position: relative;
+  }
+
+  svg {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+}

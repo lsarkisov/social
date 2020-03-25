@@ -32,12 +32,6 @@
     margin-bottom: 25px;
   }
 
-  .title-lg {
-    color: $primary;
-    text-transform: uppercase;
-    font-size: $px22;
-  }
-
   .form-group.text-sm {
     font-size: $px13;
     margin-bottom: $px15;
@@ -79,13 +73,5 @@
   .auth-content__form {
     order: 2;
     margin-left: 0;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .auth-content__form {
-    &-wrapper {
-      padding: 0 2rem;
-    }
   }
 }
