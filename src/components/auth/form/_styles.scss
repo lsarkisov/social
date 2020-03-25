@@ -9,6 +9,11 @@
   justify-content: center;
   align-items: center;
 
+  &-wrapper {
+    width: 100%;
+    max-width: 23rem;
+  }
+
   .form-group {
     margin-bottom: 1.625rem;
 

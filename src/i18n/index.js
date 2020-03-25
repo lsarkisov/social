@@ -10,6 +10,7 @@ export default i18n.use(initReactI18next).init({
           register: 'register',
           link: { question: 'Already a member?', click: 'Click here' },
           help: 'Need help?',
+          login: 'log in',
           org: {
             companyName: 'company name',
             orgNumber: 'organisation number',
