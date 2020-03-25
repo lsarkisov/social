@@ -10,7 +10,7 @@ export default function AuthMain(props) {
   const { t } = useTranslation()
 
   return (
-    <AuthContent>
+    <AuthContent className="main-page">
       <AuthForm>
         <h2>{t('auth.title')}</h2>
         <Form>
