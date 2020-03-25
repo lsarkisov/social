@@ -14,6 +14,7 @@ import AuthLoginError from '../components/auth/login/error'
 import AuthLoginNewPassword from '../components/auth/login/new-password'
 import AuthLoginResetPassword from '../components/auth/login/reset-password'
 import AuthLoginCongratulations from '../components/auth/login/congratulations'
+import AuthLoginAproveEmail from '../components/auth/login/aprove-email'
 import AuthCompany from '../components/auth/company'
 import AuthModel from '../components/auth/model'
 import AuthError from '../components/auth/form/error'
@@ -56,6 +57,9 @@ function Routes() {
         </Route>
         <Route path="/auth/login/congratulations">
           <AuthLoginCongratulations />
+        </Route>
+        <Route path="/auth/login/aprove-email">
+          <AuthLoginAproveEmail />
         </Route>
         <Route path="/auth/login">
           <AuthLogin />

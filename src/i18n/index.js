@@ -48,6 +48,13 @@ export default i18n.use(initReactI18next).init({
             message: 'Your password has now been reset!',
             button: 'countinue',
           },
+          aprove: {
+            title: 'Follow the link',
+            message1: 'We have sent you an email. Check your email’s inbox.',
+            message2: 'Can’t find it? Check your junk mail!',
+            message3: 'Still can’t find it?',
+            button: 'resend email',
+          },
         },
       },
     },
