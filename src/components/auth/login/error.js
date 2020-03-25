@@ -16,7 +16,7 @@ export default function AuthLoginError(props) {
     <AuthContent>
       <AuthForm>
         <h2>{t('login.error')}</h2>
-        <p className="auth-login__subtitle">{t('login.errorMsg')}</p>
+        <p className="auth-login__subtitle">{t('login.errorMessage')}</p>
         <Form>
           <Form.Group>
             <Button onClick={goBack} variant="primary">

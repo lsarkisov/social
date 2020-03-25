@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import NoMatch from '../components/no-match'
 import UIKit from '../components/ui'
+import AuthMain from '../components/auth/main'
 import AuthLogin from '../components/auth/login'
 import AuthLoginError from '../components/auth/login/error'
 import AuthLoginNewPassword from '../components/auth/login/new-password'
@@ -46,6 +47,9 @@ function Routes() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/">
+          <AuthMain />
+        </Route>
         <Route path="/auth/login/error">
           <AuthLoginError />
         </Route>

@@ -32,7 +32,7 @@ export default i18n.use(initReactI18next).init({
           title: 'log in',
           logging: 'logging in...',
           error: 'login failed',
-          errorMsg: 'Wrong email or/and wrong password',
+          errorMessage: 'Wrong email or/and wrong password',
           tryAgain: 'try logging in again',
           forgotPassword: 'Forgot your password?',
           newPasswordTitle: 'create a new password',
