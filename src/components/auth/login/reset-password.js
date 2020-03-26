@@ -4,14 +4,7 @@ import { useTranslation } from 'react-i18next'
 import AuthContent from '../content'
 import AuthForm from '../form'
 import { PreLoader } from '../utils'
-import {
-  lt,
-  isDigit,
-  isWebsiteValid,
-  isEmailValid,
-  isPassword,
-  isConfirm,
-} from '../../../utils'
+import { isEmailValid } from '../../../utils'
 
 export default function AuthLoginResetPassword(props) {
   const { t } = useTranslation()
@@ -56,12 +49,8 @@ export default function AuthLoginResetPassword(props) {
                 <div className="error">{t('error.email')}</div>
               )}
             </Form.Group>
-            <Form.Group>
-              <Button
-                className={`${disable ? 'disabled' : ''}`}
-                onClick={onReset}
-                variant="primary"
-              >
+            <Form.Group className={`${disable ? 'disabled' : ''}`}>
+              <Button onClick={onReset} variant="primary">
                 {t('login.resetPassword')}
               </Button>
             </Form.Group>

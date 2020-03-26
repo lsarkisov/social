@@ -57,12 +57,8 @@ export default function AuthLoginNewPassword(props) {
               <div className="error">{t('error.confirm')}</div>
             )}
           </Form.Group>
-          <Form.Group>
-            <Button
-              className={`${disable ? 'disabled' : ''}`}
-              onClick={onSendPassword}
-              variant="primary"
-            >
+          <Form.Group className={`${disable ? 'disabled' : ''}`}>
+            <Button onClick={onSendPassword} variant="primary">
               {t('login.changePassword')}
             </Button>
           </Form.Group>
