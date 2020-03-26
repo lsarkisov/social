@@ -4,11 +4,21 @@ import { useTranslation } from 'react-i18next'
 import AuthContent from '../content'
 import AuthForm from '../form'
 import { PreLoader } from '../utils'
+import {
+  lt,
+  isDigit,
+  isWebsiteValid,
+  isEmailValid,
+  isPassword,
+  isConfirm,
+} from '../../../utils'
 
 export default function AuthLoginResetPassword(props) {
+  const { t } = useTranslation()
   const [userExists, setUserExists] = useState(true)
   const [resetPassword, setresetPassword] = useState(false)
-  const { t } = useTranslation()
+  const [disable, setDisable] = useState(true)
+  const [email, setImail] = useState(null)
 
   const onReset = () => {
     setresetPassword(true)
@@ -19,6 +29,14 @@ export default function AuthLoginResetPassword(props) {
     }, 1500)
   }
 
+  const isValid = () => {
+    if (email) {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }
+
   return (
     <AuthContent>
       {!resetPassword ? (
@@ -27,16 +45,23 @@ export default function AuthLoginResetPassword(props) {
           {!userExists && (
             <p className="auth-login__subtitle">{t('login.userNotExists')}</p>
           )}
-          <Form>
-            <Form.Group>
+          <Form onKeyUp={isValid}>
+            <Form.Group onChange={(e) => isEmailValid(e, setImail)}>
               <Form.Control
                 size="lg"
                 type="email"
                 placeholder={t('login.email')}
               />
+              {email === false && (
+                <div className="error">{t('error.email')}</div>
+              )}
             </Form.Group>
             <Form.Group>
-              <Button onClick={onReset} variant="primary">
+              <Button
+                className={`${disable ? 'disabled' : ''}`}
+                onClick={onReset}
+                variant="primary"
+              >
                 {t('login.resetPassword')}
               </Button>
             </Form.Group>

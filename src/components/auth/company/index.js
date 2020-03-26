@@ -24,15 +24,6 @@ export default function AuthModel(props) {
   const [confirm, setConfirm] = useState({ valid: null, value: null })
 
   const isValid = () => {
-    console.log(
-      'TEST',
-      company,
-      number,
-      website,
-      email,
-      password.valid,
-      confirm,
-    )
     if (
       company &&
       number &&
