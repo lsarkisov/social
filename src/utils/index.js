@@ -1,5 +1,6 @@
 import {
   lt,
+  isAlpha,
   isDigit,
   isWebsiteValid,
   isEmailValid,
@@ -7,4 +8,12 @@ import {
   isConfirm,
 } from './form-validation'
 
-export { lt, isDigit, isWebsiteValid, isEmailValid, isPassword, isConfirm }
+export {
+  lt,
+  isAlpha,
+  isDigit,
+  isWebsiteValid,
+  isEmailValid,
+  isPassword,
+  isConfirm,
+}

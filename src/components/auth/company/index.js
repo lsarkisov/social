@@ -15,26 +15,35 @@ import {
 
 export default function AuthModel(props) {
   const { t } = useTranslation()
-  const [disable, setDisable] = useState(false)
-  const [company, setCompany] = useState(false)
-  const [number, setNumber] = useState(false)
-  const [website, setWebsite] = useState(false)
-  const [email, setImail] = useState(false)
-  const [password, setPassword] = useState({ valid: false, value: null })
-  const [confirm, setConfirm] = useState(false)
+  const [disable, setDisable] = useState(true)
+  const [company, setCompany] = useState(null)
+  const [number, setNumber] = useState(null)
+  const [website, setWebsite] = useState(null)
+  const [email, setImail] = useState(null)
+  const [password, setPassword] = useState({ valid: null, value: null })
+  const [confirm, setConfirm] = useState({ valid: null, value: null })
 
   const isValid = () => {
+    console.log(
+      'TEST',
+      company,
+      number,
+      website,
+      email,
+      password.valid,
+      confirm,
+    )
     if (
-      !company &&
-      !number &&
-      !website &&
-      !email &&
-      !password.valid &&
-      !confirm
+      company &&
+      number &&
+      website &&
+      email &&
+      password.valid &&
+      confirm.valid
     ) {
-      setDisable(true)
-    } else {
       setDisable(false)
+    } else {
+      setDisable(true)
     }
   }
 
@@ -42,14 +51,16 @@ export default function AuthModel(props) {
     <AuthContent>
       <AuthForm>
         <h2>{t('auth.title')}</h2>
-        <Form onChange={isValid}>
-          <Form.Group onChange={(e) => lt(e, 1, setCompany)}>
+        <Form onKeyUp={isValid}>
+          <Form.Group onChange={(e) => lt(e, 2, setCompany)}>
             <Form.Control
               size="lg"
               type="text"
               placeholder={t('auth.org.companyName')}
             />
-            {company && <div className="error">{t('error.len')} 2</div>}
+            {company === false && (
+              <div className="error">{t('error.len')} 2</div>
+            )}
           </Form.Group>
           <Form.Group onChange={(e) => isDigit(e, setNumber)}>
             <Form.Control
@@ -57,7 +68,9 @@ export default function AuthModel(props) {
               type="text"
               placeholder={t('auth.org.orgNumber')}
             />
-            {number && <div className="error">{t('error.digit')}</div>}
+            {number === false && (
+              <div className="error">{t('error.digit')}</div>
+            )}
           </Form.Group>
           <Form.Group onChange={(e) => isWebsiteValid(e, setWebsite)}>
             <Form.Control
@@ -65,7 +78,9 @@ export default function AuthModel(props) {
               type="text"
               placeholder={t('auth.org.website')}
             />
-            {website && <div className="error">{t('error.website')}</div>}
+            {website === false && (
+              <div className="error">{t('error.website')}</div>
+            )}
           </Form.Group>
           <Form.Group onChange={(e) => isEmailValid(e, setImail)}>
             <Form.Control
@@ -73,15 +88,15 @@ export default function AuthModel(props) {
               type="email"
               placeholder={t('auth.model.email')}
             />
-            {email && <div className="error">{t('error.email')}</div>}
+            {email === false && <div className="error">{t('error.email')}</div>}
           </Form.Group>
-          <Form.Group onChange={(e) => isPassword(e, 5, setPassword)}>
+          <Form.Group onChange={(e) => isPassword(e, 6, setPassword)}>
             <Form.Control
               size="lg"
               type="password"
               placeholder={t('auth.model.password')}
             />
-            {password.valid && (
+            {password.valid === false && (
               <div className="error">{t('error.password')} 6</div>
             )}
           </Form.Group>
@@ -93,7 +108,9 @@ export default function AuthModel(props) {
               type="password"
               placeholder={t('auth.model.confirmPassword')}
             />
-            {confirm && <div className="error">{t('error.confirm')}</div>}
+            {confirm.valid === false && (
+              <div className="error">{t('error.confirm')}</div>
+            )}
           </Form.Group>
           <Form.Group className={`${disable ? 'disabled' : ''}`}>
             <Button variant="primary">{t('auth.register')}</Button>
