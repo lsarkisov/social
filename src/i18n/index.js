@@ -6,12 +6,16 @@ export default i18n.use(initReactI18next).init({
     en: {
       translation: {
         auth: {
+          main: 'hire models now',
           title: 'we are so happy To have you here!',
+          slogan: { first: 'The One For', second: 'All' },
           register: 'register',
           link: { member: 'Already a member?', click: 'Click here' },
           help: 'Need help?',
           error: 'Something went wrong…',
           tryAgain: 'try registering again',
+          registerModel: 'register as a model',
+          registerCompany: 'register as a booker',
           org: {
             companyName: 'company name',
             orgNumber: 'organisation number',
