@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 export default function AuthNavbarLinks() {
   return (
     <>
-      <div className="auth-navbar__icon">
-        <span>i</span>
-        <span>i</span>
-      </div>
+      <Link to="/">
+        <span className="auth-navbar__icon">
+          <span>i</span>
+          <span>i</span>
+        </span>
+      </Link>
       <div className="auth-navbar__link">
         <Link to="/" className="bounceOutLeft">
           About
