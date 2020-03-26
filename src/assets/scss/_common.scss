@@ -9,3 +9,23 @@ body {
   font-family: $font-family;
   line-height: 1rem;
 }
+
+.error {
+  color: red;
+  padding: $px5 $px5 0;
+  text-align: left;
+}
+
+.disabled {
+  position: relative;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: white;
+    opacity: 0.5;
+  }
+}
