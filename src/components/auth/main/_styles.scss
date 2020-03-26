@@ -4,11 +4,11 @@
   text-transform: uppercase;
   color: transparent;
   text-align: center;
-  font-size: 90px;
+  font-size: 5.625rem;
   font-weight: 700;
   font-weight: bold;
-  line-height: 90px;
-  letter-spacing: 5px;
+  line-height: 5.625rem;
+  letter-spacing: $px5;
 
   &::before {
     content: 'hire models now';
@@ -47,7 +47,7 @@
     font-size: $px13;
     letter-spacing: 0.2px;
     position: relative;
-    top: -5px;
+    top: -$px5;
   }
 
   .auth-content__form {
@@ -117,11 +117,11 @@
     }
 
     .form-group {
-      margin-bottom: 20px !important;
+      margin-bottom: $px20 !important;
     }
 
     .form-group.main-page__forgot-password {
-      margin-bottom: 40px !important;
+      margin-bottom: $px40 !important;
     }
 
     .auth-content__form {
@@ -143,7 +143,7 @@
     }
 
     &__slogan {
-      margin-bottom: 40px;
+      margin-bottom: $px40;
     }
   }
 }
@@ -170,11 +170,11 @@
     font-size: 70px;
     line-height: 80px;
     text-align: left;
-    letter-spacing: -2px;
+    letter-spacing: -$px2;
 
     &::before {
-      top: -4px;
-      right: -7px;
+      top: -$px4;
+      right: -$px7;
     }
   }
   .main-page {
@@ -201,8 +201,8 @@
     letter-spacing: 1px;
 
     &::before {
-      top: -3px;
-      right: -3px;
+      top: -$px3;
+      right: -$px3;
     }
   }
 }
@@ -215,9 +215,9 @@
     margin: auto 3%;
 
     &::before {
-      top: -2px;
-      right: -2px;
-      -webkit-text-stroke-width: 2px;
+      top: -$px2;
+      right: -$px2;
+      -webkit-text-stroke-width: $px2;
     }
   }
   .main-page {
