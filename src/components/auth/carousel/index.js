@@ -23,7 +23,7 @@ export default function AuthCarousel(props) {
   useEffect(() => {
     Array.from(Array(imgLen).keys()).forEach((i) => {
       const img = new Image()
-      img.src = `${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`
+      img.src = `${REACT_APP_IMAGES_HOSTING}/img-${i}.jpg`
     })
   }, [])
 
@@ -34,7 +34,7 @@ export default function AuthCarousel(props) {
           <Carousel.Item key={`carousel-img-${i}`}>
             <CarouselItemImage
               className="carousel__item-1"
-              src={`${REACT_APP_IMAGES_HOSTING}/img-${i + 1}.jpg`}
+              src={`${REACT_APP_IMAGES_HOSTING}/img-${i}.jpg`}
             />
           </Carousel.Item>
         ))}
