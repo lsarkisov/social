@@ -1,51 +1,62 @@
 export const lt = (e, len, callback) => {
-  if (e.target.value.trim().length > len - 1) {
-    callback(true)
+  const value = e.target.value.trim()
+
+  if (value.length > len - 1) {
+    callback({ valid: true, value })
   } else {
-    callback(false)
+    callback({ valid: false, value })
   }
 }
 
 export const isAlpha = (e, len, callback) => {
   const value = e.target.value.trim()
+
   if (/^\w+$/.test(value) && value.length > len - 1) {
-    callback(true)
+    callback({ valid: true, value })
   } else {
-    callback(false)
+    callback({ valid: false, value })
   }
 }
 
 export const isDigit = (e, callback) => {
-  if (/^\d+$/.test(e.target.value.trim())) {
-    callback(true)
+  const value = e.target.value.trim()
+
+  if (/^\d+$/.test(value)) {
+    callback({ valid: true, value })
   } else {
-    callback(false)
+    callback({ valid: false, value })
   }
 }
 
 export const isWebsiteValid = (e, callback) => {
+  const value = e.target.value.trim()
   const reg = /[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+/
-  if (reg.test(e.target.value.trim())) {
-    callback(true)
+
+  if (reg.test(value)) {
+    callback({ valid: true, value })
   } else {
-    callback(false)
+    callback({ valid: false, value })
   }
 }
 
 export const isEmailValid = (e, callback) => {
+  const value = e.target.value.trim()
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  if (reg.test(e.target.value.trim())) {
-    callback(true)
+
+  if (reg.test(value)) {
+    callback({ valid: true, value })
   } else {
-    callback(false)
+    callback({ valid: false, value })
   }
 }
 
 export const isPassword = (e, len, callback) => {
-  if (e.target.value.trim().length > len - 1) {
-    callback({ valid: true, value: e.target.value.trim() })
+  const value = e.target.value.trim()
+
+  if (value.length > len - 1) {
+    callback({ valid: true, value })
   } else {
-    callback({ valid: false, value: e.target.value.trim() })
+    callback({ valid: false, value })
   }
 }
 

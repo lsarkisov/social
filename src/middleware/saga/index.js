@@ -1,12 +1,35 @@
 import { put, call, takeEvery, all } from 'redux-saga/effects'
+import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
 import * as types from 'const/requests'
-import { REQUEST, SUCCESS, FAILURE } from 'const/requests'
 import * as services from 'services/api'
 
+const fields = {
+  email: null,
+  password: null,
+  repeatPassword: null,
+  firstName: null,
+  lastName: null,
+  phone: null,
+  companyCompanyNumber: null,
+  companyCompanyName: null,
+  companyEmail: null,
+  companyWebsite: null,
+  companyRole: null,
+  companyAddressStreet: null,
+  companyAddressZipCode: null,
+  companyAddressCity: null,
+  authority: null,
+}
+
 function* onAuthCommonSuccess(data) {
-  const payload = yield call(() => services.auth(data.payload))
+  const payload = yield call(() =>
+    services.auth({ ...fields, ...data.payload }),
+  )
+
   try {
     const { token, role } = payload
+    console.log('PAYLOAD', payload)
+
     if (token && role) {
       localStorage.setItem('token', token)
       localStorage.setItem('role', role)

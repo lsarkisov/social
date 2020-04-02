@@ -1,6 +1,4 @@
-export const REQUEST = 'REQUEST'
-export const SUCCESS = 'SUCCESS'
-export const FAILURE = 'FAILURE'
+import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
 
 function createRequestTypes(base) {
   return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {

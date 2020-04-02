@@ -11,7 +11,7 @@ export default function AuthLoginResetPassword(props) {
   const [userExists, setUserExists] = useState(true)
   const [resetPassword, setresetPassword] = useState(false)
   const [disable, setDisable] = useState(true)
-  const [email, setImail] = useState(null)
+  const [username, setUsername] = useState({ valid: null, value: null })
 
   const onReset = () => {
     setresetPassword(true)
@@ -23,7 +23,7 @@ export default function AuthLoginResetPassword(props) {
   }
 
   const isValid = () => {
-    if (email) {
+    if (username.valid) {
       setDisable(false)
     } else {
       setDisable(true)
@@ -39,13 +39,13 @@ export default function AuthLoginResetPassword(props) {
             <p className="auth-login__subtitle">{t('login.userNotExists')}</p>
           )}
           <Form onKeyUp={isValid}>
-            <Form.Group onChange={(e) => isEmailValid(e, setImail)}>
+            <Form.Group onChange={(e) => isEmailValid(e, setUsername)}>
               <Form.Control
                 size="lg"
                 type="email"
                 placeholder={t('login.email')}
               />
-              {email === false && (
+              {username.valid === false && (
                 <div className="error">{t('error.email')}</div>
               )}
             </Form.Group>

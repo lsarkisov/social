@@ -1,43 +1,40 @@
-import {
-  REQUEST,
-  SUCCESS,
-  FAILURE,
-  LOGIN_COMMON,
-  LOGOUT_COMMON,
-} from 'const/requests'
+import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
+import * as types from 'const/requests'
 
-const auth = (state = {}, action) => {
+const fields = {
+  email: null,
+  password: null,
+}
+
+const login = (state = fields, action) => {
   switch (action.type) {
-    case LOGIN_COMMON[REQUEST]:
+    case types.LOGIN_COMMON[REQUEST]:
       return Object.assign({}, state, {
-        authorised: false,
-        user: null,
+        token: null,
+        role: null,
       })
-    case LOGIN_COMMON[SUCCESS]:
+    case types.LOGIN_COMMON[SUCCESS]:
+      const { token, role } = action.payload
+      localStorage.setItem('token', token)
+      localStorage.setItem('role', role)
+
       return Object.assign({}, state, {
-        authorised: true,
-        user: action.user,
+        token,
+        role,
       })
-    case LOGIN_COMMON[FAILURE]:
+    case types.LOGIN_COMMON[FAILURE]:
       return Object.assign({}, state, {
-        authorised: false,
-        user: null,
+        token: null,
+        role: null,
       })
 
-    case LOGOUT_COMMON[REQUEST]:
+    case types.LOGOUT_COMMON:
+      localStorage.removeItem('token')
+      localStorage.removeItem('role')
+
       return Object.assign({}, state, {
-        authorised: false,
-        user: null,
-      })
-    case LOGOUT_COMMON[SUCCESS]:
-      return Object.assign({}, state, {
-        authorised: true,
-        user: action.user,
-      })
-    case LOGOUT_COMMON[FAILURE]:
-      return Object.assign({}, state, {
-        authorised: false,
-        user: null,
+        token: null,
+        role: null,
       })
 
     default:
@@ -45,4 +42,4 @@ const auth = (state = {}, action) => {
   }
 }
 
-export default auth
+export default login

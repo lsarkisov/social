@@ -1,42 +1,31 @@
-import {
-  REQUEST,
-  SUCCESS,
-  FAILURE,
-  AUTH_SOCIAL,
-  AUTH_COMMON,
-} from 'const/requests'
+import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
+import * as types from 'const/requests'
 
 const auth = (state = {}, action) => {
   switch (action.type) {
-    case AUTH_SOCIAL[REQUEST]:
+    case types.AUTH_SOCIAL[REQUEST]:
       return Object.assign({}, state, {
-        authorised: false,
         user: null,
       })
-    case AUTH_SOCIAL[SUCCESS]:
+    case types.AUTH_SOCIAL[SUCCESS]:
       return Object.assign({}, state, {
-        authorised: true,
         user: action.user,
       })
-    case AUTH_SOCIAL[FAILURE]:
+    case types.AUTH_SOCIAL[FAILURE]:
       return Object.assign({}, state, {
-        authorised: false,
         user: null,
       })
 
-    case AUTH_COMMON[REQUEST]:
+    case types.AUTH_COMMON[REQUEST]:
       return Object.assign({}, state, {
-        authorised: false,
         user: null,
       })
-    case AUTH_COMMON[SUCCESS]:
+    case types.AUTH_COMMON[SUCCESS]:
       return Object.assign({}, state, {
-        authorised: true,
         user: action.user,
       })
-    case AUTH_COMMON[FAILURE]:
+    case types.AUTH_COMMON[FAILURE]:
       return Object.assign({}, state, {
-        authorised: false,
         user: null,
       })
 

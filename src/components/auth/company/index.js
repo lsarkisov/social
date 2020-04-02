@@ -16,19 +16,28 @@ import {
 export default function AuthModel(props) {
   const { t } = useTranslation()
   const [disable, setDisable] = useState(true)
-  const [company, setCompany] = useState(null)
-  const [number, setNumber] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [email, setImail] = useState(null)
+  const [companyCompanyName, setCompanyName] = useState({
+    valid: null,
+    value: null,
+  })
+  const [companyCompanyNumber, setCompanyCompanyNumber] = useState({
+    valid: null,
+    value: null,
+  })
+  const [companyWebsite, setCompanyWebsite] = useState({
+    valid: null,
+    value: null,
+  })
+  const [email, setImail] = useState({ valid: null, value: null })
   const [password, setPassword] = useState({ valid: null, value: null })
   const [confirm, setConfirm] = useState({ value: null })
 
   const isValid = () => {
     if (
-      company &&
-      number &&
-      website &&
-      email &&
+      companyCompanyName.value &&
+      companyCompanyNumber.value &&
+      companyWebsite.value &&
+      email.value &&
       password.valid &&
       password.value === confirm.value
     ) {
@@ -43,33 +52,33 @@ export default function AuthModel(props) {
       <AuthForm>
         <h2>{t('auth.title')}</h2>
         <Form onKeyUp={isValid}>
-          <Form.Group onChange={(e) => lt(e, 2, setCompany)}>
+          <Form.Group onChange={(e) => lt(e, 2, setCompanyName)}>
             <Form.Control
               size="lg"
               type="text"
               placeholder={t('auth.org.companyName')}
             />
-            {company === false && (
+            {companyCompanyName.valid === false && (
               <div className="error">{t('error.len')} 2</div>
             )}
           </Form.Group>
-          <Form.Group onChange={(e) => isDigit(e, setNumber)}>
+          <Form.Group onChange={(e) => isDigit(e, setCompanyCompanyNumber)}>
             <Form.Control
               size="lg"
               type="text"
               placeholder={t('auth.org.orgNumber')}
             />
-            {number === false && (
+            {companyCompanyNumber.valid === false && (
               <div className="error">{t('error.digit')}</div>
             )}
           </Form.Group>
-          <Form.Group onChange={(e) => isWebsiteValid(e, setWebsite)}>
+          <Form.Group onChange={(e) => isWebsiteValid(e, setCompanyWebsite)}>
             <Form.Control
               size="lg"
               type="text"
               placeholder={t('auth.org.website')}
             />
-            {website === false && (
+            {companyWebsite.valid === false && (
               <div className="error">{t('error.website')}</div>
             )}
           </Form.Group>
@@ -79,7 +88,9 @@ export default function AuthModel(props) {
               type="email"
               placeholder={t('auth.model.email')}
             />
-            {email === false && <div className="error">{t('error.email')}</div>}
+            {email.valid === false && (
+              <div className="error">{t('error.email')}</div>
+            )}
           </Form.Group>
           <Form.Group onChange={(e) => isPassword(e, 6, setPassword)}>
             <Form.Control
