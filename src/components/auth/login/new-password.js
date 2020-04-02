@@ -9,14 +9,14 @@ export default function AuthLoginNewPassword(props) {
   const { t } = useTranslation()
   const [disable, setDisable] = useState(true)
   const [password, setPassword] = useState({ valid: null, value: null })
-  const [confirm, setConfirm] = useState({ valid: null, value: null })
+  const [confirm, setConfirm] = useState({ value: null })
 
   const onSendPassword = () => {
     console.log('sent password...')
   }
 
   const isValid = () => {
-    if (password.valid && confirm.valid) {
+    if (password.valid && password.value === confirm.value) {
       setDisable(false)
     } else {
       setDisable(true)
@@ -38,15 +38,14 @@ export default function AuthLoginNewPassword(props) {
               <div className="error">{t('error.password')} 6</div>
             )}
           </Form.Group>
-          <Form.Group
-            onChange={(e) => isConfirm(e, password.value, setConfirm)}
-          >
+
+          <Form.Group onChange={(e) => isConfirm(e, setConfirm)}>
             <Form.Control
               size="lg"
               type="password"
               placeholder={t('login.confirmPassword')}
             />
-            {confirm.valid === false && (
+            {confirm.value && confirm.value !== password.value && (
               <div className="error">{t('error.confirm')}</div>
             )}
           </Form.Group>

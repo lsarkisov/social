@@ -49,10 +49,6 @@ export const isPassword = (e, len, callback) => {
   }
 }
 
-export const isConfirm = (e, value, callback) => {
-  if (e.target.value === value) {
-    callback({ valid: true, value: e.target.value.trim() })
-  } else {
-    callback({ valid: false, value: e.target.value.trim() })
-  }
+export const isConfirm = (e, callback) => {
+  callback({ value: e.target.value.trim() })
 }

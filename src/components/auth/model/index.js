@@ -13,10 +13,10 @@ export default function AuthCompany(props) {
   const [name, setName] = useState(null)
   const [email, setImail] = useState(null)
   const [password, setPassword] = useState({ valid: null, value: null })
-  const [confirm, setConfirm] = useState({ valid: null, value: null })
+  const [confirm, setConfirm] = useState({ value: null })
 
   const isValid = () => {
-    if (name && email && password.valid && confirm.valid) {
+    if (name && email && password.valid && password.value === confirm.value) {
       setDisable(false)
     } else {
       setDisable(true)
@@ -54,15 +54,13 @@ export default function AuthCompany(props) {
               <div className="error">{t('error.password')} 6</div>
             )}
           </Form.Group>
-          <Form.Group
-            onChange={(e) => isConfirm(e, password.value, setConfirm)}
-          >
+          <Form.Group onChange={(e) => isConfirm(e, setConfirm)}>
             <Form.Control
               size="lg"
               type="password"
               placeholder={t('auth.model.confirmPassword')}
             />
-            {confirm.valid === false && (
+            {confirm.value && confirm.value !== password.value && (
               <div className="error">{t('error.confirm')}</div>
             )}
           </Form.Group>
