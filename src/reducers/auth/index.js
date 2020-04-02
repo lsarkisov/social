@@ -1,5 +1,5 @@
-import { LOG_IN } from '../../const'
-import { REQUEST, SUCCESS, FAILURE } from '../../const/requests'
+import { LOG_IN } from 'const'
+import { REQUEST, SUCCESS, FAILURE } from 'const/requests'
 
 const auth = (state = {}, action) => {
   switch (action.type) {

@@ -7,19 +7,19 @@ import {
   Redirect,
   withRouter,
 } from 'react-router-dom'
-import NoMatch from '../components/no-match'
-import UIKit from '../components/ui'
-import AuthMain from '../components/auth/main'
-import AuthLogin from '../components/auth/login'
-import AuthLoginError from '../components/auth/login/error'
-import AuthLoginNewPassword from '../components/auth/login/new-password'
-import AuthLoginResetPassword from '../components/auth/login/reset-password'
-import AuthLoginCongratulations from '../components/auth/login/congratulations'
-import AuthLoginAproveEmail from '../components/auth/login/aprove-email'
-import AuthCompany from '../components/auth/company'
-import AuthModel from '../components/auth/model'
-import AuthError from '../components/auth/form/error'
-import Dashboard from '../components/dashboard'
+import NoMatch from 'components/no-match'
+import UIKit from 'components/ui'
+import AuthMain from 'components/auth/main'
+import AuthLogin from 'components/auth/login'
+import AuthLoginError from 'components/auth/login/error'
+import AuthLoginNewPassword from 'components/auth/login/new-password'
+import AuthLoginResetPassword from 'components/auth/login/reset-password'
+import AuthLoginCongratulations from 'components/auth/login/congratulations'
+import AuthLoginAproveEmail from 'components/auth/login/aprove-email'
+import AuthCompany from 'components/auth/company'
+import AuthModel from 'components/auth/model'
+import AuthError from 'components/auth/form/error'
+import Dashboard from 'components/dashboard'
 
 function Routes() {
   const { authorised } = useSelector((state) => state.auth)

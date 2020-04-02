@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import AuthContent from '../content'
-import AuthForm from '../form'
-import { AuthMember, AuthNeedHelp } from '../utils'
-import { isAlpha, isEmailValid, isPassword, isConfirm } from '../../../utils'
-import AuthSocial from '../social'
+import AuthContent from 'components/auth/content'
+import AuthForm from 'components/auth/form'
+import { AuthMember, AuthNeedHelp } from 'components/auth/utils'
+import { isAlpha, isEmailValid, isPassword, isConfirm } from 'utils/validator'
+import AuthSocial from 'components/auth/social'
 
 export default function AuthCompany(props) {
   const { t } = useTranslation()

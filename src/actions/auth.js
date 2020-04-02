@@ -1,5 +1,5 @@
-import * as type from '../const'
-import { REQUEST, SUCCESS, FAILURE } from '../const/requests'
+import * as type from 'const'
+import { REQUEST, SUCCESS, FAILURE } from 'const/requests'
 
 function action(type, payload = {}) {
   return { type, ...payload }

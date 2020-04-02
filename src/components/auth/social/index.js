@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
-import { REACT_APP_FACEBOOK_APP_ID } from '../../../const/api'
-import { logInAction } from '../../../actions/auth'
+import { REACT_APP_FACEBOOK_APP_ID } from 'const/api'
+import { logInAction } from 'actions/auth'
 import SocialButton from './button'
 
 export default function AuthSocial(props) {

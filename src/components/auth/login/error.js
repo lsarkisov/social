@@ -2,9 +2,9 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import { ForgotPassword, AuthNeedHelp } from '../utils'
-import AuthContent from '../content'
-import AuthForm from '../form'
+import { ForgotPassword, AuthNeedHelp } from 'components/auth/utils'
+import AuthContent from 'components/auth/content'
+import AuthForm from 'components/auth/form'
 
 export default function AuthLoginError(props) {
   const { t } = useTranslation()

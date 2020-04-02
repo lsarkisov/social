@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Carousel } from 'react-bootstrap'
-import { REACT_APP_IMAGES_HOSTING } from '../../../const/api'
+import { REACT_APP_IMAGES_HOSTING } from 'const/api'
 
 const properties = {
   controls: false,

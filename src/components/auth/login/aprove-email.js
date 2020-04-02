@@ -1,8 +1,8 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import AuthContent from '../content'
-import AuthForm from '../form'
+import AuthContent from 'components/auth/content'
+import AuthForm from 'components/auth/form'
 
 export default function AuthLoginAproveEmail(props) {
   const { t } = useTranslation()

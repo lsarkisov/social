@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import AuthContent from '../content'
-import AuthForm from '../form'
-import { AuthMember, AuthNeedHelp } from '../utils'
+import AuthContent from 'components/auth/content'
+import AuthForm from 'components/auth/form'
+import { AuthMember, AuthNeedHelp } from 'components/auth/utils'
 import {
   lt,
   isDigit,
@@ -11,7 +11,7 @@ import {
   isEmailValid,
   isPassword,
   isConfirm,
-} from '../../../utils'
+} from 'utils/validator'
 
 export default function AuthModel(props) {
   const { t } = useTranslation()

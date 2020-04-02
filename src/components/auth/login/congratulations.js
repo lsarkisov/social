@@ -4,8 +4,8 @@ import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
-import AuthContent from '../content'
-import AuthForm from '../form'
+import AuthContent from 'components/auth/content'
+import AuthForm from 'components/auth/form'
 
 export default function AuthLoginCongratulations(props) {
   const { t } = useTranslation()

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import AuthNavbar from '../navbar'
-import AuthCarousel from '../carousel'
+import AuthNavbar from 'components/auth/navbar'
+import AuthCarousel from 'components/auth/carousel'
 
 export default function AuthContent(props) {
   const { t } = useTranslation()
