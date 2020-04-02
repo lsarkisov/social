@@ -2,39 +2,39 @@ import {
   REQUEST,
   SUCCESS,
   FAILURE,
-  AUTH_SOCIAL,
-  AUTH_COMMON,
+  LOGIN_COMMON,
+  LOGOUT_COMMON,
 } from 'const/requests'
 
 const auth = (state = {}, action) => {
   switch (action.type) {
-    case AUTH_SOCIAL[REQUEST]:
+    case LOGIN_COMMON[REQUEST]:
       return Object.assign({}, state, {
         authorised: false,
         user: null,
       })
-    case AUTH_SOCIAL[SUCCESS]:
+    case LOGIN_COMMON[SUCCESS]:
       return Object.assign({}, state, {
         authorised: true,
         user: action.user,
       })
-    case AUTH_SOCIAL[FAILURE]:
+    case LOGIN_COMMON[FAILURE]:
       return Object.assign({}, state, {
         authorised: false,
         user: null,
       })
 
-    case AUTH_COMMON[REQUEST]:
+    case LOGOUT_COMMON[REQUEST]:
       return Object.assign({}, state, {
         authorised: false,
         user: null,
       })
-    case AUTH_COMMON[SUCCESS]:
+    case LOGOUT_COMMON[SUCCESS]:
       return Object.assign({}, state, {
         authorised: true,
         user: action.user,
       })
-    case AUTH_COMMON[FAILURE]:
+    case LOGOUT_COMMON[FAILURE]:
       return Object.assign({}, state, {
         authorised: false,
         user: null,

@@ -5,7 +5,7 @@ import AuthContent from 'components/auth/content'
 import AuthForm from 'components/auth/form'
 import { AuthMember, AuthNeedHelp } from 'components/auth/utils'
 import { isAlpha, isEmailValid, isPassword, isConfirm } from 'utils/validator'
-import AuthSocial from 'components/auth/social'
+// import AuthSocial from 'components/auth/social'
 
 export default function AuthCompany(props) {
   const { t } = useTranslation()
@@ -21,6 +21,10 @@ export default function AuthCompany(props) {
     } else {
       setDisable(true)
     }
+  }
+
+  const onAuth = () => {
+    console.log('TEST')
   }
 
   return (
@@ -65,7 +69,9 @@ export default function AuthCompany(props) {
             )}
           </Form.Group>
           <Form.Group className={`${disable ? 'disabled' : ''}`}>
-            <Button variant="primary">{t('auth.register')}</Button>
+            <Button onClick={onAuth} variant="primary">
+              {t('auth.register')}
+            </Button>
           </Form.Group>
           <Form.Group className="text-sm">
             <AuthMember />
@@ -73,9 +79,9 @@ export default function AuthCompany(props) {
           <Form.Group className="text-sm">
             <AuthNeedHelp />
           </Form.Group>
-          <Form.Group className="text-sm">
+          {/* <Form.Group className="text-sm">
             {t('auth.model.orSocial')} <AuthSocial />
-          </Form.Group>
+          </Form.Group> */}
         </Form>
       </AuthForm>
     </AuthContent>
