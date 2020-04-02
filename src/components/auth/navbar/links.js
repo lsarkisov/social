@@ -5,7 +5,7 @@ export default function AuthNavbarLinks() {
   return (
     <>
       <Link to="/">
-        <span className="auth-navbar__icon">
+        <span className="auth-navbar__logo">
           <span>i</span>
           <span>i</span>
         </span>

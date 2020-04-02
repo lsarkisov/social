@@ -2,11 +2,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Redirect,
   withRouter,
 } from 'react-router-dom'
+import { AnimatedSwitch } from 'react-router-transition'
 import NoMatch from 'components/no-match'
 import UIKit from 'components/ui'
 import AuthMain from 'components/auth/main'
@@ -20,6 +20,21 @@ import AuthCompany from 'components/auth/company'
 import AuthModel from 'components/auth/model'
 import AuthError from 'components/auth/form/error'
 import Dashboard from 'components/dashboard'
+
+const routes = [
+  { path: '/auth/login/error', Component: AuthLoginError },
+  { path: '/auth/login/new-password', Component: AuthLoginNewPassword },
+  { path: '/auth/login/reset-password', Component: AuthLoginResetPassword },
+  { path: '/auth/login/congratulations', Component: AuthLoginCongratulations },
+  { path: '/auth/login/aprove-email', Component: AuthLoginAproveEmail },
+  { path: '/auth/login', Component: AuthLogin },
+  { path: '/auth/model', Component: AuthModel },
+  { path: '/auth/company', Component: AuthCompany },
+  { path: '/auth/error', Component: AuthError },
+  { path: '/ui', Component: UIKit },
+]
+
+const authRoutes = [{ path: '/dashboard', Component: Dashboard }]
 
 function Routes() {
   const { authorised } = useSelector((state) => state.auth)
@@ -46,47 +61,32 @@ function Routes() {
 
   return (
     <Router>
-      <Switch>
+      <AnimatedSwitch
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        className="switch-wrapper"
+      >
         <Route exact path="/">
           <AuthMain />
         </Route>
-        <Route path="/auth/login/error">
-          <AuthLoginError />
-        </Route>
-        <Route path="/auth/login/new-password">
-          <AuthLoginNewPassword />
-        </Route>
-        <Route path="/auth/login/reset-password">
-          <AuthLoginResetPassword />
-        </Route>
-        <Route path="/auth/login/congratulations">
-          <AuthLoginCongratulations />
-        </Route>
-        <Route path="/auth/login/aprove-email">
-          <AuthLoginAproveEmail />
-        </Route>
-        <Route path="/auth/login">
-          <AuthLogin />
-        </Route>
-        <Route path="/auth/model">
-          <AuthModel />
-        </Route>
-        <Route path="/auth/company">
-          <AuthCompany />
-        </Route>
-        <Route path="/auth/error">
-          <AuthError />
-        </Route>
-        <Route path="/ui">
-          <UIKit />
-        </Route>
-        <PrivateRoute path="/model/dashboard">
-          <Dashboard />
-        </PrivateRoute>
+
+        {routes.map(({ path, Component }) => (
+          <Route path={path} key={path}>
+            <Component />
+          </Route>
+        ))}
+
+        {authRoutes.map(({ path, Component }) => (
+          <PrivateRoute path={path} key={path}>
+            <Component />
+          </PrivateRoute>
+        ))}
+
         <Route>
           <NoMatch />
         </Route>
-      </Switch>
+      </AnimatedSwitch>
     </Router>
   )
 }

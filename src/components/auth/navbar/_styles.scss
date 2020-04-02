@@ -10,7 +10,7 @@
     }
   }
 
-  &__icon {
+  &__logo {
     color: white;
     position: relative;
     left: 20%;
@@ -127,7 +127,7 @@
       display: none;
     }
 
-    &__icon {
+    &__logo {
       left: 0;
       top: 0;
       font-size: 20px;
@@ -182,17 +182,13 @@
 
 @include media-breakpoint-down(sm) {
   .auth-navbar {
-    flex-direction: column;
+    flex-direction: row;
 
     &__link {
       width: 100%;
     }
 
     &__social {
-      display: none;
-    }
-
-    &__icon {
       display: none;
     }
   }
