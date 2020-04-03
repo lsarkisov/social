@@ -19,7 +19,9 @@ export function AuthMember(props) {
 
 export function ForgotPassword(props) {
   const { t } = useTranslation()
-  return <Link to="/auth/login/new-password">{t('login.forgotPassword')}</Link>
+  return (
+    <Link to="/auth/login/reset-password">{t('login.forgotPassword')}</Link>
+  )
 }
 
 export function PreLoader(props) {
@@ -29,4 +31,8 @@ export function PreLoader(props) {
       <i className="preloader" />
     </div>
   )
+}
+
+export function getIdFromPath(pattern) {
+  return window.location.pathname.replace(pattern, '')
 }

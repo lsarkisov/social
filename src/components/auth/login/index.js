@@ -14,7 +14,7 @@ export default function AuthLogin(props) {
   const { t } = useTranslation()
   const [isLogging, setIsLogging] = useState(false)
   const [disable, setDisable] = useState(true)
-  const [email, setImail] = useState(null)
+  const [email, setImail] = useState({ valid: null, value: null })
   const [password, setPassword] = useState({ valid: null, value: null })
   const [redirect, setRedirect] = useState(false)
 
@@ -24,15 +24,17 @@ export default function AuthLogin(props) {
 
   useEffect(() => {
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-    if (user && user.status > 399 && email) {
+    if (user && user.status > 399) {
       setIsLogging(false)
-      history.push('/auth/login/error')
+      dispatch(logInAction.failure())
+      history.push('/auth/login/error', { text: t('login.errorMessage') })
     }
-    if (user && user.token && user.role) {
+
+    if (localStorage.getItem('token') && localStorage.getItem('role')) {
       setIsLogging(false)
       setRedirect(true)
     }
-  }, [user, email, history])
+  }, [user, history, dispatch, t])
 
   const isValid = () => {
     if (email && password.valid) {

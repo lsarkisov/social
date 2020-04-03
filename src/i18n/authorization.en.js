@@ -38,6 +38,7 @@ export const login = {
   newPlaceholder: 'new password',
   confirmPassword: 'confirm password',
   changePassword: 'change password',
+  changingPassword: 'changing the password',
   resetPassword: 'reset password',
   email: 'email',
   userNotExists: 'There is no user with this email',

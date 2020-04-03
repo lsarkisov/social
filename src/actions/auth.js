@@ -24,13 +24,13 @@ export const logOutAction = {
 }
 
 export const resetPasswordAction = {
-  request: () => action(types.RESET_PASSWORD[REQUEST]),
+  request: (payload) => action(types.RESET_PASSWORD[REQUEST], { payload }),
   success: (payload) => action(types.RESET_PASSWORD[SUCCESS], { payload }),
   failure: (error) => action(types.RESET_PASSWORD[FAILURE], error),
 }
 
 export const changePasswordAction = {
-  request: () => action(types.CHANGE_PASSWORD[REQUEST]),
+  request: (payload) => action(types.CHANGE_PASSWORD[REQUEST], { payload }),
   success: (payload) => action(types.CHANGE_PASSWORD[SUCCESS], { payload }),
   failure: (error) => action(types.CHANGE_PASSWORD[FAILURE], error),
 }

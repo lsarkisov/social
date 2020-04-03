@@ -23,8 +23,8 @@ import Dashboard from 'components/dashboard'
 
 const routes = [
   { path: '/auth/login/error', Component: AuthLoginError },
-  { path: '/auth/login/new-password', Component: AuthLoginNewPassword },
   { path: '/auth/login/reset-password', Component: AuthLoginResetPassword },
+  { path: '/user/password/change/:id', Component: AuthLoginNewPassword },
   { path: '/auth/login/congratulations', Component: AuthLoginCongratulations },
   { path: '/auth/confirm/email', Component: AuthLoginConfirmEmail },
   { path: '/onboarding/confirm/:id', Component: AuthRedirect },

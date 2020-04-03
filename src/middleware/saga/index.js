@@ -66,7 +66,7 @@ function* loginCommonRequest() {
 
 function* onResetPasswordSuccess(data) {
   const payload = yield call(() => services.resetPassword(data.payload))
-  console.log('reset', data, payload)
+
   try {
     yield put({ type: types.RESET_PASSWORD[SUCCESS], payload })
   } catch (error) {
@@ -79,10 +79,12 @@ function* resetPasswordRequest() {
 }
 
 function* onChangePasswordSuccess(data) {
-  const payload = yield call(() => services.changePassword(data.payload))
-  console.log('change', data, payload)
+  yield call(() => services.changePassword(data.payload))
   try {
-    yield put({ type: types.CHANGE_PASSWORD[SUCCESS], payload })
+    yield put({
+      type: types.CHANGE_PASSWORD[SUCCESS],
+      payload: { success: true },
+    })
   } catch (error) {
     yield put({ type: types.CHANGE_PASSWORD[FAILURE], error })
   }
