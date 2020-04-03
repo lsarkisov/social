@@ -32,7 +32,7 @@ export default function AuthLogin(props) {
       setIsLogging(false)
       setRedirect(true)
     }
-  }, [user])
+  }, [user, email, history])
 
   const isValid = () => {
     if (email && password.valid) {
