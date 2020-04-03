@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { logInAction } from 'actions/auth'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import AuthContent from 'components/auth/content'
 import AuthForm from 'components/auth/form'
 import { AuthNeedHelp, PreLoader } from 'components/auth/utils'
 import { isEmailValid, isPassword } from 'utils/validator'
+import AuthRedirect from 'components/auth/redirect'
 
 export default function AuthLogin(props) {
   const { t } = useTranslation()
@@ -12,10 +16,23 @@ export default function AuthLogin(props) {
   const [disable, setDisable] = useState(true)
   const [email, setImail] = useState(null)
   const [password, setPassword] = useState({ valid: null, value: null })
+  const [redirect, setRedirect] = useState(false)
 
-  const onLoging = () => {
-    setIsLogging(true)
-  }
+  const { user } = useSelector((state) => state.login)
+  const dispatch = useDispatch()
+  const history = useHistory()
+
+  useEffect(() => {
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+    if (user && user.status > 399 && email) {
+      setIsLogging(false)
+      history.push('/auth/login/error')
+    }
+    if (user && user.token && user.role) {
+      setIsLogging(false)
+      setRedirect(true)
+    }
+  }, [user])
 
   const isValid = () => {
     if (email && password.valid) {
@@ -23,6 +40,20 @@ export default function AuthLogin(props) {
     } else {
       setDisable(true)
     }
+  }
+
+  const onLogin = () => {
+    setIsLogging(true)
+    dispatch(
+      logInAction.request({
+        username: email.value,
+        password: password.value,
+      }),
+    )
+  }
+
+  if (redirect) {
+    return <AuthRedirect />
   }
 
   return (
@@ -52,7 +83,7 @@ export default function AuthLogin(props) {
               )}
             </Form.Group>
             <Form.Group className={`${disable ? 'disabled' : ''}`}>
-              <Button variant="primary" onClick={onLoging}>
+              <Button onClick={onLogin} variant="primary">
                 {t('login.title')}
               </Button>
             </Form.Group>

@@ -28,7 +28,6 @@ function* onAuthCommonSuccess(data) {
 
   try {
     const { token, role } = payload
-    console.log('PAYLOAD', payload)
 
     if (token && role) {
       localStorage.setItem('token', token)
