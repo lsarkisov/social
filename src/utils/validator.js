@@ -30,6 +30,7 @@ export const isDigit = (e, callback) => {
 
 export const isWebsiteValid = (e, callback) => {
   const value = e.target.value.trim()
+  //eslint-disable-next-line
   const reg = /[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+/
 
   if (reg.test(value)) {
@@ -41,6 +42,7 @@ export const isWebsiteValid = (e, callback) => {
 
 export const isEmailValid = (e, callback) => {
   const value = e.target.value.trim()
+  //eslint-disable-next-line
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
   if (reg.test(value)) {
