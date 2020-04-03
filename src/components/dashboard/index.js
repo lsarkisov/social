@@ -1,11 +1,11 @@
 import React from 'react'
-import AuthSocialLogout from 'components/auth/social/logout'
 
 export default function Dashboard(props) {
+  const role = localStorage.getItem('role')
+
   return (
     <div>
-      <AuthSocialLogout />
-      <h1>Dashboard</h1>
+      <h1>Dashboard {role && role}</h1>
     </div>
   )
 }

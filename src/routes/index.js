@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +14,8 @@ import AuthLoginError from 'components/auth/login/error'
 import AuthLoginNewPassword from 'components/auth/password/new-password'
 import AuthLoginResetPassword from 'components/auth/password/reset-password'
 import AuthLoginCongratulations from 'components/auth/login/congratulations'
-import AuthLoginAproveEmail from 'components/auth/login/aprove-email'
+import AuthLoginConfirmEmail from 'components/auth/login/confirm-email'
+import AuthRedirect from 'components/auth/redirect'
 import AuthCompany from 'components/auth/company'
 import AuthModel from 'components/auth/model'
 import AuthError from 'components/auth/form/error'
@@ -26,7 +26,8 @@ const routes = [
   { path: '/auth/login/new-password', Component: AuthLoginNewPassword },
   { path: '/auth/login/reset-password', Component: AuthLoginResetPassword },
   { path: '/auth/login/congratulations', Component: AuthLoginCongratulations },
-  { path: '/auth/login/aprove-email', Component: AuthLoginAproveEmail },
+  { path: '/auth/confirm/email', Component: AuthLoginConfirmEmail },
+  { path: '/onboarding/confirm/:id', Component: AuthRedirect },
   { path: '/auth/login', Component: AuthLogin },
   { path: '/auth/model', Component: AuthModel },
   { path: '/auth/company', Component: AuthCompany },
@@ -34,22 +35,23 @@ const routes = [
   { path: '/ui', Component: UIKit },
 ]
 
-const authRoutes = [{ path: '/dashboard', Component: Dashboard }]
+const authRoutes = [
+  { path: '/dashboard/model', Component: Dashboard },
+  { path: '/dashboard/company', Component: Dashboard },
+]
 
 function Routes() {
-  const { authorised } = useSelector((state) => state.auth)
-
   function PrivateRoute({ children, ...rest }) {
     return (
       <Route
         {...rest}
         render={({ location }) =>
-          authorised ? (
+          localStorage.getItem('token') && localStorage.getItem('role') ? (
             children
           ) : (
             <Redirect
               to={{
-                pathname: '/auth/model',
+                pathname: '/',
                 state: { from: location },
               }}
             />

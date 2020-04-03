@@ -8,12 +8,6 @@ const jsonHeaders = {
 function callApi(endpoint, headers) {
   return fetch(`${REACT_APP_API_URL}${endpoint}`, headers)
     .then((response) => {
-      if (response && response.ok) {
-        return {
-          status: response.status,
-          ok: response.ok,
-        }
-      }
       return response.clone().json()
     })
     .then((response) => response)

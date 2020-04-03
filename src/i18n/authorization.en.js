@@ -7,8 +7,9 @@ export const auth = {
   help: 'Need help?',
   error: 'Something went wrong…',
   tryAgain: 'try registering again',
-  registerModel: 'register as a model',
-  registerCompany: 'register as a booker',
+  registerModel: 'registering a model',
+  registerCompany: 'registering a booker',
+  userExists: 'the user with this email exists',
   org: {
     companyName: 'company name',
     orgNumber: 'organisation number',
@@ -46,7 +47,7 @@ export const login = {
     message: 'Your password has now been reset!',
     button: 'countinue',
   },
-  aprove: {
+  confirm: {
     title: 'Follow the link',
     message1: 'We have sent you an email. Check your email’s inbox.',
     message2: 'Can’t find it? Check your junk mail!',

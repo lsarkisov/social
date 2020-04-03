@@ -9,7 +9,7 @@ const auth = (state = {}, action) => {
       })
     case types.AUTH_SOCIAL[SUCCESS]:
       return Object.assign({}, state, {
-        user: action.user,
+        user: action.payload,
       })
     case types.AUTH_SOCIAL[FAILURE]:
       return Object.assign({}, state, {
@@ -22,7 +22,7 @@ const auth = (state = {}, action) => {
       })
     case types.AUTH_COMMON[SUCCESS]:
       return Object.assign({}, state, {
-        user: action.user,
+        user: action.payload,
       })
     case types.AUTH_COMMON[FAILURE]:
       return Object.assign({}, state, {

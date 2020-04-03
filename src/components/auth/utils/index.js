@@ -24,7 +24,7 @@ export function ForgotPassword(props) {
 
 export function PreLoader(props) {
   return (
-    <div className="auth-preloader">
+    <div className="custom-preloader">
       <p>{props.text}</p>
       <i className="preloader" />
     </div>
