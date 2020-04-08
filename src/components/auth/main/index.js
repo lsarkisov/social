@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -18,30 +18,35 @@ function getViePortHeight() {
   return window.innerHeight
 }
 
-function draw(ctx, delta, angle1, angle2, color) {
-  ctx.fillStyle = color
-  ctx.beginPath()
-  ctx.moveTo(0, 0)
-  ctx.lineTo(getWidth() - delta, 0)
-  ctx.lineTo(getWidth() - getWidth() / angle1, getViePortHeight())
-  ctx.lineTo(getWidth() - getWidth() / angle2, getHeight())
-  ctx.lineTo(0, getHeight())
+function draw(params) {
+  const { context, delta, p1, p2, color } = params
 
-  ctx.closePath()
-  ctx.fill()
+  context.fillStyle = color
+
+  context.beginPath()
+  context.moveTo(0, 0)
+  context.lineTo(getWidth() - delta, 0)
+  context.lineTo(getWidth() - getWidth() / p1, getViePortHeight())
+  context.lineTo(getWidth() - getWidth() / p2, getHeight())
+  context.lineTo(0, getHeight())
+
+  context.closePath()
+  context.fill()
 }
 
-function initCanvas(ctx, delta, angle1, angle2, color) {
-  ctx.canvas.height = getHeight()
-  ctx.canvas.width = getWidth()
+function initCanvas(params) {
+  const { context } = params
+
+  context.canvas.height = getHeight()
+  context.canvas.width = getWidth()
 
   window.addEventListener('resize', () => {
-    ctx.canvas.height = getHeight()
-    ctx.canvas.width = getWidth()
-    draw(ctx, delta, angle1, angle2, color)
+    context.canvas.height = getHeight()
+    context.canvas.width = getWidth()
+    draw(params)
   })
 
-  draw(ctx, delta, angle1, angle2, color)
+  draw(params)
 }
 
 export default function AuthMain(props) {
@@ -52,11 +57,11 @@ export default function AuthMain(props) {
   useEffect(() => {
     const canvas1 = shape1.current.getContext('2d').canvas
     const ctx1 = canvas1.getContext('2d')
-    initCanvas(ctx1, 0, 10, 4.4, '#ff929c')
+    initCanvas({ context: ctx1, delta: 0, p1: 10, p2: 4.4, color: '#ff929c' })
 
     const canvas2 = shape2.current.getContext('2d').canvas
     const ctx2 = canvas2.getContext('2d')
-    initCanvas(ctx2, 50, 1.5, 1.4, '#ff929c')
+    initCanvas({ context: ctx2, delta: 50, p1: 1.5, p2: 1.4, color: '#ff929c' })
   })
 
   return (

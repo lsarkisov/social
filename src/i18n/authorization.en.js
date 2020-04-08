@@ -29,6 +29,7 @@ export const auth = {
 
 export const login = {
   title: 'log in',
+  logout: 'log out',
   logging: 'logging in...',
   error: 'login failed',
   errorMessage: 'Wrong email or/and wrong password',

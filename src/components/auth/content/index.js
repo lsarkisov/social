@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
+import AuthRedirect from 'components/auth/redirect'
 import AuthNavbar from 'components/auth/navbar'
 import AuthCarousel from 'components/auth/carousel'
+
+const token = localStorage.getItem('token')
+const role = localStorage.getItem('role')
 
 export default function AuthContent(props) {
   const { t } = useTranslation()
@@ -16,6 +20,10 @@ export default function AuthContent(props) {
       setContent(8)
     }
   }, [isMain])
+
+  if (token && role) {
+    return <AuthRedirect />
+  }
 
   return (
     <div className={`auth-content ${props.className}`}>

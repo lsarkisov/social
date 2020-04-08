@@ -12,7 +12,8 @@ export function AuthMember(props) {
   const { t } = useTranslation()
   return (
     <>
-      {t('auth.link.member')} <Link to="/">{t('auth.link.click')}</Link>
+      {t('auth.link.member')}{' '}
+      <Link to="/auth/login">{t('auth.link.click')}</Link>
     </>
   )
 }
