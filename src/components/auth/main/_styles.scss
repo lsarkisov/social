@@ -71,9 +71,39 @@
       color: $gray-3;
     }
   }
+
+  @media only screen and (min-width: 1140px) {
+    &__content {
+      position: relative;
+      z-index: 100;
+      margin-top: 50px;
+    }
+
+    .auth-navbar {
+      &::before,
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.canvas {
+  display: none;
 }
 
 @media only screen and (min-width: 1140px) {
+  .canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &__opacity {
+      opacity: 0.3;
+    }
+  }
   .main-title {
     margin: auto 8%;
   }
@@ -165,6 +195,9 @@
 }
 
 @include media-breakpoint-down(lg) {
+  .canvas {
+    display: none;
+  }
   .main-title {
     margin: auto 15% auto 0;
     font-size: 70px;
