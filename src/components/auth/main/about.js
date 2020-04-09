@@ -41,6 +41,7 @@ export default function AuthMainAbout(props) {
           </p>
         </Col>
       </Row>
+
       <Row>
         <Col sm={true} xs={12} className="img-bg img-bg__2">
           <p>

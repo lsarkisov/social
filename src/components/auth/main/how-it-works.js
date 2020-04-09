@@ -1,13 +1,112 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { REACT_APP_IMAGES_HOSTING } from 'const/api'
+import { ReactComponent as LogInActive } from 'assets/img/icons/log-in-active.svg'
+import { ReactComponent as LogIn } from 'assets/img/icons/log-in.svg'
+import { ReactComponent as UserActive } from 'assets/img/icons/user-active.svg'
+import { ReactComponent as User } from 'assets/img/icons/user.svg'
+import { ReactComponent as TapActive } from 'assets/img/icons/tap-active.svg'
+import { ReactComponent as Tap } from 'assets/img/icons/tap.svg'
+import { ReactComponent as GiveWomensRights } from 'assets/img/icons/give-womens-rights.svg'
+import { ReactComponent as Pay } from 'assets/img/icons/pay.svg'
 
 export default function AuthMainHowItWorks(props) {
   return (
-    <>
+    <div className="main-page__how-it">
       <h2 className="center">
         How it <span className="sub-text">works</span>
       </h2>
-    </>
+      <table className="table">
+        <thead>
+          <tr>
+            <td></td>
+            <td>
+              <span className="table__text">Model</span>
+            </td>
+            <td></td>
+            <td>
+              <span className="table__text">Booker</span>
+            </td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <LogInActive /> <span className="dash">---</span>
+            </td>
+            <td>
+              <span className="table__text">Register account</span>
+            </td>
+            <td></td>
+            <td>
+              <span className="table__text">Register account</span>
+            </td>
+            <td>
+              <span className="dash">---</span> <LogIn />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <UserActive /> <span className="dash">---</span>
+            </td>
+            <td>
+              <span className="table__text">Build your profile</span>
+            </td>
+            <td></td>
+            <td>
+              <span className="table__text">Build your profile</span>
+            </td>
+            <td>
+              <span className="dash">---</span> <User />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <TapActive /> <span className="dash">---</span>
+            </td>
+            <td>
+              <span className="table__text">Apply for jobs</span>
+            </td>
+            <td></td>
+            <td>
+              <span className="table__text">Create jobs</span>
+            </td>
+            <td>
+              <span className="dash">---</span> <Tap />
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+              <span className="table__text">Get hired</span>
+            </td>
+            <td>
+              - <GiveWomensRights /> -
+            </td>
+            <td></td>
+            <td>
+              <span className="table__text">Hire</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+              <span className="table__text">Get paid</span>
+            </td>
+            <td>
+              - <Pay /> -
+            </td>
+            <td>
+              <span className="table__text">Pay</span>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   )
 }

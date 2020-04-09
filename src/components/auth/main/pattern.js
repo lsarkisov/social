@@ -50,7 +50,7 @@ export default function AuthMainPattern(props) {
   useEffect(() => {
     const canvas1 = shape1.current.getContext('2d').canvas
     const ctx1 = canvas1.getContext('2d')
-    initCanvas({ context: ctx1, delta: 0, p1: 10, p2: 4.4, color: '#ff929c' })
+    initCanvas({ context: ctx1, delta: 0, p1: 10, p2: 3.5, color: '#ff929c' })
 
     const canvas2 = shape2.current.getContext('2d').canvas
     const ctx2 = canvas2.getContext('2d')
