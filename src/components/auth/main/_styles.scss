@@ -66,9 +66,13 @@
       display: block;
       width: 100%;
     }
+  }
 
-    .sub-text {
-      color: $gray-3;
+  &__content {
+    position: relative;
+
+    .container {
+      position: relative;
     }
   }
 
@@ -76,7 +80,38 @@
     &__content {
       position: relative;
       z-index: 100;
-      margin-top: 50px;
+
+      .container {
+        position: relative;
+        z-index: 100;
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+      }
+
+      .bg-1 {
+        width: 120px;
+        right: 10%;
+        height: 0;
+        border-top: 100px solid $gray-2;
+        border-left: 100px solid transparent;
+        border-right: 70px solid transparent;
+        opacity: 0.36;
+        z-index: 1;
+      }
+
+      .bg-2 {
+        width: 120px;
+        left: 10%;
+        height: 0;
+        border-top: 100px solid $gray-2;
+        border-left: 100px solid transparent;
+        border-right: 70px solid transparent;
+        opacity: 0.36;
+        z-index: 1;
+      }
     }
 
     .auth-navbar {

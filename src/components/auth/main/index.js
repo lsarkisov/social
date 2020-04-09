@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import AuthMainPattern from 'components/auth/main/pattern'
 import StickyNav from 'components/sticky-nav'
 import AuthContent from 'components/auth/content'
+import AuthMainContent from 'components/auth/main/content'
 import AuthForm from 'components/auth/form'
 import { ForgotPassword, AuthNeedHelp } from 'components/auth/utils'
 
@@ -59,86 +60,7 @@ export default function AuthMain(props) {
           </Form>
         </AuthForm>
       </AuthContent>
-      <div className="main-page__content">
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-      </div>
+      <AuthMainContent />
     </>
   )
 }

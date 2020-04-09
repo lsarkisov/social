@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function StickyNav(props) {
   const [show, setShow] = useState(false)
-  const delta = 50
+  const delta = 150
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
