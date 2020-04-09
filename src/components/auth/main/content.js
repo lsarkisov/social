@@ -1,5 +1,8 @@
 import React, { useState, useRef } from 'react'
+import { Container } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
+import AuthMainAbout from 'components/auth/main/about'
+import AuthMainHowItWorks from 'components/auth/main/how-it-works'
 
 export default function AuthMainContent(props) {
   const { t } = useTranslation()
@@ -30,90 +33,22 @@ export default function AuthMainContent(props) {
       <i
         className="bg bg-2"
         style={{
-          width: `${Math.round(width / 5)}px`,
+          width: `${Math.round(width / 3)}px`,
           borderTopWidth: `${height}px`,
         }}
       />
-      <div className="container">
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-        <h1>TEST!!!</h1>
-      </div>
+
+      <i
+        className="bg bg-3"
+        style={{
+          width: `${Math.round(width / 4)}px`,
+          borderBottomWidth: `${height}px`,
+        }}
+      />
+      <Container>
+        <AuthMainAbout />
+        <AuthMainHowItWorks />
+      </Container>
     </div>
   )
 }

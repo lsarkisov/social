@@ -28,7 +28,7 @@ export default function AuthContent(props) {
   return (
     <div className={`auth-content ${props.className}`}>
       <AuthNavbar />
-      <Row className="p-0 m-0">
+      <Row className="p-0 m-0 overflow-x-hidden">
         <Col xs={12} lg={sidebar} className="content-row p-0">
           {props.children}
         </Col>
