@@ -892,6 +892,17 @@
     }
   }
 
+  @include media-breakpoint-down(lg) {
+    li {
+      line-height: 1rem;
+      margin: 2.5rem 1%;
+    }
+
+    .logo {
+      margin: 2rem 0;
+    }
+  }
+
   @include media-breakpoint-down(md) {
     ul {
       margin: 1rem 0 2rem;
