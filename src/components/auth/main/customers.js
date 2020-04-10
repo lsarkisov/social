@@ -62,7 +62,7 @@ export default function AuthMainCustomers(props) {
           <dl className="custom-card">
             <dt>Your safety is our priority!</dt>
             <dd className="custom-card__image">
-              <Shield />
+              <Shield className="svg-height-auto" />
             </dd>
             <dd>
               Recruit without hesitation thanks to our rating & feedback system,
@@ -88,7 +88,7 @@ export default function AuthMainCustomers(props) {
           <dl className="custom-card">
             <dt>Diversity is our motto!</dt>
             <dd className="custom-card__image">
-              <People />
+              <People className="svg-height-auto" />
             </dd>
             <dd>
               Iconicli welcomes all looks. This gives you a uniquely diverse
@@ -105,7 +105,7 @@ export default function AuthMainCustomers(props) {
           <dl className="custom-card">
             <dt>find jobs worldwide</dt>
             <dd className="custom-card__image">
-              <World />
+              <World className="svg-height-auto" />
             </dd>
             <dd>
               Find and apply to any job you want. No matter the location or
@@ -118,7 +118,7 @@ export default function AuthMainCustomers(props) {
           <dl className="custom-card">
             <dt>you are more than enough</dt>
             <dd className="custom-card__image">
-              <Crown />
+              <Crown className="svg-height-auto" />
             </dd>
             <dd>
               No matter your looks, you are always welcomed! Professionals,
@@ -145,7 +145,7 @@ export default function AuthMainCustomers(props) {
           <dl className="custom-card">
             <dt>Your safety is our priority!</dt>
             <dd className="custom-card__image">
-              <Shield />
+              <Shield className="svg-height-auto" />
             </dd>
             <dd>
               Freelance without hesitation thanks to our rating & feedback
