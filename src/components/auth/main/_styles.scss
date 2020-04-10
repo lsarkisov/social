@@ -103,28 +103,33 @@
       }
 
       .bg-1 {
-        width: 120px;
+        position: absolute;
         right: 10%;
-        border-top: 100px solid $gray-2;
-        border-left: 300px solid transparent;
-        border-right: 20px solid transparent;
+        width: 150%;
+        height: 100%;
+        background-color: $gray-2;
+        opacity: 0.5;
+        transform: skewX(3deg) translateX(1rem);
       }
 
       .bg-2 {
-        width: 120px;
-        left: 10%;
-        border-top: 100px solid $gray-2;
-        border-left: 180px solid transparent;
-        border-right: 60px solid transparent;
+        position: absolute;
+        right: 10%;
+        width: 120%;
+        height: 100%;
+        background-color: $gray-3;
+        opacity: 0.03;
+        transform: skewX(2deg) translateX(-15%);
       }
 
       .bg-3 {
-        left: 40%;
-        bottom: 0;
-        border-bottom: 100px solid $gray-2;
-        border-left: 120px solid transparent;
-        border-right: 90px solid transparent;
-        transform: skewX(6deg) translateX(-90%);
+        position: absolute;
+        right: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-3;
+        opacity: 0.03;
+        transform: skewX(1deg) translateX(-30%);
       }
     }
   }
@@ -846,14 +851,20 @@
   }
 }
 
+.main-page__about,
+.main-page__howit,
+.main-page__customers {
+  @include media-breakpoint-down(sm) {
+    margin: 0 $px15;
+  }
+}
+
 .main-page__footer {
   position: relative;
   height: 300px;
   z-index: 100;
   background: transparent url('../../../assets/img/footer.svg') no-repeat center
     top;
-  display: flex;
-  justify-content: center;
   text-align: center;
 
   ul {
