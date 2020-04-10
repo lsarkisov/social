@@ -106,7 +106,7 @@
         top: 0;
         height: 0;
         z-index: 1;
-        opacity: 0.6;
+        opacity: 0.7;
       }
 
       .bg-1 {
@@ -631,6 +631,22 @@
     }
   }
 
+  thead {
+    td:nth-child(2) {
+      .table__text {
+        background-color: $primary;
+        color: white;
+      }
+    }
+
+    td:nth-child(4) {
+      .table__text {
+        background-color: $gray-3;
+        color: white;
+      }
+    }
+  }
+
   td:nth-child(4) {
     .table__text {
       border-color: $gray-3;
@@ -816,4 +832,23 @@
 }
 
 .main-page__customers {
+  .for-all {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $gray-3;
+
+    p {
+      margin: $px10 10% 0;
+      text-align: center;
+    }
+
+    &__text {
+      color: $primary;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 10%;
+      }
+    }
+  }
 }

@@ -11,6 +11,9 @@ import { ReactComponent as Muscle } from 'assets/img/icons/muscle.svg'
 import { ReactComponent as Money } from 'assets/img/icons/money-bag-with-dollar-symbol.svg'
 import { ReactComponent as Ascend } from 'assets/img/icons/ascend.svg'
 import { ReactComponent as People } from 'assets/img/icons/people.svg'
+import { ReactComponent as Gender } from 'assets/img/gender.svg'
+import { ReactComponent as Decent } from 'assets/img/decent.svg'
+import { ReactComponent as Reduced } from 'assets/img/reduced.svg'
 
 export default function AuthMainCustomers(props) {
   return (
@@ -180,6 +183,50 @@ export default function AuthMainCustomers(props) {
               the bigger jobs!
             </dd>
           </dl>
+        </Col>
+      </Row>
+      <h2 className="center">
+        For <span className="sub-text">Both</span>
+      </h2>
+      <Row>
+        <Col>
+          <dl className="custom-card">
+            <dt>Be part of something bigger!</dt>
+            <dd className="custom-card__image">
+              <Ascend />
+            </dd>
+            <dd>
+              By using and supporting Iconicli, your are automatically
+              contributing and being part of a higher purpose! We strive to make
+              a better world by supporting 3 of the 17 Global Goals for 2030.
+            </dd>
+          </dl>
+        </Col>
+      </Row>
+      <Row className="for-all">
+        <Col className="center">
+          <Gender />
+          <p>Gender Equality</p>
+        </Col>
+        <Col className="center">
+          <Decent />
+          <p>Decent work and economic growth</p>
+        </Col>
+        <Col className="center">
+          <Reduced />
+          <p>Reduced Inequalities</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p className="for-all__text">
+            ’’In 2015, world leaders agreed to 17 goals for a better world by
+            2030. These goals have the power to end poverty, fight inequality
+            and address the urgency of climate change. Guided by the goals, it
+            is now up to all of us, governments, businesses, civil society and
+            the general public to work together to build a better future for
+            everyone’’
+          </p>
         </Col>
       </Row>
     </div>
