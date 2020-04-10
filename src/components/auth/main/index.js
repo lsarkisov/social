@@ -2,11 +2,13 @@ import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import Logo from 'components/logo'
 import AuthMainPattern from 'components/auth/main/pattern'
 import StickyNav from 'components/sticky-nav'
 import AuthContent from 'components/auth/content'
 import AuthMainContent from 'components/auth/main/content'
 import AuthForm from 'components/auth/form'
+import AuthMainFooter from 'components/auth/main/footer'
 import { ForgotPassword, AuthNeedHelp } from 'components/auth/utils'
 
 export default function AuthMain(props) {
@@ -28,13 +30,7 @@ export default function AuthMain(props) {
       </StickyNav>
       <AuthContent className="main-page">
         <AuthForm>
-          <h2>
-            Iconic<span className="sub-text">li</span>
-          </h2>
-          <p className="main-page__slogan">
-            {t('auth.slogan.first')}
-            <span className="sub-text"> {t('auth.slogan.second')}</span>
-          </p>
+          <Logo />
           <Form>
             <Form.Group>
               <Link to="/auth/login">
@@ -61,6 +57,7 @@ export default function AuthMain(props) {
         </AuthForm>
       </AuthContent>
       <AuthMainContent />
+      <AuthMainFooter />
     </>
   )
 }
