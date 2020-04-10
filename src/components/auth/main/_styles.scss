@@ -835,9 +835,19 @@
     font-weight: bold;
     color: $gray-3;
 
+    @include media-breakpoint-up(md) {
+      img {
+        width: 50%;
+      }
+    }
+
     p {
       margin: $px10 10% 0;
       text-align: center;
+
+      @include media-breakpoint-down(md) {
+        font-size: $px12;
+      }
     }
 
     &__text {

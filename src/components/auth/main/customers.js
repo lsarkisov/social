@@ -11,9 +11,9 @@ import { ReactComponent as Muscle } from 'assets/img/icons/muscle.svg'
 import { ReactComponent as Money } from 'assets/img/icons/money-bag-with-dollar-symbol.svg'
 import { ReactComponent as Ascend } from 'assets/img/icons/ascend.svg'
 import { ReactComponent as People } from 'assets/img/icons/people.svg'
-import { ReactComponent as Gender } from 'assets/img/gender.svg'
-import { ReactComponent as Decent } from 'assets/img/decent.svg'
-import { ReactComponent as Reduced } from 'assets/img/reduced.svg'
+import Gender from 'assets/img/gender.svg'
+import Decent from 'assets/img/decent.svg'
+import Reduced from 'assets/img/reduced.svg'
 
 export default function AuthMainCustomers(props) {
   return (
@@ -205,15 +205,15 @@ export default function AuthMainCustomers(props) {
       </Row>
       <Row className="for-all">
         <Col className="center">
-          <Gender />
+          <img src={Gender} alt="" />
           <p>Gender Equality</p>
         </Col>
         <Col className="center">
-          <Decent />
+          <img src={Decent} alt="" />
           <p>Decent work and economic growth</p>
         </Col>
         <Col className="center">
-          <Reduced />
+          <img src={Reduced} alt="" />
           <p>Reduced Inequalities</p>
         </Col>
       </Row>
