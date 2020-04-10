@@ -135,7 +135,8 @@
     }
   }
 
-  &__about {
+  &__about,
+  &__how-it {
     h2 {
       font-size: $px40;
       line-height: 0.55;
@@ -525,24 +526,70 @@
   .table {
     font-size: $px13;
     width: 100%;
+
+    &__text {
+      font-size: 15px;
+      padding: 2px 26px;
+      letter-spacing: 0.9px;
+      display: inline-block;
+      border: 2px solid $primary;
+      border-radius: 10px;
+      width: 140px;
+      height: 45px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+    }
   }
 
   td {
     border: 0;
     color: $gray-3;
+    padding-bottom: 25px;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+  }
+
+  td:nth-child(1),
+  td:nth-child(5) {
+    width: 16%;
   }
 
   td:nth-child(1) {
-    text-align: right;
+    text-align: left;
+    padding-left: 0;
+
+    .dash {
+      margin-left: 1rem;
+    }
   }
 
   td:nth-child(5) {
-    text-align: left;
+    text-align: right;
   }
 
   td:nth-child(1),
   td:nth-child(2) {
     color: $primary;
+  }
+
+  td:nth-child(5) {
+    .dash {
+      position: absolute;
+      left: 10px;
+      top: 42%;
+
+      &::before,
+      &::after,
+      i::before,
+      i::after {
+        border-color: $gray-3;
+      }
+    }
   }
 
   td:nth-child(4),
@@ -552,11 +599,132 @@
     }
   }
 
+  td:nth-child(4) {
+    .table__text {
+      border-color: $gray-3;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    td:nth-child(3) {
+      .dash {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    td:nth-child(1),
+    td:nth-child(5) {
+      display: none;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    td:nth-child(2),
+    td:nth-child(4) {
+      width: 10%;
+    }
+
+    td:nth-child(3) {
+      width: 3%;
+      padding: 0;
+    }
+
+    .table {
+      width: 80%;
+      margin-left: 10%;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    td:nth-child(3) {
+      .dash {
+        display: block;
+      }
+    }
+  }
+
+  svg {
+    height: 43px;
+  }
+
   #prefix__Shape-4 {
     fill: $gray-3 !important;
   }
 
+  #prefix__tap {
+    margin: 0 8px;
+  }
+
   .dash {
-    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after,
+    i::before,
+    i::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 12px;
+      height: 1px;
+      border-top: 1px solid $primary;
+    }
+
+    &::after {
+      left: 19px;
+    }
+
+    i::before {
+      left: 37px;
+    }
+    i::after {
+      left: 54px;
+    }
+
+    @media only screen and (max-width: 1350px) {
+      i::after {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 1270px) {
+      i::before,
+      i::after {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 1137px) {
+      i::before {
+        display: block;
+      }
+    }
+  }
+
+  td:nth-child(3) {
+    .dash {
+      position: absolute;
+      left: -20%;
+      top: 45%;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    :nth-child(3) {
+      right: -110%;
+      &::before {
+        color: $gray-3;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .dash {
+      display: none !important;
+    }
   }
 }

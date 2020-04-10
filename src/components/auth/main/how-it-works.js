@@ -1,5 +1,4 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
 import { ReactComponent as LogInActive } from 'assets/img/icons/log-in-active.svg'
 import { ReactComponent as LogIn } from 'assets/img/icons/log-in.svg'
 import { ReactComponent as UserActive } from 'assets/img/icons/user-active.svg'
@@ -32,7 +31,10 @@ export default function AuthMainHowItWorks(props) {
         <tbody>
           <tr>
             <td>
-              <LogInActive /> <span className="dash">---</span>
+              <LogInActive />{' '}
+              <span className="dash">
+                <i />
+              </span>
             </td>
             <td>
               <span className="table__text">Register account</span>
@@ -42,13 +44,19 @@ export default function AuthMainHowItWorks(props) {
               <span className="table__text">Register account</span>
             </td>
             <td>
-              <span className="dash">---</span> <LogIn />
+              <span className="dash">
+                <i />
+              </span>{' '}
+              <LogIn />
             </td>
           </tr>
 
           <tr>
             <td>
-              <UserActive /> <span className="dash">---</span>
+              <UserActive />{' '}
+              <span className="dash">
+                <i />
+              </span>
             </td>
             <td>
               <span className="table__text">Build your profile</span>
@@ -58,13 +66,19 @@ export default function AuthMainHowItWorks(props) {
               <span className="table__text">Build your profile</span>
             </td>
             <td>
-              <span className="dash">---</span> <User />
+              <span className="dash">
+                <i />
+              </span>{' '}
+              <User />
             </td>
           </tr>
 
           <tr>
             <td>
-              <TapActive /> <span className="dash">---</span>
+              <TapActive />{' '}
+              <span className="dash">
+                <i />
+              </span>
             </td>
             <td>
               <span className="table__text">Apply for jobs</span>
@@ -74,7 +88,10 @@ export default function AuthMainHowItWorks(props) {
               <span className="table__text">Create jobs</span>
             </td>
             <td>
-              <span className="dash">---</span> <Tap />
+              <span className="dash">
+                <i />
+              </span>{' '}
+              <Tap />
             </td>
           </tr>
 
@@ -84,12 +101,13 @@ export default function AuthMainHowItWorks(props) {
               <span className="table__text">Get hired</span>
             </td>
             <td>
-              - <GiveWomensRights /> -
+              <span className="dash" /> <GiveWomensRights />{' '}
+              <span className="dash" />
             </td>
-            <td></td>
             <td>
               <span className="table__text">Hire</span>
             </td>
+            <td></td>
           </tr>
 
           <tr>
@@ -98,7 +116,7 @@ export default function AuthMainHowItWorks(props) {
               <span className="table__text">Get paid</span>
             </td>
             <td>
-              - <Pay /> -
+              <span className="dash" /> <Pay /> <span className="dash" />
             </td>
             <td>
               <span className="table__text">Pay</span>

@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react'
 import { Container } from 'react-bootstrap'
-import { useTranslation } from 'react-i18next'
 import AuthMainAbout from 'components/auth/main/about'
 import AuthMainHowItWorks from 'components/auth/main/how-it-works'
 
 export default function AuthMainContent(props) {
-  const { t } = useTranslation()
   const content = useRef(null)
   const [height, setHeight] = useState(null)
   const [width, setWidth] = useState(null)
