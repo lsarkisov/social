@@ -73,6 +73,7 @@
 
     .container {
       position: relative;
+      padding: 1px 0;
     }
 
     h2,
@@ -105,7 +106,7 @@
         top: 0;
         height: 0;
         z-index: 1;
-        opacity: 0.36;
+        opacity: 0.6;
       }
 
       .bg-1 {
@@ -136,14 +137,15 @@
   }
 
   &__about,
-  &__how-it {
+  &__how-it,
+  &__customers {
     h2 {
       font-size: $px40;
       line-height: 0.55;
       letter-spacing: 3.44px;
       text-align: center;
       color: #ff929c;
-      padding: 64px 0 52px;
+      margin: 64px 0 52px;
 
       @include media-breakpoint-down(md) {
         padding-bottom: $px30;
@@ -289,152 +291,6 @@
   }
 }
 
-.img-bg__1,
-.img-bg__2,
-.img-bg__3,
-.img-bg__4 {
-  &::before,
-  &::after,
-  p::before,
-  p::after {
-    content: '';
-    position: absolute;
-    background-color: white;
-    opacity: 0.5;
-  }
-
-  overflow: hidden;
-
-  @include media-breakpoint-down(md) {
-    &::before,
-    &::after,
-    p::before,
-    p::after {
-      display: none;
-    }
-  }
-}
-
-.img-bg__1 {
-  &::before {
-    transform: skewX(-15deg) translateX(-60%);
-    width: 30%;
-    height: 100%;
-  }
-  &::after {
-    transform: skewX(-20deg) translateX(-60%);
-    width: 50%;
-    height: 100%;
-    top: 0;
-  }
-
-  p {
-    &::before {
-      transform: skewX(-15deg) translateX(35%);
-      width: 30%;
-      height: 100%;
-      right: 0;
-    }
-
-    &::after {
-      transform: skewX(-20deg) translateX(-50%);
-      width: 50%;
-      height: 100%;
-      top: 0;
-    }
-  }
-}
-
-.img-bg__2 {
-  &::before {
-    transform: skewX(12deg) translateX(-60%);
-    width: 30%;
-    height: 100%;
-  }
-  &::after {
-    transform: skewX(18deg) translateX(-60%);
-    width: 50%;
-    height: 100%;
-    top: 0;
-  }
-
-  p {
-    &::before {
-      transform: skewX(12deg) translateX(50%);
-      width: 30%;
-      height: 100%;
-      right: 0;
-    }
-
-    &::after {
-      transform: skewX(16deg) translateX(-34%);
-      width: 50%;
-      height: 100%;
-      top: 0;
-    }
-  }
-}
-
-.img-bg__3 {
-  &::before {
-    transform: skewX(-15deg) translateX(-60%);
-    width: 35%;
-    height: 100%;
-  }
-  &::after {
-    transform: skewX(-20deg) translateX(-60%);
-    width: 50%;
-    height: 100%;
-    top: 0;
-  }
-
-  p {
-    &::before {
-      transform: skewX(-15deg) translateX(35%);
-      width: 30%;
-      height: 100%;
-      right: 0;
-    }
-
-    &::after {
-      transform: skewX(-20deg) translateX(-50%);
-      width: 50%;
-      height: 100%;
-      top: 0;
-    }
-  }
-}
-
-.img-bg__4 {
-  &::before {
-    transform: skewX(10deg) translateX(-40%);
-    width: 30%;
-    height: 100%;
-  }
-  &::after {
-    transform: skewX(7deg) translateX(-80%);
-    width: 50%;
-    height: 100%;
-    top: 0;
-  }
-
-  p {
-    &::before {
-      transform: skewX(8deg) translateX(50%);
-      width: 30%;
-      height: 100%;
-      right: 0;
-    }
-
-    &::after {
-      transform: skewX(12deg) translateX(-34%);
-      width: 50%;
-      height: 100%;
-      top: 0;
-    }
-  }
-}
-
 @media only screen and (width: 1366px) {
   .main-page {
     .carousel-row {
@@ -488,7 +344,7 @@
     text-align: center;
     font-size: 60px;
     line-height: 65px;
-    letter-spacing: 1px;
+    letter-spacing: 1.33px;
 
     &::before {
       top: -$px3;
@@ -518,6 +374,182 @@
     }
     button {
       padding: $px10 auto;
+    }
+  }
+}
+
+.img-bg {
+  overflow: hidden;
+
+  p {
+    margin: 0;
+  }
+}
+
+.img-bg__1,
+.img-bg__2,
+.img-bg__3,
+.img-bg__4 {
+  &::before,
+  &::after,
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    &::before,
+    &::after,
+    span::before,
+    span::after {
+      display: none;
+    }
+  }
+}
+
+.img-bg__1 {
+  position: absolute;
+
+  &::before {
+    transform: skewX(-15deg) translateX(-60%);
+    width: 30%;
+    height: 100%;
+  }
+  &::after {
+    transform: skewX(-20deg) translateX(-60%);
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+
+  span {
+    &::before {
+      transform: skewX(-15deg) translateX(45%);
+      width: 30%;
+      height: 100%;
+      right: 0;
+    }
+
+    &::after {
+      transform: skewX(-20deg) translateX(-50%);
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}
+
+.img-bg__2 {
+  &::before {
+    transform: skewX(12deg) translateX(-60%);
+    width: 30%;
+    height: 100%;
+  }
+  &::after {
+    transform: skewX(18deg) translateX(-60%);
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+
+  span {
+    &::before {
+      transform: skewX(12deg) translateX(60%);
+      width: 30%;
+      height: 100%;
+      right: 0;
+    }
+
+    &::after {
+      transform: skewX(16deg) translateX(-34%);
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}
+
+.img-bg__3 {
+  &::before {
+    transform: skewX(-15deg) translateX(-60%);
+    width: 35%;
+    height: 100%;
+  }
+  &::after {
+    transform: skewX(-20deg) translateX(-60%);
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+
+  span {
+    &::before {
+      transform: skewX(-15deg) translateX(65%);
+      width: 30%;
+      height: 100%;
+      right: 0;
+    }
+
+    &::after {
+      transform: skewX(-20deg) translateX(-40%);
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}
+
+.img-bg__4 {
+  &::before {
+    transform: skewX(10deg) translateX(-50%);
+    width: 30%;
+    height: 100%;
+  }
+  &::after {
+    transform: skewX(7deg) translateX(-80%);
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+
+  span {
+    &::before {
+      transform: skewX(8deg) translateX(50%);
+      width: 30%;
+      height: 100%;
+      right: 0;
+    }
+
+    &::after {
+      transform: skewX(12deg) translateX(-44%);
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}
+
+.main-page__about {
+  .img-bg {
+    span {
+      margin: 0;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &-text {
+      margin: 0 $px15;
     }
   }
 }
@@ -727,4 +759,57 @@
       display: none !important;
     }
   }
+}
+
+.custom-card {
+  position: relative;
+  padding-top: 6.25rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  dt {
+    text-transform: uppercase;
+    color: $primary;
+    margin: 1rem 0 1.5rem;
+  }
+
+  dd {
+    letter-spacing: 1px;
+    color: $gray-3;
+    line-height: 1.5rem;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-left: -3.125rem;
+    background: transparent url('../../../assets/img/icons/sun-shining.svg')
+      no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1.5625rem;
+      top: 1.5625rem;
+      width: 3.125rem;
+      height: 3.125rem;
+      border-radius: 1.5625rem;
+      background-color: white;
+    }
+
+    svg {
+      height: 3.125rem;
+    }
+  }
+}
+
+.main-page__customers {
 }

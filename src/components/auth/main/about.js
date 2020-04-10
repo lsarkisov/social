@@ -32,23 +32,27 @@ export default function AuthMainAbout(props) {
             us on every screen, every street, every add, and wherever we may go.
           </p>
         </Col>
-        <Col sm={true} xs={12} className="img-bg img-bg__1">
-          <p>
-            <img
-              src={`${REACT_APP_IMAGES_HOSTING}/andre-hunter-k_VgiuhGLeU-unsplash.jpg`}
-              alt=""
-            />
+        <Col sm={true} xs={12} className="p-0 img-bg">
+          <p className="img-bg__1">
+            <span>
+              <img
+                src={`${REACT_APP_IMAGES_HOSTING}/andre-hunter-k_VgiuhGLeU-unsplash.jpg`}
+                alt=""
+              />
+            </span>
           </p>
         </Col>
       </Row>
 
       <Row>
-        <Col sm={true} xs={12} className="img-bg img-bg__2">
-          <p>
-            <img
-              src={`${REACT_APP_IMAGES_HOSTING}/frank-busch-4BRyWy_6yME-unsplash.jpg`}
-              alt=""
-            />
+        <Col sm={true} xs={12} className="p-0 img-bg">
+          <p className="img-bg__2">
+            <span>
+              <img
+                src={`${REACT_APP_IMAGES_HOSTING}/frank-busch-4BRyWy_6yME-unsplash.jpg`}
+                alt=""
+              />
+            </span>
           </p>
         </Col>
         <Col sm={true} xs={12} className="main-page__about-text">
@@ -82,22 +86,26 @@ export default function AuthMainAbout(props) {
 
           <p>Try repeating that as fast as you can!</p>
         </Col>
-        <Col sm={5} className="img-bg img-bg__3">
-          <p>
-            <img
-              src={`${REACT_APP_IMAGES_HOSTING}/agung-raharja-3oBOVtkFTWQ-unsplash.jpg`}
-              alt=""
-            />
+        <Col sm={5} className="p-0 img-bg">
+          <p className="img-bg__3">
+            <span>
+              <img
+                src={`${REACT_APP_IMAGES_HOSTING}/agung-raharja-3oBOVtkFTWQ-unsplash.jpg`}
+                alt=""
+              />
+            </span>
           </p>
         </Col>
       </Row>
       <Row>
-        <Col sm={5} className="img-bg img-bg__4">
-          <p>
-            <img
-              src={`${REACT_APP_IMAGES_HOSTING}/fabio-lucas-1Z1wTrhH1Ck-unsplash.jpg`}
-              alt=""
-            />
+        <Col sm={5} className="p-0 img-bg">
+          <p className="img-bg__4">
+            <span>
+              <img
+                src={`${REACT_APP_IMAGES_HOSTING}/fabio-lucas-1Z1wTrhH1Ck-unsplash.jpg`}
+                alt=""
+              />
+            </span>
           </p>
         </Col>
         <Col sm={7} xs={12}>

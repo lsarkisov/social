@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { Container } from 'react-bootstrap'
 import AuthMainAbout from 'components/auth/main/about'
 import AuthMainHowItWorks from 'components/auth/main/how-it-works'
+import AuthMainCustomers from 'components/auth/main/customers'
 
 export default function AuthMainContent(props) {
   const content = useRef(null)
@@ -46,6 +47,7 @@ export default function AuthMainContent(props) {
       <Container>
         <AuthMainAbout />
         <AuthMainHowItWorks />
+        <AuthMainCustomers />
       </Container>
     </div>
   )
