@@ -57,3 +57,12 @@ export const login = {
     button: 'resend email',
   },
 }
+
+export const footer = {
+  policy: 'Privacy policy',
+  terms: 'Terms of use',
+  faq: 'FAQ',
+  contact: 'Contact ',
+  company: 'company',
+  copyright: '2018: ICONICLI AKTIEBOLAG - all rights reserved - Privacy',
+}

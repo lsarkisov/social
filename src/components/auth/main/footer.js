@@ -1,33 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 import Logo from 'components/logo'
 
 export default function AuthMainFooter(props) {
+  const { t } = useTranslation()
+
   return (
     <div className="main-page__footer">
       <Container>
         <ul>
           <li>
-            <Link to="">Privacy policy</Link>
+            <Link to="">{t('footer.policy')}</Link>
           </li>
           <li>
-            <Link to="">Terms of use</Link>
+            <Link to="">{t('footer.terms')}</Link>
           </li>
           <li>
-            <Link to="">FAQ</Link>
+            <Link to="">{t('footer.faq')}</Link>
           </li>
           <li>
-            <Link to="">Contact </Link>
+            <Link to="">{t('footer.contact')}</Link>
           </li>
           <li>
-            <Link to="">company</Link>
+            <Link to="">{t('footer.company')}</Link>
           </li>
         </ul>
         <Logo />
-        <p className="copyright">
-          2018: ICONICLI AKTIEBOLAG - all rights reserved - Privacy
-        </p>
+        <p className="copyright">{t('footer.copyright')}</p>
       </Container>
     </div>
   )
