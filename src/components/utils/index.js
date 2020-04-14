@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { REACT_APP_EMAIL } from 'const/api'
+import ReactScroll from 'react-scroll'
 
 export function AuthNeedHelp(props) {
   const { t } = useTranslation()
@@ -28,5 +29,22 @@ export function PreLoader(props) {
       <p>{props.text}</p>
       <i className="preloader" />
     </div>
+  )
+}
+
+export function ScrollTo(props) {
+  const { to, offset } = props
+  return (
+    <ReactScroll.Link
+      activeClass="active"
+      to={to}
+      spy={true}
+      smooth={true}
+      duration={500}
+      className="bounceOutLeft"
+      offset={offset || -65}
+    >
+      {props.children}
+    </ReactScroll.Link>
   )
 }

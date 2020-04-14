@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactScroll from 'react-scroll'
 import { ReactComponent as LogInActive } from 'assets/img/icons/log-in-active.svg'
 import { ReactComponent as LogIn } from 'assets/img/icons/log-in.svg'
 import { ReactComponent as UserActive } from 'assets/img/icons/user-active.svg'
@@ -11,9 +12,11 @@ import { ReactComponent as Pay } from 'assets/img/icons/pay.svg'
 export default function AuthMainHowItWorks(props) {
   return (
     <div className="main-page__how-it">
-      <h2 className="center">
-        How it <span className="sub-text">works</span>
-      </h2>
+      <ReactScroll.Element name="how-it-works">
+        <h2 className="center">
+          How it <span className="sub-text">works</span>
+        </h2>
+      </ReactScroll.Element>
       <table className="table">
         <thead>
           <tr>

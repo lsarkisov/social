@@ -10,12 +10,14 @@ import AuthMainContent from 'components/auth/main/content'
 import AuthForm from 'components/auth/form'
 import AuthMainFooter from 'components/auth/main/footer'
 import { ForgotPassword, AuthNeedHelp } from 'components/auth/utils'
+import ScrollTop from 'components/scroll-top'
 
 export default function AuthMain(props) {
   const { t } = useTranslation()
 
   return (
     <>
+      <ScrollTop />
       <AuthMainPattern />
       <StickyNav>
         <Link to="/auth/model">

@@ -25,6 +25,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-transition": "^2.0.0",
     "react-scripts": "3.4.0",
+    "react-scroll": "^1.7.16",
     "react-slideshow-image": "^1.4.0",
     "react-social-login": "deepakaggarwal7/react-social-login",
     "redux": "^4.0.5",

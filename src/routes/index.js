@@ -19,6 +19,8 @@ import AuthRedirect from 'components/auth/redirect'
 import AuthCompany from 'components/auth/company'
 import AuthModel from 'components/auth/model'
 import AuthError from 'components/auth/form/error'
+import Faq from 'components/faq'
+import Contacts from 'components/contacts'
 import Dashboard from 'components/dashboard'
 
 const routes = [
@@ -33,6 +35,8 @@ const routes = [
   { path: '/auth/company', Component: AuthCompany },
   { path: '/auth/error', Component: AuthError },
   { path: '/ui', Component: UIKit },
+  { path: '/faq', Component: Faq },
+  { path: '/contacts', Component: Contacts },
 ]
 
 const authRoutes = [

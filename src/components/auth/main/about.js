@@ -1,13 +1,16 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
+import ReactScroll from 'react-scroll'
 import { REACT_APP_IMAGES_HOSTING } from 'const/api'
 
 export default function AuthMainAbout(props) {
   return (
     <div className="main-page__about">
-      <h2 className="center">
-        About <span className="sub-text">us</span>
-      </h2>
+      <ReactScroll.Element name="about">
+        <h2 className="center">
+          About <span className="sub-text">us</span>
+        </h2>
+      </ReactScroll.Element>
       <Row>
         <Col sm={true} xs={12} className="main-page__about-text">
           <h3>

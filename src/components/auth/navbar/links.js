@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ScrollTo } from 'components/utils'
 
 export default function AuthNavbarLinks() {
   return (
@@ -11,18 +12,14 @@ export default function AuthNavbarLinks() {
         </span>
       </Link>
       <div className="auth-navbar__link">
-        <Link to="/" className="bounceOutLeft">
-          About
-        </Link>
-        <Link to="/" className="bounceOutLeft">
+        <ScrollTo to="about">About</ScrollTo>
+        <Link to="/faq" className="bounceOutLeft">
           Faq
         </Link>
-        <Link to="/" className="bounceOutLeft">
+        <Link to="/contacts" className="bounceOutLeft">
           Contact
         </Link>
-        <Link to="/" className="bounceOutLeft">
-          How it works
-        </Link>
+        <ScrollTo to="how-it-works">How it works</ScrollTo>
       </div>
     </>
   )
