@@ -1,32 +1,29 @@
 .main-title {
   position: absolute;
   z-index: 1000;
-  text-transform: uppercase;
-  color: transparent;
+  width: 100%;
   text-align: center;
-  font-size: 5.625rem;
-  font-weight: 700;
-  font-weight: bold;
-  line-height: 5.625rem;
-  letter-spacing: $px5;
 
-  &::before {
-    content: 'hire models now';
-    -webkit-text-stroke-width: 3px;
+  .double-text__shadow {
     -webkit-text-stroke-color: $primary;
-    color: transparent;
-    position: absolute;
-    top: -4px;
-    right: -7px;
   }
 
-  &::after {
-    content: 'hire models now';
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    text-align: center;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    text-align: center;
+
+    .double-text {
+      font-size: $px50;
+    }
+
+    .double-text__shadow {
+      top: -1px;
+    }
   }
 }
 
@@ -208,9 +205,6 @@
     }
   }
 
-  .main-title {
-    margin: auto 8%;
-  }
   .main-page {
     position: relative;
     width: 100%;
@@ -309,18 +303,7 @@
   .canvas {
     display: none;
   }
-  .main-title {
-    margin: auto 15% auto 0;
-    font-size: 70px;
-    line-height: 80px;
-    text-align: left;
-    letter-spacing: -$px2;
 
-    &::before {
-      top: -$px4;
-      right: -$px7;
-    }
-  }
   .main-page {
     .auth-content__form {
       form {
@@ -336,34 +319,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
-  .main-title {
-    margin: auto 2%;
-    text-align: center;
-    font-size: 60px;
-    line-height: 65px;
-    letter-spacing: 1.33px;
-
-    &::before {
-      top: -$px3;
-      right: -$px3;
-    }
-  }
-}
-
 @include media-breakpoint-down(sm) {
-  .main-title {
-    font-size: 40px;
-    text-align: center;
-    line-height: 45px;
-    margin: auto 3%;
-
-    &::before {
-      top: -$px2;
-      right: -$px2;
-      -webkit-text-stroke-width: $px2;
-    }
-  }
   .main-page {
     .auth-content__form {
       form {
