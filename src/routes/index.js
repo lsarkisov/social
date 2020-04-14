@@ -21,6 +21,10 @@ import AuthModel from 'components/auth/model'
 import AuthError from 'components/auth/form/error'
 import Faq from 'components/faq'
 import Contacts from 'components/contacts'
+import Terms from 'components/terms'
+import Privacy from 'components/privacy'
+import Policy from 'components/policy'
+import Company from 'components/company'
 import Dashboard from 'components/dashboard'
 
 const routes = [
@@ -36,6 +40,10 @@ const routes = [
   { path: '/auth/error', Component: AuthError },
   { path: '/ui', Component: UIKit },
   { path: '/faq', Component: Faq },
+  { path: '/terms', Component: Terms },
+  { path: '/privacy', Component: Privacy },
+  { path: '/policy', Component: Policy },
+  { path: '/company', Component: Company },
   { path: '/contacts', Component: Contacts },
 ]
 

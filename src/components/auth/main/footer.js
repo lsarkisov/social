@@ -12,19 +12,19 @@ export default function AuthMainFooter(props) {
       <Container>
         <ul>
           <li>
-            <Link to="">{t('footer.policy')}</Link>
+            <Link to="/policy">{t('footer.policy')}</Link>
           </li>
           <li>
-            <Link to="">{t('footer.terms')}</Link>
+            <Link to="/terms">{t('footer.terms')}</Link>
           </li>
           <li>
-            <Link to="">{t('footer.faq')}</Link>
+            <Link to="/faq">{t('footer.faq')}</Link>
           </li>
           <li>
-            <Link to="">{t('footer.contact')}</Link>
+            <Link to="/contacts">{t('footer.contact')}</Link>
           </li>
           <li>
-            <Link to="">{t('footer.company')}</Link>
+            <Link to="/company">{t('footer.company')}</Link>
           </li>
         </ul>
         <Logo />
