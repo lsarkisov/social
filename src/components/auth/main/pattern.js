@@ -58,9 +58,9 @@ export default function AuthMainPattern(props) {
   })
 
   return (
-    <>
+    <div className="overflow-y-hidden">
       <canvas className="canvas canvas__opacity" ref={shape1} />
       <canvas className="canvas" ref={shape2} />
-    </>
+    </div>
   )
 }
