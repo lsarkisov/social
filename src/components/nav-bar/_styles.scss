@@ -1,0 +1,13 @@
+.nav-bar {
+  .social-links {
+    a {
+      display: inline-block;
+
+      &:hover {
+        svg {
+          color: red;
+        }
+      }
+    }
+  }
+}

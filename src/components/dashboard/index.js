@@ -1,13 +1,15 @@
 import React from 'react'
-import AuthLogOut from 'components/auth/login/logout'
+import { ROLE_MODEL_USER, ROLE_COMPANY_USER } from 'const/requests'
+import ModelDashboard from 'components/model'
+import CompanyDashboard from 'components/company'
 
 export default function Dashboard(props) {
   const role = localStorage.getItem('role')
 
   return (
-    <div>
-      <AuthLogOut />
-      <h1>Dashboard {role && role}</h1>
-    </div>
+    <>
+      {role && role === ROLE_MODEL_USER && <ModelDashboard />}
+      {role && role === ROLE_COMPANY_USER && <CompanyDashboard />}
+    </>
   )
 }
