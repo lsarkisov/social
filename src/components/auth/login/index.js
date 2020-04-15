@@ -70,7 +70,7 @@ export default function AuthLogin(props) {
                 type="email"
                 placeholder={t('auth.model.email')}
               />
-              {email === false && (
+              {email.valid === false && (
                 <div className="error">{t('error.email')}</div>
               )}
             </Form.Group>
