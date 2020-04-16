@@ -50,10 +50,14 @@ export const login = {
     button: 'countinue',
   },
   confirm: {
-    title: 'Follow the link',
-    message1: 'We have sent you an email. Check your email’s inbox.',
-    message2: 'Can’t find it? Check your junk mail!',
-    message3: 'Still can’t find it?',
+    title: 'Congratulations!',
+    message1: 'the REGISTRATION is almost done',
+    message2:
+      "There is a verification email waiting for you in your email's inbox.",
+    message3:
+      'Make sure to click the verification link to finish your registration!',
+    message4: 'Can’t find it? Check your junk-mail',
+    message5: 'Still can’t find it?',
     button: 'resend email',
   },
 }

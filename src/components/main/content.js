@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import AuthMainAbout from 'components/auth/main/about'
-import AuthMainHowItWorks from 'components/auth/main/how-it-works'
-import AuthMainCustomers from 'components/auth/main/customers'
+import AuthMainAbout from 'components/main/about'
+import AuthMainHowItWorks from 'components/main/how-it-works'
+import AuthMainCustomers from 'components/main/customers'
 
 export default function AuthMainContent(props) {
   return (

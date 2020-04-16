@@ -13,8 +13,11 @@
 @import '../../components/logo/styles.scss';
 @import '../../components/sticky-nav/styles.scss';
 @import '../../components/scroll-top/styles.scss';
+@import '../../components/nav-bar/styles.scss';
+@import '../../components/social-links/styles.scss';
+@import '../../components/congratulation/styles.scss';
+@import '../../components/double-text/styles.scss';
 
-@import '../../components/auth/main/styles.scss';
 @import '../../components/auth/model/styles.scss';
 @import '../../components/auth/navbar/styles.scss';
 @import '../../components/auth/content/styles.scss';
@@ -25,5 +28,11 @@
 @import '../../components/auth/password/reset-password/styles.scss';
 @import '../../components/auth/password/new-password/styles.scss';
 
+@import '../../components/main/styles.scss';
+
 @import '../../components/faq/styles.scss';
 @import '../../components/contacts/styles.scss';
+
+@import '../../components/dashboard/styles.scss';
+@import '../../components/model/styles.scss';
+@import '../../components/company/styles.scss';

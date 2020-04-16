@@ -8,7 +8,7 @@ import {
 import { AnimatedSwitch } from 'react-router-transition'
 import NoMatch from 'components/no-match'
 import UIKit from 'components/ui'
-import AuthMain from 'components/auth/main'
+import AuthMain from 'components/main'
 import AuthLogin from 'components/auth/login'
 import AuthLoginError from 'components/auth/login/error'
 import AuthLoginNewPassword from 'components/auth/password/new-password'

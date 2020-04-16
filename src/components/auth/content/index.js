@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import AuthRedirect from 'components/auth/redirect'
 import AuthNavbar from 'components/auth/navbar'
 import AuthCarousel from 'components/auth/carousel'
+import DoubleText from 'components/double-text'
 
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
@@ -33,7 +34,11 @@ export default function AuthContent(props) {
           {props.children}
         </Col>
         <Col xs={12} lg={content} className="carousel-row p-0">
-          {isMain && <h1 className="main-title">{t('auth.main')}</h1>}
+          {isMain && (
+            <h1 className="main-title">
+              <DoubleText text={t('auth.main')} />
+            </h1>
+          )}
           <AuthCarousel />
         </Col>
       </Row>

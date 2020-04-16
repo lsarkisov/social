@@ -25,6 +25,16 @@ a {
   border-color: $gray-1 !important;
 }
 
+/* Badge
+----------------------------------------*/
+.badge-primary {
+  color: white;
+}
+
+.badge-light {
+  color: $primary;
+}
+
 /* Navbar
 ----------------------------------------*/
 .navbar__wrapper {

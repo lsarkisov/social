@@ -1,5 +1,14 @@
 import React from 'react'
-import { Container, Row, Button, Navbar, Form } from 'react-bootstrap'
+import {
+  Container,
+  Row,
+  Button,
+  Badge,
+  Navbar,
+  Form,
+  Table,
+} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function UIKit(props) {
   return (
@@ -58,6 +67,15 @@ export default function UIKit(props) {
         <Button variant="link">Link</Button>
       </Row>
       <Row className="ui__row">
+        <Badge variant="primary">Primary</Badge>{' '}
+        <Badge variant="secondary">Secondary</Badge>{' '}
+        <Badge variant="success">Success</Badge>{' '}
+        <Badge variant="danger">Danger</Badge>{' '}
+        <Badge variant="warning">Warning</Badge>{' '}
+        <Badge variant="info">Info</Badge> <Badge variant="light">Light</Badge>{' '}
+        <Badge variant="dark">Dark</Badge>
+      </Row>
+      <Row className="ui__row">
         <Navbar
           className="navbar__wrapper"
           expand="lg"
@@ -104,6 +122,60 @@ export default function UIKit(props) {
             <Form.Control as="textarea" rows="3" />
           </Form.Group>
         </Form>
+      </Row>
+      <Row className="ui__row">
+        <Table className="ul-table">
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Title</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td className="ul-table__button">
+                <span className="ul-table__button-wrapper">
+                  <FontAwesomeIcon icon={'caret-up'} />
+                  <p>test</p>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>
+                Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item
+                1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1
+              </td>
+              <td className="ul-table__button">
+                <span className="ul-table__button-wrapper">
+                  <FontAwesomeIcon icon={'caret-up'} />
+                  <p>test</p>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td>Item 1</td>
+              <td className="ul-table__button">
+                <span className="ul-table__button-wrapper">
+                  <FontAwesomeIcon icon={'caret-up'} />
+                  <p>test</p>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
       </Row>
     </Container>
   )
