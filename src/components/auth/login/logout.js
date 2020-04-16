@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { logInAction } from 'actions/auth'
-import { Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 
 export default function AuthLogOut(props) {
@@ -25,5 +24,9 @@ export default function AuthLogOut(props) {
     }
   }, [redirect, history])
 
-  return <Button onClick={onLogOut}>{t('login.logout')}</Button>
+  return (
+    <span className="logout" onClick={onLogOut}>
+      {t('login.logout')}
+    </span>
+  )
 }

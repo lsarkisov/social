@@ -6,9 +6,9 @@ import {
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
 
-export default function AuthNavbarSocial() {
+export default function SocialLinks() {
   return (
-    <div className="auth-navbar__social">
+    <div className="social-links">
       <a
         target="_blank"
         rel="noopener noreferrer"
