@@ -22,6 +22,8 @@ export default function ScrollTop(props) {
         setScrollTop(false)
       }
     })
+
+    document.removeEventListener('scroll', () => {})
   })
 
   const scrollToTop = () => {

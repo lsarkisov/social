@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Container, Row, Col, Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import NavBar from 'components/nav-bar'
+import Menu from 'components/menu'
 
 export default function ModelDashboard(props) {
   const { t } = useTranslation()
@@ -28,6 +29,7 @@ export default function ModelDashboard(props) {
           </ul>
         </NavBar>
         <Col>
+          <Menu />
           <h1>ModelDashboard</h1>
         </Col>
       </Row>

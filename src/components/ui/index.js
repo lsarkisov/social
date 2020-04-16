@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Row,
-  Button,
-  Badge,
-  Navbar,
-  Form,
-  Table,
-} from 'react-bootstrap'
+import { Container, Row, Button, Badge, Form, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function UIKit(props) {
@@ -74,18 +66,6 @@ export default function UIKit(props) {
         <Badge variant="warning">Warning</Badge>{' '}
         <Badge variant="info">Info</Badge> <Badge variant="light">Light</Badge>{' '}
         <Badge variant="dark">Dark</Badge>
-      </Row>
-      <Row className="ui__row">
-        <Navbar
-          className="navbar__wrapper"
-          expand="lg"
-          variant="light"
-          bg="primary"
-        >
-          <Navbar.Brand href="#">Navbar 1</Navbar.Brand>
-          <Navbar.Brand href="#">Navbar 2</Navbar.Brand>
-          <Navbar.Brand href="#">Navbar 3</Navbar.Brand>
-        </Navbar>
       </Row>
       <Row className="ui__row">
         <Form>
