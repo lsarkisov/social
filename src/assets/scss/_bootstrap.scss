@@ -35,25 +35,6 @@ a {
   color: $primary;
 }
 
-/* Navbar
-----------------------------------------*/
-.navbar__wrapper {
-  transform: skewX(10deg);
-}
-
-.navbar-brand {
-  transform: skewX(-10deg);
-  color: $white;
-}
-
-.navbar-light {
-  .navbar-brand {
-    text-transform: uppercase;
-    font-size: $font-size-sm;
-    color: white;
-  }
-}
-
 /* Forms
 ----------------------------------------*/
 .form-control {

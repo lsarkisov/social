@@ -12,6 +12,8 @@ export default function StickyNav(props) {
         setShow(false)
       }
     })
+
+    window.removeEventListener('scroll', () => {})
   })
   return (
     <nav className={`sticky-nav ${show ? 'sticky-nav__show' : ''}`}>
