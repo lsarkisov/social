@@ -24,5 +24,9 @@ export default function AuthLogOut(props) {
     }
   }, [redirect, history])
 
-  return <span onClick={onLogOut}>{t('login.logout')}</span>
+  return (
+    <span className="logout" onClick={onLogOut}>
+      {t('login.logout')}
+    </span>
+  )
 }
