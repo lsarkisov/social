@@ -9,7 +9,7 @@ import { ReactComponent as Tap } from 'assets/img/icons/tap.svg'
 import { ReactComponent as GiveWomensRights } from 'assets/img/icons/give-womens-rights.svg'
 import { ReactComponent as Pay } from 'assets/img/icons/pay.svg'
 
-export default function AuthMainHowItWorks(props) {
+export default function OnboardingMainHowItWorks(props) {
   return (
     <div className="main-page__how-it">
       <ReactScroll.Element name="how-it-works">

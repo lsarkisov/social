@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import Logo from 'components/logo'
 
-export default function AuthMainFooter(props) {
+export default function OnboardingMainFooter(props) {
   const { t } = useTranslation()
 
   return (

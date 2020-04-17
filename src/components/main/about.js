@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 import ReactScroll from 'react-scroll'
 import { REACT_APP_IMAGES_HOSTING } from 'const/api'
 
-export default function AuthMainAbout(props) {
+export default function OnboardingMainAbout(props) {
   return (
     <div className="main-page__about">
       <ReactScroll.Element name="about">

@@ -10,8 +10,8 @@ export default function Logo(props) {
         Iconic<span className="sub-text">li</span>
       </h2>
       <p className="logo__slogan">
-        {t('auth.slogan.first')}
-        <span className="sub-text"> {t('auth.slogan.second')}</span>
+        {t('onboarding.slogan.first')}
+        <span className="sub-text"> {t('onboarding.slogan.second')}</span>
       </p>
     </div>
   )

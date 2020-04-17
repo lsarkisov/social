@@ -28,7 +28,7 @@
 }
 
 .main-page {
-  .auth-content__form {
+  .onboarding-content__form {
     padding-top: 3%;
     padding-bottom: 3%;
   }
@@ -40,7 +40,7 @@
     align-items: center;
   }
 
-  .auth-content__form {
+  .onboarding-content__form {
     h2,
     p {
       color: $primary;
@@ -210,7 +210,7 @@
     width: 100%;
     height: 100%;
 
-    .auth-navbar {
+    .onboarding-navbar {
       &::before,
       &::after {
         display: none !important;
@@ -240,7 +240,7 @@
       }
     }
 
-    .auth-content__carousel {
+    .onboarding-content__carousel {
       &::before {
         transform: skewX(-20deg) translateX(97%);
         opacity: 0.3;
@@ -259,7 +259,7 @@
       margin-bottom: $px40 !important;
     }
 
-    .auth-content__form {
+    .onboarding-content__form {
       transform: skewX(0) translateX(0);
       left: -12%;
 
@@ -289,7 +289,7 @@
       &::before {
         transform: skewX(-5deg) translateX(50%);
       }
-      .auth-content__carousel {
+      .onboarding-content__carousel {
         &::before,
         &::after {
           display: none;
@@ -305,7 +305,7 @@
   }
 
   .main-page {
-    .auth-content__form {
+    .onboarding-content__form {
       form {
         margin: 0 10%;
       }
@@ -321,7 +321,7 @@
 
 @include media-breakpoint-down(sm) {
   .main-page {
-    .auth-content__form {
+    .onboarding-content__form {
       form {
         margin: 0;
       }

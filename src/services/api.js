@@ -14,7 +14,7 @@ function callApi(endpoint, headers) {
     .catch((error) => error)
 }
 
-export const auth = (body) =>
+export const onboarding = (body) =>
   callApi('/onboarding/register', {
     method: 'post',
     headers: jsonHeaders,
@@ -22,7 +22,7 @@ export const auth = (body) =>
   })
 
 export const login = (body) =>
-  callApi('/auth/token', {
+  callApi('/onboarding/token', {
     method: 'post',
     headers: jsonHeaders,
     body: JSON.stringify(body),

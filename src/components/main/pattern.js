@@ -43,7 +43,7 @@ function initCanvas(params) {
   draw(params)
 }
 
-export default function AuthMainPattern(props) {
+export default function OnboardingMainPattern(props) {
   const shape1 = useRef(null)
   const shape2 = useRef(null)
 
