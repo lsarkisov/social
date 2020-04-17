@@ -10,7 +10,7 @@ import { PreLoader } from 'components/onboarding/utils'
 import { isPassword, isConfirm } from 'utils/validator'
 import { getIdFromPath } from 'components/onboarding/utils'
 
-export default function OnboardingLoginNewPassword(props) {
+export default function OnboardingNewPassword(props) {
   const { t } = useTranslation()
   const [isChanging, setIsChanging] = useState(false)
   const [disable, setDisable] = useState(true)
@@ -29,7 +29,7 @@ export default function OnboardingLoginNewPassword(props) {
   useEffect(() => {
     if (user && user.success) {
       setIsChanging(false)
-      history.push('/onboarding/login/congratulations')
+      history.push('/onboarding/congratulations')
     }
   }, [user, history])
 

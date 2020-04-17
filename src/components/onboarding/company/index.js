@@ -106,7 +106,7 @@ export default function OnboardingModel(props) {
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder={t('onboarding.org.companyName')}
+                  placeholder={t('onboarding.company.companyName')}
                 />
                 {companyCompanyName.valid === false && (
                   <div className="error">{t('error.len')} 2</div>
@@ -116,7 +116,7 @@ export default function OnboardingModel(props) {
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder={t('onboarding.org.orgNumber')}
+                  placeholder={t('onboarding.company.companyNumber')}
                 />
                 {companyCompanyNumber.valid === false && (
                   <div className="error">{t('error.digit')}</div>
@@ -128,7 +128,7 @@ export default function OnboardingModel(props) {
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder={t('onboarding.org.website')}
+                  placeholder={t('onboarding.company.website')}
                 />
                 {companyWebsite.valid === false && (
                   <div className="error">{t('error.website')}</div>
