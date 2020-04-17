@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
+  Switch,
   withRouter,
 } from 'react-router-dom'
-import { AnimatedSwitch } from 'react-router-transition'
 import NoMatch from 'components/no-match'
 import UIKit from 'components/ui'
 import OnboardingMain from 'components/main'
@@ -16,8 +16,8 @@ import OnboardingResetPassword from 'components/onboarding/password/reset-passwo
 import OnboardingConfirmEmail from 'components/onboarding/confirm-email'
 import OnboardingCongratulation from 'components/onboarding/congratulation'
 import OnboardingRedirect from 'components/onboarding/redirect'
-import OnboardingCompany from 'components/onboarding/company'
-import OnboardingModel from 'components/onboarding/model'
+import OnboardingCompany from 'components/onboarding/auth/company'
+import OnboardingModel from 'components/onboarding/auth/model'
 import OnboardingError from 'components/onboarding/form/error'
 import Faq from 'components/faq'
 import Contacts from 'components/contacts'
@@ -78,12 +78,7 @@ function Routes() {
 
   return (
     <Router>
-      <AnimatedSwitch
-        atEnter={{ opacity: 0 }}
-        atLeave={{ opacity: 0 }}
-        atActive={{ opacity: 1 }}
-        className="switch-wrapper"
-      >
+      <Switch>
         <Route exact path="/">
           <OnboardingMain />
         </Route>
@@ -103,7 +98,7 @@ function Routes() {
         <Route>
           <NoMatch />
         </Route>
-      </AnimatedSwitch>
+      </Switch>
     </Router>
   )
 }

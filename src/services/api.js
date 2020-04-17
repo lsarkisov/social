@@ -15,7 +15,7 @@ function callApi(endpoint, headers) {
 }
 
 export const onboarding = (body) =>
-  callApi('/auth/register', {
+  callApi('/onboarding/register', {
     method: 'post',
     headers: jsonHeaders,
     body: JSON.stringify(body),

@@ -69,7 +69,7 @@ export default function OnboardingModel(props) {
         email: email.value,
         password: password.value,
         firstName: firstName.value,
-        Onboardingority: ROLE_MODEL_USER,
+        authority: ROLE_MODEL_USER,
       }),
     )
   }
