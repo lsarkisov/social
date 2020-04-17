@@ -73,7 +73,7 @@ export default function OnboardingResetPassword(props) {
               )}
             </Form.Group>
             <Form.Group className={`${disable ? 'disabled' : ''}`}>
-              <Button type="submit" onClick={onReset} variant="primary">
+              <Button onClick={onReset} variant="primary">
                 {t('login.resetPassword')}
               </Button>
             </Form.Group>

@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
+  Switch,
   withRouter,
 } from 'react-router-dom'
-import { AnimatedSwitch } from 'react-router-transition'
 import NoMatch from 'components/no-match'
 import UIKit from 'components/ui'
 import OnboardingMain from 'components/main'
@@ -78,12 +78,7 @@ function Routes() {
 
   return (
     <Router>
-      <AnimatedSwitch
-        atEnter={{ opacity: 0 }}
-        atLeave={{ opacity: 0 }}
-        atActive={{ opacity: 1 }}
-        className="switch-wrapper"
-      >
+      <Switch>
         <Route exact path="/">
           <OnboardingMain />
         </Route>
@@ -103,7 +98,7 @@ function Routes() {
         <Route>
           <NoMatch />
         </Route>
-      </AnimatedSwitch>
+      </Switch>
     </Router>
   )
 }

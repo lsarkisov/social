@@ -125,7 +125,7 @@ export default function OnboardingModel(props) {
                 <p className="center error">{t('onboarding.userExists')}</p>
               )}
               <Form.Group className={`${disable ? 'disabled' : ''}`}>
-                <Button type="submit" onClick={onboarding} variant="primary">
+                <Button onClick={onboarding} variant="primary">
                   {t('onboarding.register')}
                 </Button>
               </Form.Group>

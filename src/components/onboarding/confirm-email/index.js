@@ -22,9 +22,7 @@ export default function OnboardingConfirmEmail(props) {
         </p>
         <Form>
           <Form.Group className="onboarding-login__congrat-button">
-            <Button type="submit" variant="primary">
-              {t('confirmEamil.button')}{' '}
-            </Button>
+            <Button variant="primary">{t('confirmEamil.button')} </Button>
           </Form.Group>
         </Form>
       </OnboardingForm>

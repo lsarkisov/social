@@ -22,10 +22,6 @@ export default function OnboardingContent(props) {
     }
   }, [isMain])
 
-  if (token && role) {
-    return <OnboardingRedirect />
-  }
-
   return (
     <div className={`onboarding-content ${props.className}`}>
       <OnboardingNavbar />

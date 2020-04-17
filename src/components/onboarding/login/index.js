@@ -45,7 +45,6 @@ export default function OnboardingLogin(props) {
   }
 
   const onLogin = () => {
-    console.log('TEST')
     setIsLogging(true)
     dispatch(
       logInAction.request({
@@ -86,7 +85,7 @@ export default function OnboardingLogin(props) {
               )}
             </Form.Group>
             <Form.Group className={`${disable ? 'disabled' : ''}`}>
-              <Button type="submit" onClick={onLogin} variant="primary">
+              <Button onClick={onLogin} variant="primary">
                 {t('login.title')}
               </Button>
             </Form.Group>

@@ -57,6 +57,10 @@ export default function OnboardingMainPattern(props) {
     initCanvas({ context: ctx2, delta: 50, p1: 1.5, p2: 1.4, color: '#ff929c' })
   })
 
+  useEffect(() => {
+    return window.removeEventListener('resize', () => {})
+  }, [])
+
   return (
     <div className="overflow-y-hidden">
       <canvas className="canvas canvas__opacity" ref={shape1} />
