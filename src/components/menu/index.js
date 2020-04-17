@@ -1,6 +1,7 @@
 import React from 'react'
 import { InputGroup, FormControl, Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Logout from 'components/onboarding/login/logout'
 
 export default function Menu(props) {
   return (
@@ -8,7 +9,9 @@ export default function Menu(props) {
       <Navbar className="menu" expand="lg" variant="light" bg="primary">
         <Navbar.Brand href="#">Faq</Navbar.Brand>
         <Navbar.Brand href="#">Contact</Navbar.Brand>
-        <Navbar.Brand href="#">Log out</Navbar.Brand>
+        <Navbar.Brand>
+          <Logout />
+        </Navbar.Brand>
       </Navbar>
 
       <InputGroup className="mb-3">

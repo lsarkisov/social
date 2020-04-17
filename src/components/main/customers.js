@@ -15,7 +15,7 @@ import Gender from 'assets/img/gender.svg'
 import Decent from 'assets/img/decent.svg'
 import Reduced from 'assets/img/reduced.svg'
 
-export default function AuthMainCustomers(props) {
+export default function OnboardingMainCustomers(props) {
   return (
     <div className="main-page__customers">
       <h2 className="center">

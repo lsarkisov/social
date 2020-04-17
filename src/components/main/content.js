@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import AuthMainAbout from 'components/main/about'
-import AuthMainHowItWorks from 'components/main/how-it-works'
-import AuthMainCustomers from 'components/main/customers'
+import OnboardingMainAbout from 'components/main/about'
+import OnboardingMainHowItWorks from 'components/main/how-it-works'
+import OnboardingMainCustomers from 'components/main/customers'
 
-export default function AuthMainContent(props) {
+export default function OnboardingMainContent(props) {
   return (
     <div className="main-page__content">
       <i className="bg bg-1" />
@@ -12,9 +12,9 @@ export default function AuthMainContent(props) {
       <i className="bg bg-3" />
 
       <Container>
-        <AuthMainAbout />
-        <AuthMainHowItWorks />
-        <AuthMainCustomers />
+        <OnboardingMainAbout />
+        <OnboardingMainHowItWorks />
+        <OnboardingMainCustomers />
       </Container>
     </div>
   )

@@ -35,6 +35,77 @@ a {
   color: $primary;
 }
 
+/* Dropdown
+----------------------------------------*/
+.dropdown {
+  button.btn {
+    margin-right: 0;
+  }
+  .dropdown-menu {
+    transform: 0;
+    width: 100%;
+  }
+}
+
+/* Accordion
+----------------------------------------*/
+.ic-accordion {
+  width: 100%;
+  text-align: center;
+
+  .collapse {
+    background-color: white;
+    text-align: left;
+    border-radius: 0 0 0.625rem 0.625rem;
+  }
+  &__button {
+    border-radius: 0 0 0.625rem 0.625rem;
+  }
+}
+
+/* Nav
+----------------------------------------*/
+.nav {
+  background-color: $gray-1;
+  border-radius: 0.625rem;
+
+  .nav-link {
+    padding: $px12;
+  }
+
+  a {
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .active {
+    background-color: white !important;
+    color: $primary !important;
+  }
+}
+
+/* Forms
+----------------------------------------*/
+.tag {
+  position: relative;
+  background-color: $primary;
+  color: white;
+  font-size: $px13;
+  padding: $px7;
+
+  &__close {
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    font-size: 14px;
+    width: 14px !important;
+    padding: 2px;
+    border-radius: 9px;
+  }
+}
+
 /* Forms
 ----------------------------------------*/
 .form-control {

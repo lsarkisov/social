@@ -17,10 +17,10 @@ export const ENTITY_NOT_FOUND = 'ENTITY_NOT_FOUND'
 export const ROLE_COMPANY_USER = 'ROLE_COMPANY_USER'
 export const ROLE_MODEL_USER = 'ROLE_MODEL_USER'
 
-/* Authorisation
+/* Onboarding
 ----------------------------------------*/
-export const AUTH_SOCIAL = createRequestTypes('AUTH_SOCIAL')
-export const AUTH_COMMON = createRequestTypes('AUTH_COMMON')
+export const ONBOARDING_SOCIAL = createRequestTypes('ONBOARDING_SOCIAL')
+export const ONBOARDING_COMMON = createRequestTypes('ONBOARDING_COMMON')
 
 /* Login/Logout
 ----------------------------------------*/

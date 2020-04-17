@@ -8,17 +8,17 @@ import {
 import { AnimatedSwitch } from 'react-router-transition'
 import NoMatch from 'components/no-match'
 import UIKit from 'components/ui'
-import AuthMain from 'components/main'
-import AuthLogin from 'components/auth/login'
-import AuthLoginError from 'components/auth/login/error'
-import AuthLoginNewPassword from 'components/auth/password/new-password'
-import AuthLoginResetPassword from 'components/auth/password/reset-password'
-import AuthLoginCongratulations from 'components/auth/password/congratulations'
-import AuthLoginConfirmEmail from 'components/auth/login/confirm-email'
-import AuthRedirect from 'components/auth/redirect'
-import AuthCompany from 'components/auth/company'
-import AuthModel from 'components/auth/model'
-import AuthError from 'components/auth/form/error'
+import OnboardingMain from 'components/main'
+import OnboardingLogin from 'components/onboarding/login'
+import OnboardingLoginError from 'components/onboarding/login/error'
+import OnboardingLoginNewPassword from 'components/onboarding/password/new-password'
+import OnboardingLoginResetPassword from 'components/onboarding/password/reset-password'
+import OnboardingLoginCongratulations from 'components/onboarding/password/congratulations'
+import OnboardingLoginConfirmEmail from 'components/onboarding/login/confirm-email'
+import OnboardingRedirect from 'components/onboarding/redirect'
+import OnboardingCompany from 'components/onboarding/company'
+import OnboardingModel from 'components/onboarding/model'
+import OnboardingError from 'components/onboarding/form/error'
 import Faq from 'components/faq'
 import Contacts from 'components/contacts'
 import Terms from 'components/terms'
@@ -28,16 +28,22 @@ import Company from 'components/company'
 import Dashboard from 'components/dashboard'
 
 const routes = [
-  { path: '/auth/login/error', Component: AuthLoginError },
-  { path: '/auth/login/reset-password', Component: AuthLoginResetPassword },
-  { path: '/user/password/change/:id', Component: AuthLoginNewPassword },
-  { path: '/auth/login/congratulations', Component: AuthLoginCongratulations },
-  { path: '/auth/confirm/email', Component: AuthLoginConfirmEmail },
-  { path: '/onboarding/confirm/:id', Component: AuthRedirect },
-  { path: '/auth/login', Component: AuthLogin },
-  { path: '/auth/model', Component: AuthModel },
-  { path: '/auth/company', Component: AuthCompany },
-  { path: '/auth/error', Component: AuthError },
+  { path: '/onboarding/login/error', Component: OnboardingLoginError },
+  {
+    path: '/onboarding/login/reset-password',
+    Component: OnboardingLoginResetPassword,
+  },
+  { path: '/user/password/change/:id', Component: OnboardingLoginNewPassword },
+  {
+    path: '/onboarding/login/congratulations',
+    Component: OnboardingLoginCongratulations,
+  },
+  { path: '/onboarding/confirm/email', Component: OnboardingLoginConfirmEmail },
+  { path: '/onboarding/confirm/:id', Component: OnboardingRedirect },
+  { path: '/onboarding/login', Component: OnboardingLogin },
+  { path: '/onboarding/model', Component: OnboardingModel },
+  { path: '/onboarding/company', Component: OnboardingCompany },
+  { path: '/onboarding/error', Component: OnboardingError },
   { path: '/ui', Component: UIKit },
   { path: '/faq', Component: Faq },
   { path: '/terms', Component: Terms },
@@ -47,7 +53,7 @@ const routes = [
   { path: '/contacts', Component: Contacts },
 ]
 
-const authRoutes = [
+const privateRoutes = [
   { path: '/dashboard/model', Component: Dashboard },
   { path: '/dashboard/company', Component: Dashboard },
 ]
@@ -82,7 +88,7 @@ function Routes() {
         className="switch-wrapper"
       >
         <Route exact path="/">
-          <AuthMain />
+          <OnboardingMain />
         </Route>
 
         {routes.map(({ path, Component }) => (
@@ -91,7 +97,7 @@ function Routes() {
           </Route>
         ))}
 
-        {authRoutes.map(({ path, Component }) => (
+        {privateRoutes.map(({ path, Component }) => (
           <PrivateRoute path={path} key={path}>
             <Component />
           </PrivateRoute>

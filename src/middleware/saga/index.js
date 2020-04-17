@@ -21,9 +21,9 @@ const fields = {
   authority: null,
 }
 
-function* onAuthCommonSuccess(data) {
+function* onboardingCommonSuccess(data) {
   const payload = yield call(() =>
-    services.auth({ ...fields, ...data.payload }),
+    services.onboarding({ ...fields, ...data.payload }),
   )
 
   try {
@@ -34,14 +34,14 @@ function* onAuthCommonSuccess(data) {
       localStorage.setItem('role', role)
     }
 
-    yield put({ type: types.AUTH_COMMON[SUCCESS], payload })
+    yield put({ type: types.ONBOARDING_COMMON[SUCCESS], payload })
   } catch (error) {
-    yield put({ type: types.AUTH_COMMON[FAILURE], error })
+    yield put({ type: types.ONBOARDING_COMMON[FAILURE], error })
   }
 }
 
-function* authCommonRequest() {
-  yield takeEvery(types.AUTH_COMMON[REQUEST], onAuthCommonSuccess)
+function* onboardingCommonRequest() {
+  yield takeEvery(types.ONBOARDING_COMMON[REQUEST], onboardingCommonSuccess)
 }
 
 function* onLoginCommonSuccess(data) {
@@ -96,7 +96,7 @@ function* changePasswordRequest() {
 
 export default function* rootSaga() {
   yield all([
-    authCommonRequest(),
+    onboardingCommonRequest(),
     loginCommonRequest(),
     resetPasswordRequest(),
     changePasswordRequest(),
