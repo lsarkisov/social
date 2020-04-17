@@ -80,7 +80,11 @@ export default function OnboardingNewPassword(props) {
                 )}
               </Form.Group>
               <Form.Group className={`${disable ? 'disabled' : ''}`}>
-                <Button onClick={onSendPassword} variant="primary">
+                <Button
+                  type="submit"
+                  onClick={onSendPassword}
+                  variant="primary"
+                >
                   {t('login.changePassword')}
                 </Button>
               </Form.Group>

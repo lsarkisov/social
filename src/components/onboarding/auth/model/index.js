@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
@@ -11,33 +11,16 @@ import {
   OnboardingMember,
   OnboardingNeedHelp,
 } from 'components/onboarding/utils'
-import {
-  lt,
-  isDigit,
-  isWebsiteValid,
-  isEmailValid,
-  isPassword,
-  isConfirm,
-} from 'utils/validator'
-import { ROLE_COMPANY_USER, ENTITY_ALREADY_EXISTS } from 'const/requests'
+import { isAlpha, isEmailValid, isPassword, isConfirm } from 'utils/validator'
+import { ROLE_MODEL_USER, ENTITY_ALREADY_EXISTS } from 'const/requests'
+// import OnboardingSocial from 'components/onboarding/social'
 
 export default function OnboardingModel(props) {
   const { t } = useTranslation()
   const [disable, setDisable] = useState(true)
   const [isPreloader, setIsPreloader] = useState(false)
   const [isUserExists, setIsUserExists] = useState(false)
-  const [companyCompanyName, setCompanyName] = useState({
-    valid: null,
-    value: null,
-  })
-  const [companyCompanyNumber, setCompanyCompanyNumber] = useState({
-    valid: null,
-    value: null,
-  })
-  const [companyWebsite, setCompanyWebsite] = useState({
-    valid: null,
-    value: null,
-  })
+  const [firstName, setFirstName] = useState({ valid: null, value: null })
   const [email, setImail] = useState({ valid: null, value: null })
   const [password, setPassword] = useState({ valid: null, value: null })
   const [confirm, setConfirm] = useState({ value: null })
@@ -68,10 +51,8 @@ export default function OnboardingModel(props) {
 
   const isValid = () => {
     if (
-      companyCompanyName.value &&
-      companyCompanyNumber.value &&
-      companyWebsite.value &&
-      email.value &&
+      firstName.valid &&
+      email.valid &&
       password.valid &&
       password.value === confirm.value
     ) {
@@ -85,12 +66,10 @@ export default function OnboardingModel(props) {
     setIsPreloader(true)
     dispatch(
       onboardingCommonAction.request({
-        companyCompanyName: companyCompanyName.value,
-        companyCompanyNumber: companyCompanyNumber.value,
-        companyWebsite: companyWebsite.value,
         email: email.value,
-        password: password.valid,
-        authority: ROLE_COMPANY_USER,
+        password: password.value,
+        firstName: firstName.value,
+        authority: ROLE_MODEL_USER,
       }),
     )
   }
@@ -102,36 +81,14 @@ export default function OnboardingModel(props) {
           <>
             <h2>{t('onboarding.title')}</h2>
             <Form onKeyUp={isValid}>
-              <Form.Group onChange={(e) => lt(e, 2, setCompanyName)}>
+              <Form.Group onChange={(e) => isAlpha(e, 3, setFirstName)}>
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder={t('onboarding.company.companyName')}
+                  placeholder={t('onboarding.model.name')}
                 />
-                {companyCompanyName.valid === false && (
-                  <div className="error">{t('error.len')} 2</div>
-                )}
-              </Form.Group>
-              <Form.Group onChange={(e) => isDigit(e, setCompanyCompanyNumber)}>
-                <Form.Control
-                  size="lg"
-                  type="text"
-                  placeholder={t('onboarding.company.companyNumber')}
-                />
-                {companyCompanyNumber.valid === false && (
-                  <div className="error">{t('error.digit')}</div>
-                )}
-              </Form.Group>
-              <Form.Group
-                onChange={(e) => isWebsiteValid(e, setCompanyWebsite)}
-              >
-                <Form.Control
-                  size="lg"
-                  type="text"
-                  placeholder={t('onboarding.company.website')}
-                />
-                {companyWebsite.valid === false && (
-                  <div className="error">{t('error.website')}</div>
+                {firstName.valid === false && (
+                  <div className="error">{t('error.len')} 3</div>
                 )}
               </Form.Group>
               <Form.Group onChange={(e) => isEmailValid(e, setImail)}>
@@ -168,7 +125,7 @@ export default function OnboardingModel(props) {
                 <p className="center error">{t('onboarding.userExists')}</p>
               )}
               <Form.Group className={`${disable ? 'disabled' : ''}`}>
-                <Button onClick={onboarding} variant="primary">
+                <Button type="submit" onClick={onboarding} variant="primary">
                   {t('onboarding.register')}
                 </Button>
               </Form.Group>
@@ -178,6 +135,9 @@ export default function OnboardingModel(props) {
               <Form.Group className="text-sm">
                 <OnboardingNeedHelp />
               </Form.Group>
+              {/* <Form.Group className="text-sm">
+            {t('onboarding.model.orSocial')} <OnboardingSocial />
+          </Form.Group> */}
             </Form>
           </>
         ) : (
