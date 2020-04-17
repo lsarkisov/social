@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import OnboardingRedirect from 'components/onboarding/redirect'
 import OnboardingNavbar from 'components/onboarding/navbar'
 import OnboardingCarousel from 'components/onboarding/carousel'
 import DoubleText from 'components/double-text'
-
-const token = localStorage.getItem('token')
-const role = localStorage.getItem('role')
 
 export default function OnboardingContent(props) {
   const { t } = useTranslation()
