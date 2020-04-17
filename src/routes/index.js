@@ -56,8 +56,8 @@ const routes = [
 ]
 
 const privateRoutes = [
-  { path: '/dashboard/model', Component: Dashboard },
-  { path: '/dashboard/company', Component: Dashboard },
+  { path: '/dashboard/model/:id', Component: Dashboard },
+  { path: '/dashboard/company/:id', Component: Dashboard },
 ]
 
 function Routes() {

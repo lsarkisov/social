@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Container, Row, Col, Badge } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Nav, NavLink } from 'react-router-dom'
 import NavBar from 'components/nav-bar'
 import Menu from 'components/menu'
 
@@ -14,17 +14,25 @@ export default function ModelDashboard(props) {
         <NavBar>
           <ul className="nav-bar__list">
             <li>
-              <Link to="">{t('dashboard.navbar.myProfile')}</Link>
+              <NavLink to="/dashboard/model/profile">
+                {t('dashboard.navbar.myProfile')}
+              </NavLink>
             </li>
-            <li className="nav-bar__active">
-              <Link to="">{t('dashboard.navbar.jobs')}</Link>
+            <li>
+              <NavLink to="/dashboard/model/jobs">
+                {t('dashboard.navbar.jobs')}
+              </NavLink>
               <Badge variant="light">2</Badge>
             </li>
             <li>
-              <Link to="">{t('dashboard.navbar.messages')}</Link>
+              <NavLink to="/dashboard/model/messages">
+                {t('dashboard.navbar.messages')}
+              </NavLink>
             </li>
             <li>
-              <Link to="">{t('dashboard.navbar.settings')}</Link>
+              <NavLink to="/dashboard/model/settings">
+                {t('dashboard.navbar.settings')}
+              </NavLink>
             </li>
           </ul>
         </NavBar>

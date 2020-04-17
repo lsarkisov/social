@@ -9,10 +9,10 @@ export default function OnboardingRedirect(props) {
     const role = localStorage.getItem('role')
 
     if (role === ROLE_MODEL_USER) {
-      history.push('/dashboard/model')
+      history.push('/dashboard/model/profile')
     }
     if (role === ROLE_COMPANY_USER) {
-      history.push('/dashboard/company')
+      history.push('/dashboard/company/profile')
     }
   }, [history])
 
