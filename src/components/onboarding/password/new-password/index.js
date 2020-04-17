@@ -29,7 +29,7 @@ export default function OnboardingNewPassword(props) {
   useEffect(() => {
     if (user && user.success) {
       setIsChanging(false)
-      history.push('/onboarding/congratulations')
+      history.push('/onboarding/reset-passwprd/congratulations')
     }
   }, [user, history])
 

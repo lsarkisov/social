@@ -6,7 +6,7 @@ import { ForgotPassword, OnboardingNeedHelp } from 'components/onboarding/utils'
 import OnboardingContent from 'components/onboarding/content'
 import OnboardingForm from 'components/onboarding/form'
 
-export default function OnboardingLoginError(props) {
+export default function OnboardingResetPasswordCongratulation(props) {
   const { t } = useTranslation()
   const history = useHistory()
 

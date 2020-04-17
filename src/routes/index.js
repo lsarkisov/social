@@ -13,6 +13,7 @@ import OnboardingLogin from 'components/onboarding/login'
 import OnboardingLoginError from 'components/onboarding/login/error'
 import OnboardingNewPassword from 'components/onboarding/password/new-password'
 import OnboardingResetPassword from 'components/onboarding/password/reset-password'
+import OnboardingResetPasswordCongratulation from 'components/onboarding/password/reset-password/congratulation'
 import OnboardingConfirmEmail from 'components/onboarding/confirm-email'
 import OnboardingCongratulation from 'components/onboarding/congratulation'
 import OnboardingRedirect from 'components/onboarding/redirect'
@@ -38,16 +39,20 @@ const routes = [
   { path: '/onboarding/model', Component: OnboardingModel },
   { path: '/onboarding/company', Component: OnboardingCompany },
   { path: '/onboarding/login/error', Component: OnboardingLoginError },
+  {
+    path: '/onboarding/login/reset-password',
+    Component: OnboardingResetPassword,
+  },
+  {
+    path: '/onboarding/reset-passwprd/congratulations',
+    Component: OnboardingResetPasswordCongratulation,
+  },
   { path: '/onboarding/login', Component: OnboardingLogin },
   { path: '/user/password/change/:id', Component: OnboardingNewPassword },
   { path: '/onboarding/confirm/email', Component: OnboardingConfirmEmail },
   { path: '/onboarding/congratulation', Component: OnboardingCongratulation },
   { path: '/onboarding/confirm/:id', Component: OnboardingRedirect },
   { path: '/onboarding/error', Component: OnboardingError },
-  {
-    path: '/onboarding/login/reset-password',
-    Component: OnboardingResetPassword,
-  },
 ]
 
 const privateRoutes = [

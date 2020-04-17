@@ -66,6 +66,12 @@ export const confirmEamil = {
   button: 'resend email',
 }
 
+export const resetPassword = {
+  title: 'congratulations!',
+  message1: 'Your password has now been reset!',
+  button: 'log in',
+}
+
 export const footer = {
   policy: 'Privacy policy',
   terms: 'Terms of use',

@@ -6,6 +6,7 @@ import {
   footer,
   congratulation,
   confirmEamil,
+  resetPassword,
 } from './onboarding.en'
 import { error } from './form-validation.en'
 import { dashboard } from './dashboard.en'
@@ -17,6 +18,7 @@ export default i18n.use(initReactI18next).init({
         onboarding,
         congratulation,
         confirmEamil,
+        resetPassword,
         login,
         footer,
         error,
