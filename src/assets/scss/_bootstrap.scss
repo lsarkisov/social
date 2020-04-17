@@ -10,6 +10,14 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.73px;
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.btn-icon {
+  svg {
+    position: relative;
+    left: -10px;
+  }
 }
 
 .btn-sm {
@@ -23,6 +31,17 @@ a {
 .btn-secondary {
   background-color: $gray-1 !important;
   border-color: $gray-1 !important;
+}
+
+/* Img thumbnail
+----------------------------------------*/
+.img-thumbnail {
+  padding: $px12;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  height: auto;
 }
 
 /* Badge

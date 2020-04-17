@@ -12,6 +12,11 @@
   .active {
     background-color: $primary;
     color: white;
+
+    .badge {
+      background-color: $gray-2;
+      color: $primary;
+    }
   }
 
   &__list {
@@ -22,7 +27,8 @@
     .badge {
       font-size: 13px;
       padding: 3px 9px;
-      border: 1px solid $primary;
+      background-color: $primary;
+      color: white;
     }
 
     padding: 15px 0;

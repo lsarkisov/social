@@ -21,8 +21,8 @@ export default function ModelDashboard(props) {
             <li>
               <NavLink to="/dashboard/model/jobs">
                 {t('dashboard.navbar.jobs')}
+                <Badge variant="light">2</Badge>
               </NavLink>
-              <Badge variant="light">2</Badge>
             </li>
             <li>
               <NavLink to="/dashboard/model/messages">
@@ -38,7 +38,7 @@ export default function ModelDashboard(props) {
         </NavBar>
         <Col>
           <Menu />
-          <h1>ModelDashboard</h1>
+          {props.children}
         </Col>
       </Row>
     </Container>

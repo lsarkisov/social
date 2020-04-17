@@ -30,7 +30,7 @@ export default function CompanyDashboard(props) {
         </NavBar>
         <Col>
           <Menu />
-          <h1>Company dashboard</h1>
+          {props.children}
         </Col>
       </Row>
     </Container>

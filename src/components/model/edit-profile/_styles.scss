@@ -1,0 +1,19 @@
+.edit-profile {
+  &__button {
+    padding: 24px 15px 7px;
+  }
+
+  &__image {
+    padding-right: 0;
+    padding-bottom: 15px;
+    min-height: 250px;
+  }
+
+  &__thumbnails {
+    div {
+      padding-right: 0;
+      margin-bottom: 15px;
+      min-height: 100px;
+    }
+  }
+}

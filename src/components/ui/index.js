@@ -13,6 +13,7 @@ import {
   Nav,
 } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IcImage from 'components/lib/img'
 
 export default function UIKit(props) {
   return (
@@ -80,6 +81,13 @@ export default function UIKit(props) {
       </Row>
 
       <Row className="ui__row">
+        <Button className="btn-icon">
+          <FontAwesomeIcon icon={'cog'} />
+          .btn-icon
+        </Button>
+      </Row>
+
+      <Row className="ui__row">
         <Nav variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
             <Nav.Link eventKey="link-0">Item 1</Nav.Link>
@@ -98,6 +106,10 @@ export default function UIKit(props) {
           <FontAwesomeIcon className="tag__close" icon="times" />
           item 1
         </div>
+      </Row>
+
+      <Row className="ui__row">
+        <IcImage src="https://www.dw.com/image/53008431_301.jpg" />
       </Row>
 
       <Row className="ui__row">
