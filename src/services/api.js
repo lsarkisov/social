@@ -15,14 +15,14 @@ function callApi(endpoint, headers) {
 }
 
 export const onboarding = (body) =>
-  callApi('/onboarding/register', {
+  callApi('/auth/register', {
     method: 'post',
     headers: jsonHeaders,
     body: JSON.stringify(body),
   })
 
 export const login = (body) =>
-  callApi('/onboarding/token', {
+  callApi('/auth/token', {
     method: 'post',
     headers: jsonHeaders,
     body: JSON.stringify(body),
