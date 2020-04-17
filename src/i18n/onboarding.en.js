@@ -10,9 +10,9 @@ export const onboarding = {
   registerModel: 'registering a model',
   registerCompany: 'registering a booker',
   userExists: 'the user with this email exists',
-  org: {
+  company: {
     companyName: 'company name',
-    orgNumber: 'organisation number',
+    companyNumber: 'organisation number',
     website: 'website',
     email: 'email',
     password: 'password',
@@ -44,22 +44,26 @@ export const login = {
   email: 'email',
   userNotExists: 'There is no user with this email',
   createAccount: 'Creating account',
-  congratulations: {
-    title: 'congratulations!',
-    message: 'Your password has now been reset!',
-    button: 'countinue',
-  },
-  confirm: {
-    title: 'Congratulations!',
-    message1: 'the REGISTRATION is almost done',
-    message2:
-      "There is a verification email waiting for you in your email's inbox.",
-    message3:
-      'Make sure to click the verification link to finish your registration!',
-    message4: 'Can’t find it? Check your junk-mail',
-    message5: 'Still can’t find it?',
-    button: 'resend email',
-  },
+}
+
+export const congratulation = {
+  title: 'Congratulations!',
+  message1: 'the registration is almost done',
+  message2:
+    "There is a verification email waiting for you in your email's inbox.",
+  message3:
+    'Make sure to click the verification link to finish your registration!',
+  message4: 'Can’t find it? Check your junk-mail',
+  message5: 'Still can’t find it?',
+  button: 'resend email',
+}
+
+export const confirmEamil = {
+  title: 'Follow the link',
+  message1: 'We have sent you an email, check your inbox.',
+  message2: 'Can’t find it? Check your junk mail!',
+  message3: 'Still can’t find it?',
+  button: 'resend email',
 }
 
 export const footer = {

@@ -11,10 +11,10 @@ import UIKit from 'components/ui'
 import OnboardingMain from 'components/main'
 import OnboardingLogin from 'components/onboarding/login'
 import OnboardingLoginError from 'components/onboarding/login/error'
-import OnboardingLoginNewPassword from 'components/onboarding/password/new-password'
-import OnboardingLoginResetPassword from 'components/onboarding/password/reset-password'
-import OnboardingLoginCongratulations from 'components/onboarding/password/congratulations'
-import OnboardingLoginConfirmEmail from 'components/onboarding/login/confirm-email'
+import OnboardingNewPassword from 'components/onboarding/password/new-password'
+import OnboardingResetPassword from 'components/onboarding/password/reset-password'
+import OnboardingConfirmEmail from 'components/onboarding/confirm-email'
+import OnboardingCongratulation from 'components/onboarding/congratulation'
 import OnboardingRedirect from 'components/onboarding/redirect'
 import OnboardingCompany from 'components/onboarding/company'
 import OnboardingModel from 'components/onboarding/model'
@@ -28,22 +28,6 @@ import Company from 'components/company'
 import Dashboard from 'components/dashboard'
 
 const routes = [
-  { path: '/onboarding/login/error', Component: OnboardingLoginError },
-  {
-    path: '/onboarding/login/reset-password',
-    Component: OnboardingLoginResetPassword,
-  },
-  { path: '/user/password/change/:id', Component: OnboardingLoginNewPassword },
-  {
-    path: '/onboarding/login/congratulations',
-    Component: OnboardingLoginCongratulations,
-  },
-  { path: '/onboarding/confirm/email', Component: OnboardingLoginConfirmEmail },
-  { path: '/onboarding/confirm/:id', Component: OnboardingRedirect },
-  { path: '/onboarding/login', Component: OnboardingLogin },
-  { path: '/onboarding/model', Component: OnboardingModel },
-  { path: '/onboarding/company', Component: OnboardingCompany },
-  { path: '/onboarding/error', Component: OnboardingError },
   { path: '/ui', Component: UIKit },
   { path: '/faq', Component: Faq },
   { path: '/terms', Component: Terms },
@@ -51,6 +35,19 @@ const routes = [
   { path: '/policy', Component: Policy },
   { path: '/company', Component: Company },
   { path: '/contacts', Component: Contacts },
+  { path: '/onboarding/model', Component: OnboardingModel },
+  { path: '/onboarding/company', Component: OnboardingCompany },
+  { path: '/onboarding/login/error', Component: OnboardingLoginError },
+  { path: '/onboarding/login', Component: OnboardingLogin },
+  { path: '/user/password/change/:id', Component: OnboardingNewPassword },
+  { path: '/onboarding/confirm/email', Component: OnboardingConfirmEmail },
+  { path: '/onboarding/congratulation', Component: OnboardingCongratulation },
+  { path: '/onboarding/confirm/:id', Component: OnboardingRedirect },
+  { path: '/onboarding/error', Component: OnboardingError },
+  {
+    path: '/onboarding/login/reset-password',
+    Component: OnboardingResetPassword,
+  },
 ]
 
 const privateRoutes = [

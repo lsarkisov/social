@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import NavBar from 'components/nav-bar'
+import Menu from 'components/menu'
 
 export default function CompanyDashboard(props) {
   return (
@@ -28,6 +29,7 @@ export default function CompanyDashboard(props) {
           </ul>
         </NavBar>
         <Col>
+          <Menu />
           <h1>Company dashboard</h1>
         </Col>
       </Row>

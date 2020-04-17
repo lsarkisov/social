@@ -10,7 +10,7 @@ import { PreLoader } from 'components/onboarding/utils'
 import { isEmailValid } from 'utils/validator'
 import { ENTITY_NOT_FOUND } from 'const/requests'
 
-export default function OnboardingLoginResetPassword(props) {
+export default function OnboardingResetPassword(props) {
   const { t } = useTranslation()
   const [userExists, setUserExists] = useState(true)
   const [resetPassword, setResetPassword] = useState(false)

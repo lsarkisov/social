@@ -1,6 +1,12 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { onboarding, login, footer } from './onboarding.en'
+import {
+  onboarding,
+  login,
+  footer,
+  congratulation,
+  confirmEamil,
+} from './onboarding.en'
 import { error } from './form-validation.en'
 import { dashboard } from './dashboard.en'
 
@@ -9,6 +15,8 @@ export default i18n.use(initReactI18next).init({
     en: {
       translation: {
         onboarding,
+        congratulation,
+        confirmEamil,
         login,
         footer,
         error,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputGroup, FormControl, Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Logout from 'components/onboarding/login/logout'
+import Logout from 'components/onboarding/logout'
 
 export default function Menu(props) {
   return (
