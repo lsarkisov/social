@@ -20,7 +20,7 @@ export default function OnboardingContent(props) {
 
   return (
     <div className={`onboarding-content ${props.className}`}>
-      <OnboardingNavbar />
+      <OnboardingNavbar isMain={isMain} />
       <Row className="p-0 m-0 overflow-x-hidden">
         <Col xs={12} lg={sidebar} className="content-row p-0">
           {props.children}

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ScrollTo } from 'components/utils'
 
-export default function OnboardingNavbarLinks() {
+export default function OnboardingNavbarLinks(props) {
+  const { isMain } = props
   return (
     <>
       <Link to="/">
@@ -11,14 +13,22 @@ export default function OnboardingNavbarLinks() {
         </span>
       </Link>
       <div className="onboarding-navbar__link">
-        <Link to="/">About</Link>
+        {isMain ? (
+          <ScrollTo to="about">About</ScrollTo>
+        ) : (
+          <Link to="/">About</Link>
+        )}
         <Link to="/faq" className="bounceOutLeft">
           Faq
         </Link>
         <Link to="/contacts" className="bounceOutLeft">
           Contact
         </Link>
-        <Link to="/">How it works</Link>
+        {isMain ? (
+          <ScrollTo to="how-it-works">How it works</ScrollTo>
+        ) : (
+          <Link to="/">How it works</Link>
+        )}
       </div>
     </>
   )
