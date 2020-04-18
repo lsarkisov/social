@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Container, Row, Col, Badge } from 'react-bootstrap'
-import { Nav, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import NavBar from 'components/nav-bar'
 import Menu from 'components/menu'
 
