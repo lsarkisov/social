@@ -1,9 +1,49 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap'
 import ModelDashboard from 'components/model'
 import IcImage from 'components/lib/img'
 import IcModal from 'components/lib/modal'
+import IcImageGallery from 'components/lib/gallery'
+
+const images = [
+  {
+    original: 'https://picsum.photos/id/1018/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1015/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1019/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1018/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1015/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1019/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1018/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1015/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1019/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+  },
+]
 
 export default function ModelEditProfile(props) {
   const { t } = useTranslation()
@@ -14,8 +54,23 @@ export default function ModelEditProfile(props) {
         <Row>
           <Col className="edit-profile__button">
             <IcModal icon="cog" btnText={t('profile.button')}>
-              <h1>TEST!</h1>
+              <>
+                <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
+                  <Tab eventKey="home" title="Home">
+                    <h1>TEST 1</h1>
+                  </Tab>
+                  <Tab eventKey="profile" title="Profile">
+                    <h1>TEST 2</h1>
+                  </Tab>
+                  <Tab eventKey="contact" title="Contact">
+                    <h1>TEST 3</h1>
+                  </Tab>
+                </Tabs>
+              </>
             </IcModal>
+            <IcImageGallery btnText="portfolio" icon="cog" images={images}>
+              <span className="ic-gallery__tab">Portfolio</span>
+            </IcImageGallery>
           </Col>
         </Row>
         <Row>

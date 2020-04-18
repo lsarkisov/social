@@ -3,6 +3,7 @@
 @import './bootstrap';
 @import './fonts';
 @import './common';
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
 
 /* COMPONENTS
 --------------------------------------------------*/
@@ -47,3 +48,4 @@
 
 @import '../../components/lib/img/styles.scss';
 @import '../../components/lib/modal/styles.scss';
+@import '../../components/lib/gallery/styles.scss';
