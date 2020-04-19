@@ -11,7 +11,7 @@ import { ReactComponent as Pay } from 'assets/img/icons/pay.svg'
 
 export default function OnboardingMainHowItWorks(props) {
   return (
-    <div className="main-page__how-it">
+    <div className="main-page__how-it" id="how-it-works">
       <ReactScroll.Element name="how-it-works">
         <h2 className="center">
           How it <span className="sub-text">works</span>

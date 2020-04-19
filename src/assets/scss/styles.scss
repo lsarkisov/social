@@ -20,6 +20,15 @@
 @import '../../components/congratulation/styles.scss';
 @import '../../components/double-text/styles.scss';
 
+/* Library
+--------------------------------------------------*/
+@import '../../components/lib/img/styles.scss';
+@import '../../components/lib/modal/styles.scss';
+@import '../../components/lib/gallery/styles.scss';
+@import '../../components/lib/hamburger/styles.scss';
+
+/* Onboarding
+--------------------------------------------------*/
 @import '../../components/onboarding/auth/company/styles.scss';
 @import '../../components/onboarding/auth/model/styles.scss';
 @import '../../components/onboarding/navbar/styles.scss';
@@ -45,7 +54,3 @@
 @import '../../components/model/settings/styles.scss';
 
 @import '../../components/company/styles.scss';
-
-@import '../../components/lib/img/styles.scss';
-@import '../../components/lib/modal/styles.scss';
-@import '../../components/lib/gallery/styles.scss';
