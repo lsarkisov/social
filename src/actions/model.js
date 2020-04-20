@@ -7,3 +7,8 @@ export const modelImageUpload = {
   success: (payload) => action(types.MODEL_IMAGE_UPLOAD[SUCCESS], { payload }),
   failure: (error) => action(types.MODEL_IMAGE_UPLOAD[FAILURE], error),
 }
+
+export const modelImageUpdate = (payload) => ({
+  type: types.MODEL_IMAGE_UPDATE,
+  payload,
+})

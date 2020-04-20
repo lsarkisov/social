@@ -17,9 +17,9 @@ export default function IcImage(props) {
   }, [uploadImage])
 
   const onDrop = (acceptedFiles) => {
-    props.onDrop({ [props.id]: acceptedFiles[0] })
     setImage(acceptedFiles[0])
     setImagePath(URL.createObjectURL(acceptedFiles[0]))
+    props.onDrop({ [props.id]: acceptedFiles[0] })
   }
 
   const onPreview = (e) => {

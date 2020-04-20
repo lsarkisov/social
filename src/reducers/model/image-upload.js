@@ -16,6 +16,11 @@ const modelImageUpload = (state = {}, action) => {
         uploadImage: null,
       })
 
+    case types.MODEL_IMAGE_UPDATE:
+      return Object.assign({}, state, {
+        updateImage: { ...state.updateImage, ...action.payload },
+      })
+
     default:
       return Object.assign({}, state)
   }

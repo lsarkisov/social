@@ -88,7 +88,7 @@ export default function UIKit(props) {
       </Row>
 
       <Row className="ui__row">
-        <Nav variant="pills" defaultActiveKey="link-0">
+        <Nav className="menu-tabs" variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
             <Nav.Link eventKey="link-0">Item 1</Nav.Link>
           </Nav.Item>

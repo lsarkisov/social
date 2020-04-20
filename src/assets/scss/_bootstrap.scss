@@ -84,7 +84,7 @@ a {
 
 /* Nav
 ----------------------------------------*/
-.nav {
+.menu-tabs {
   background-color: $gray-1;
   border-radius: 0.625rem;
 
@@ -103,7 +103,46 @@ a {
   }
 }
 
-/* Forms
+.popup-tabs {
+  position: relative;
+  top: -31px;
+  border: 0;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(md) {
+    top: 0;
+
+    a {
+      font-size: 12px;
+    }
+  }
+
+  a {
+    color: white;
+    border: 0 !important;
+    background-color: $primary;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+
+    &:hover {
+      border: 0;
+    }
+  }
+
+  .active {
+    background-color: white;
+    color: $gray-3;
+  }
+}
+
+/* Modal
+----------------------------------------*/
+.modal-content {
+  border: 0 !important;
+}
+
+/* Tag
 ----------------------------------------*/
 .tag {
   position: relative;

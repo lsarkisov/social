@@ -32,6 +32,7 @@ export const LOGOUT_COMMON = 'LOGOUT_COMMON'
 export const RESET_PASSWORD = createRequestTypes('RESET_PASSWORD')
 export const CHANGE_PASSWORD = createRequestTypes('CHANGE_PASSWORD')
 
-/* Reset password
+/* Model
 ----------------------------------------*/
 export const MODEL_IMAGE_UPLOAD = createRequestTypes('MODEL_IMAGE_UPLOAD')
+export const MODEL_IMAGE_UPDATE = 'MODEL_IMAGE_UPDATE'
