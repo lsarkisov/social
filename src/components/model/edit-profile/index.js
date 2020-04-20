@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap'
 import ModelDashboard from 'components/model'
@@ -46,7 +46,13 @@ const images = [
 ]
 
 export default function ModelEditProfile(props) {
+  const [show, setShow] = useState(false)
   const { t } = useTranslation()
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
+  const onPreview = () => setShow(true)
 
   return (
     <ModelDashboard className="edit-profile">
@@ -68,7 +74,12 @@ export default function ModelEditProfile(props) {
                 </Tabs>
               </>
             </IcModal>
-            <IcImageGallery btnText="portfolio" icon="cog" images={images}>
+            <IcImageGallery
+              show={show}
+              images={images}
+              handleClose={handleClose}
+              handleShow={handleShow}
+            >
               <span className="ic-gallery__tab">Portfolio</span>
             </IcImageGallery>
           </Col>
@@ -77,28 +88,28 @@ export default function ModelEditProfile(props) {
           <Col sm={12} md={12} lg={8}>
             <Row className="p-0">
               <Col sm={12} md={12} lg={5} className="edit-profile__image">
-                <IcImage />
+                <IcImage onPreview={onPreview} />
               </Col>
               <Col sm={12} md={12} lg={7}>
                 <h1>Emelie</h1>
                 <Row className="edit-profile__thumbnails">
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                   <Col xs={6} md={4} lg={4}>
-                    <IcImage />
+                    <IcImage onPreview={onPreview} />
                   </Col>
                 </Row>
               </Col>

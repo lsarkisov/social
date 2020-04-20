@@ -15,6 +15,7 @@ export default function IcImage(props) {
   const onPreview = (e) => {
     e.preventDefault()
     e.stopPropagation()
+    props.onPreview()
   }
 
   return (
