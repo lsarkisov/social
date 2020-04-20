@@ -5,10 +5,15 @@ import ImageGallery from 'react-image-gallery'
 
 export default function IcImageGallery(props) {
   const [show, setShow] = useState(false)
+  const [images, setImages] = useState(null)
 
   useEffect(() => {
     setShow(props.show)
   }, [props.show])
+
+  useEffect(() => {
+    setImages(props.images)
+  }, [props.images])
 
   return (
     <div className="ic-gallery">
@@ -19,19 +24,21 @@ export default function IcImageGallery(props) {
         </Button>
       )}
 
-      <Modal
-        className="ic-gallery__modal"
-        dialogClassName="ic-gallery__width"
-        show={show}
-        onHide={props.handleClose}
-      >
-        {props.children}
-        <ImageGallery
-          showPlayButton={false}
-          showFullscreenButton={false}
-          items={props.images}
-        />
-      </Modal>
+      {images && (
+        <Modal
+          className="ic-gallery__modal"
+          dialogClassName="ic-gallery__width"
+          show={show}
+          onHide={props.handleClose}
+        >
+          {props.children}
+          <ImageGallery
+            showPlayButton={false}
+            showFullscreenButton={false}
+            items={images}
+          />
+        </Modal>
+      )}
     </div>
   )
 }

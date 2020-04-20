@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Container, Row, Col } from 'react-bootstrap'
 import ModelDashboard from 'components/model'
@@ -6,7 +7,7 @@ import IcImage from 'components/lib/img'
 import IcImageGallery from 'components/lib/gallery'
 import ModelEditProfilePopup from 'components/model/edit-profile/popup'
 
-const images = [
+const imgs = [
   {
     original: 'https://picsum.photos/id/1018/1000/600/',
     thumbnail: 'https://picsum.photos/id/1018/250/150/',
@@ -47,7 +48,23 @@ const images = [
 
 export default function ModelEditProfile(props) {
   const [show, setShow] = useState(false)
+  const [images, setImages] = useState(null)
   const { t } = useTranslation()
+
+  const { uploadImage } = useSelector((state) => state.modelImageUpload)
+
+  useEffect(() => {
+    if (uploadImage) {
+      const result = Object.keys(uploadImage).map((id) => {
+        const url = URL.createObjectURL(uploadImage[id])
+        return {
+          original: url,
+          thumbnail: url,
+        }
+      })
+      setImages(result)
+    }
+  }, [uploadImage])
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
