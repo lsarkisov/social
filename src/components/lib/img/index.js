@@ -1,15 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Dropzone from 'react-dropzone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { modelImageUpload } from 'actions/model'
 
 export default function IcImage(props) {
   const [image, setImage] = useState(null)
   const [imagePath, setImagePath] = useState('')
 
+  const { uploadImage } = useSelector((state) => state.modelImageUpload)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (uploadImage && uploadImage[props.id]) {
+      setImage(uploadImage[props.id])
+      setImagePath(URL.createObjectURL(uploadImage[props.id]))
+    }
+  }, [uploadImage])
+
   const onDrop = (acceptedFiles) => {
-    console.log(URL.createObjectURL(acceptedFiles[0]))
     setImage(acceptedFiles[0])
     setImagePath(URL.createObjectURL(acceptedFiles[0]))
+    dispatch(modelImageUpload.request({ [props.id]: acceptedFiles[0] }))
   }
 
   const onPreview = (e) => {

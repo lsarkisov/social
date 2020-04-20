@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import ModelDashboard from 'components/model'
 import IcImage from 'components/lib/img'
-import IcModal from 'components/lib/modal'
 import IcImageGallery from 'components/lib/gallery'
+import ModelEditProfilePopup from 'components/model/edit-profile/popup'
 
 const images = [
   {
@@ -59,21 +59,7 @@ export default function ModelEditProfile(props) {
       <Container>
         <Row>
           <Col className="edit-profile__button">
-            <IcModal icon="cog" btnText={t('profile.button')}>
-              <>
-                <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-                  <Tab eventKey="home" title="Home">
-                    <h1>TEST 1</h1>
-                  </Tab>
-                  <Tab eventKey="profile" title="Profile">
-                    <h1>TEST 2</h1>
-                  </Tab>
-                  <Tab eventKey="contact" title="Contact">
-                    <h1>TEST 3</h1>
-                  </Tab>
-                </Tabs>
-              </>
-            </IcModal>
+            <ModelEditProfilePopup />
             <IcImageGallery
               show={show}
               images={images}
@@ -88,28 +74,34 @@ export default function ModelEditProfile(props) {
           <Col sm={12} md={12} lg={8}>
             <Row className="p-0">
               <Col sm={12} md={12} lg={5} className="edit-profile__image">
-                <IcImage onPreview={onPreview} />
+                <IcImage id="main" onPreview={onPreview} />
               </Col>
               <Col sm={12} md={12} lg={7}>
                 <h1>Emelie</h1>
                 <Row className="edit-profile__thumbnails">
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="1" onPreview={onPreview} />
                   </Col>
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="2" onPreview={onPreview} />
                   </Col>
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="3" onPreview={onPreview} />
                   </Col>
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="4" onPreview={onPreview} />
                   </Col>
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="5" onPreview={onPreview} />
                   </Col>
-                  <Col xs={6} md={4} lg={4}>
-                    <IcImage onPreview={onPreview} />
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="6" onPreview={onPreview} />
+                  </Col>
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="7" onPreview={onPreview} />
+                  </Col>
+                  <Col xs={6} md={3} lg={3}>
+                    <IcImage id="8" onPreview={onPreview} />
                   </Col>
                 </Row>
               </Col>
