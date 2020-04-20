@@ -36,7 +36,7 @@ export default function IcImage(props) {
       <Dropzone onDrop={onDrop}>
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
-            {props.dro && <input {...getInputProps()} />}
+            {props.drop && <input {...getInputProps()} />}
             <FontAwesomeIcon icon={'plus'} />
             {props.children}
             {image && (
