@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Tab, Tabs } from 'react-bootstrap'
 import IcModal from 'components/lib/modal'
 import ModelEditProfilePortfolio from 'components/model/edit-profile/portfolio'
+import ModelEditProfileProfile from 'components/model/edit-profile/profile'
 
 export default function ModelEditProfilePopup(props) {
   const { t } = useTranslation()
@@ -22,7 +23,7 @@ export default function ModelEditProfilePopup(props) {
             <ModelEditProfilePortfolio />
           </Tab>
           <Tab eventKey="3" title={t('profile.popup.tabs.btn3')}>
-            <h1>TEST 3</h1>
+            <ModelEditProfileProfile />
           </Tab>
         </Tabs>
       </>

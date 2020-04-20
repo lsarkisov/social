@@ -18,28 +18,44 @@ export default function ModelEditProfilePortfolio(props) {
       <Col sm={12} md={12} lg={7}>
         <Row className="edit-profile__thumbnails">
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="1" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="1" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="2" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="2" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="3" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="3" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="4" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="4" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="5" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="5" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="6" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="6" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="7" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="7" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
           <Col xs={6} md={3} lg={3}>
-            <IcImage onDrop={onDrop} id="8" onPreview={onPreview} />
+            <IcImage onDrop={onDrop} id="8" onPreview={onPreview}>
+              upload from device
+            </IcImage>
           </Col>
         </Row>
       </Col>

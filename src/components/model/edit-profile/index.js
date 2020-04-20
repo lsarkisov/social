@@ -32,7 +32,7 @@ export default function ModelEditProfile(props) {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
   const onPreview = () => setShow(true)
-  const onDrop = (data) => dispatch(modelImageUpload.request(data))
+  const onDrop = (e) => e.stopPropagation()
 
   return (
     <ModelDashboard className="edit-profile">
@@ -51,7 +51,7 @@ export default function ModelEditProfile(props) {
           </Col>
         </Row>
         <Row>
-          <Col sm={12} md={12} lg={8}>
+          <Col sm={12} md={12} lg={8} className="edit-profile__content">
             <Row className="p-0">
               <Col sm={12} md={12} lg={5} className="edit-profile__image">
                 <IcImage onDrop={onDrop} id="main" onPreview={onPreview} />
