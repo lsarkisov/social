@@ -18,7 +18,12 @@ export default function ModelEditProfileProfile(props) {
       <Col sm={12} md={12} lg={7}>
         <Row className="edit-profile__thumbnails">
           <Col sm={12} md={12} lg={5} className="edit-profile__image">
-            <IcImage onDrop={onDrop} id="main" onPreview={onPreview}>
+            <IcImage
+              drop={true}
+              onDrop={onDrop}
+              id="main"
+              onPreview={onPreview}
+            >
               Drag & drop or click here to brows
             </IcImage>
           </Col>

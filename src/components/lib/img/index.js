@@ -17,6 +17,9 @@ export default function IcImage(props) {
   }, [uploadImage])
 
   const onDrop = (acceptedFiles) => {
+    if (!props.drop) {
+      return false
+    }
     props.onDrop({ [props.id]: acceptedFiles[0] })
     setImage(acceptedFiles[0])
     setImagePath(URL.createObjectURL(acceptedFiles[0]))
@@ -33,7 +36,7 @@ export default function IcImage(props) {
       <Dropzone onDrop={onDrop}>
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
-            <input {...getInputProps()} />
+            {props.dro && <input {...getInputProps()} />}
             <FontAwesomeIcon icon={'plus'} />
             {props.children}
             {image && (

@@ -32,7 +32,7 @@ export default function ModelEditProfile(props) {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
   const onPreview = () => setShow(true)
-  const onDrop = (e) => e.stopPropagation()
+  const onDrop = (data) => dispatch(modelImageUpload.request(data))
 
   return (
     <ModelDashboard className="edit-profile">
@@ -51,37 +51,82 @@ export default function ModelEditProfile(props) {
           </Col>
         </Row>
         <Row>
-          <Col sm={12} md={12} lg={8} className="edit-profile__content">
+          <Col sm={12} md={12} lg={8}>
             <Row className="p-0">
               <Col sm={12} md={12} lg={5} className="edit-profile__image">
-                <IcImage onDrop={onDrop} id="main" onPreview={onPreview} />
+                <IcImage
+                  drop={false}
+                  onDrop={onDrop}
+                  id="main"
+                  onPreview={onPreview}
+                />
               </Col>
               <Col sm={12} md={12} lg={7}>
                 <h1>Emelie</h1>
                 <Row className="edit-profile__thumbnails">
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="1" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="1"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="2" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="2"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="3" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="3"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="4" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="4"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="5" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="5"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="6" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="6"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="7" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="7"
+                      onPreview={onPreview}
+                    />
                   </Col>
                   <Col xs={6} md={3} lg={3}>
-                    <IcImage onDrop={onDrop} id="8" onPreview={onPreview} />
+                    <IcImage
+                      drop={false}
+                      onDrop={onDrop}
+                      id="8"
+                      onPreview={onPreview}
+                    />
                   </Col>
                 </Row>
               </Col>
