@@ -114,7 +114,10 @@ export default function ModelEditProfileBooking(props) {
     dispatch(
       modelBookingInfo({
         name,
-        startDate: startDate ? Date.parse(startDate) : startDate,
+        startDate:
+          startDate && typeof startDate !== 'number'
+            ? Date.parse(startDate)
+            : startDate,
         gender,
         age,
         hairColor,

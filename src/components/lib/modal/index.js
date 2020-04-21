@@ -1,21 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Button, Modal } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { modelImageUpload, modelBookingUpdate } from 'actions/model'
 
 export default function IcModal(props) {
   const [show, setShow] = useState(false)
 
-  const { updateImage } = useSelector((state) => state.modelImageUpload)
-  const { bookingInfo } = useSelector((state) => state.modelBooking)
-  const dispatch = useDispatch()
-
   const handleShow = () => setShow(true)
   const handleClose = () => setShow(false)
-  const handleSave = (callback) => {
-    dispatch(modelImageUpload.request(updateImage))
-    dispatch(modelBookingUpdate.request(bookingInfo))
+  const handleSave = () => {
+    props.onSave()
     handleClose()
   }
 
