@@ -159,7 +159,7 @@ export default function ModelEditProfileBooking(props) {
 
   return (
     <>
-      <Row>
+      <Row className="model-booking">
         <Col sm={12} md={12} lg={7}>
           <Container>
             <Row>
@@ -173,118 +173,155 @@ export default function ModelEditProfileBooking(props) {
               </Form.Group>
             </Row>
             <Row>
-              <DatePicker
-                selected={startDate || new Date()}
-                onChange={(date) => setStartDate(date)}
-                customInput={<ExampleCustomInput />}
-              />
+              <Form.Group>
+                <Form.Label>DATE OF BIRTH</Form.Label>
+                <DatePicker
+                  selected={startDate || new Date()}
+                  onChange={(date) => setStartDate(date)}
+                  customInput={<ExampleCustomInput />}
+                />
+              </Form.Group>
             </Row>
             <Row>
-              <IcDropDown
-                value={gender}
-                items={['Male', 'Famale', 'Other']}
-                callback={setGenger}
-              />
+              <Form.Group>
+                <Form.Label>Gender</Form.Label>
+                <IcDropDown
+                  value={gender}
+                  items={['Male', 'Famale', 'Other']}
+                  callback={setGenger}
+                />
+              </Form.Group>
 
-              <IcDropDown
-                value={age}
-                items={['100', '200', '300']}
-                callback={setAge}
-              />
-            </Row>
-
-            <Row>
-              <IcDropDown
-                value={hairColor}
-                items={[
-                  'Gray',
-                  'Light blond',
-                  'Half blond',
-                  'Whole blond',
-                  'Light brown',
-                  'Middle brown',
-                  'Dark brown',
-                  'Black',
-                  'Mahogany',
-                  'Warm red',
-                  'Cold red',
-                  'Copper',
-                  'Extreme colour (blue, green, pink, yellow, etc.)',
-                ]}
-                callback={setHairColor}
-              />
-              <IcDropDown
-                value={hairType}
-                items={[
-                  'Natural or non-coloured',
-                  'Coloured',
-                  'Tuned',
-                  'Bleached',
-                ]}
-                callback={setHairType}
-              />
+              <Form.Group>
+                <Form.Label>age group</Form.Label>
+                <IcDropDown
+                  value={age}
+                  items={['100', '200', '300']}
+                  callback={setAge}
+                />
+              </Form.Group>
             </Row>
 
             <Row>
-              <IcDropDown
-                value={eyeColor}
-                items={[
-                  'Dark brown',
-                  'Brown',
-                  'Light brown',
-                  'Gray',
-                  'Green',
-                  'Blue',
-                  'Hazel',
-                  'Other',
-                ]}
-                callback={setEyeColor}
-              />
-              <IcDropDown
-                value={ethnicity}
-                items={[
-                  'Caucasian',
-                  'African background',
-                  'Latino',
-                  'White',
-                  'India/Pakistani',
-                  'Middle east',
-                  'Chinese',
-                  'Japanese',
-                  'Korean',
-                  'South asia',
-                  'Pacific Islands',
-                  'Mixed',
-                  'Other',
-                ]}
-                callback={setEthnicity}
-              />
+              <Form.Group>
+                <Form.Label>HAIR color</Form.Label>
+                <IcDropDown
+                  value={hairColor}
+                  items={[
+                    'Gray',
+                    'Light blond',
+                    'Half blond',
+                    'Whole blond',
+                    'Light brown',
+                    'Middle brown',
+                    'Dark brown',
+                    'Black',
+                    'Mahogany',
+                    'Warm red',
+                    'Cold red',
+                    'Copper',
+                    'Extreme colour (blue, green, pink, yellow, etc.)',
+                  ]}
+                  callback={setHairColor}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>HAIR type</Form.Label>
+                <IcDropDown
+                  value={hairType}
+                  items={[
+                    'Natural or non-coloured',
+                    'Coloured',
+                    'Tuned',
+                    'Bleached',
+                  ]}
+                  callback={setHairType}
+                />
+              </Form.Group>
             </Row>
 
             <Row>
-              <IcDropDown
-                value={country}
-                items={['England', 'France', 'Germany']}
-                callback={setCountry}
-              />
-              <IcDropDown
-                value={city}
-                items={['London', 'Parise', 'Berlin']}
-                callback={setCity}
-              />
+              <Form.Group>
+                <Form.Label>EYE color</Form.Label>
+                <IcDropDown
+                  value={eyeColor}
+                  items={[
+                    'Dark brown',
+                    'Brown',
+                    'Light brown',
+                    'Gray',
+                    'Green',
+                    'Blue',
+                    'Hazel',
+                    'Other',
+                  ]}
+                  callback={setEyeColor}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>ETHNICITY</Form.Label>
+                <IcDropDown
+                  value={ethnicity}
+                  items={[
+                    'Caucasian',
+                    'African background',
+                    'Latino',
+                    'White',
+                    'India/Pakistani',
+                    'Middle east',
+                    'Chinese',
+                    'Japanese',
+                    'Korean',
+                    'South asia',
+                    'Pacific Islands',
+                    'Mixed',
+                    'Other',
+                  ]}
+                  callback={setEthnicity}
+                />
+              </Form.Group>
             </Row>
 
             <Row>
-              <IcDropDown
-                value={dressSizeEU}
-                items={['1', '2', '3']}
-                callback={setDressSizeEU}
-              />
-              <IcDropDown
-                value={shoeSizeEU}
-                items={['1', '2', '3']}
-                callback={setShoeSizeEU}
-              />
+              <Form.Group>
+                <Form.Label>Country</Form.Label>
+                <IcDropDown
+                  value={country}
+                  items={['England', 'France', 'Germany']}
+                  callback={setCountry}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>City</Form.Label>
+                <IcDropDown
+                  value={city}
+                  items={['London', 'Parise', 'Berlin']}
+                  callback={setCity}
+                />
+              </Form.Group>
+            </Row>
+
+            <Row>
+              <Form.Group>
+                <Form.Label>Dress size eu</Form.Label>
+                <IcDropDown
+                  value={dressSizeEU}
+                  items={['1', '2', '3']}
+                  callback={setDressSizeEU}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>Shoe size EU</Form.Label>
+                <IcDropDown
+                  value={shoeSizeEU}
+                  items={['1', '2', '3']}
+                  callback={setShoeSizeEU}
+                />
+              </Form.Group>
             </Row>
 
             <Row>
@@ -300,7 +337,7 @@ export default function ModelEditProfileBooking(props) {
           </Container>
         </Col>
         <Col sm={12} md={12} lg={5}>
-          <Row>
+          <Row className="direction-column">
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Languages</Form.Label>
               <Form.Control
@@ -314,21 +351,23 @@ export default function ModelEditProfileBooking(props) {
                 }}
               />
             </Form.Group>
-            {languages &&
-              languages.map((item, i) => (
-                <div className="tag" key={i}>
-                  <FontAwesomeIcon
-                    className="tag__close"
-                    icon="times"
-                    onClick={() => {
-                      setLanguages(languages.filter((i) => i !== item))
-                    }}
-                  />
-                  {item}
-                </div>
-              ))}
+            <div>
+              {languages &&
+                languages.map((item, i) => (
+                  <div className="tag" key={i}>
+                    <FontAwesomeIcon
+                      className="tag__close"
+                      icon="times"
+                      onClick={() => {
+                        setLanguages(languages.filter((i) => i !== item))
+                      }}
+                    />
+                    {item}
+                  </div>
+                ))}
+            </div>
           </Row>
-          <Row>
+          <Row className="direction-column">
             <Form.Group>
               <Form.Label>categorie</Form.Label>
               <IcDropDown
@@ -352,23 +391,27 @@ export default function ModelEditProfileBooking(props) {
                   'Piercing',
                 ]}
                 callback={(item, e) => {
-                  setCategories([...categories, item])
+                  if (!categories.includes(item)) {
+                    setCategories([...categories, item])
+                  }
                 }}
               />
             </Form.Group>
-            {categories &&
-              categories.map((item, i) => (
-                <div className="tag" key={i}>
-                  <FontAwesomeIcon
-                    className="tag__close"
-                    icon="times"
-                    onClick={() => {
-                      setCategories(categories.filter((i) => i !== item))
-                    }}
-                  />
-                  {item}
-                </div>
-              ))}
+            <div>
+              {categories &&
+                categories.map((item, i) => (
+                  <div className="tag" key={i}>
+                    <FontAwesomeIcon
+                      className="tag__close"
+                      icon="times"
+                      onClick={() => {
+                        setCategories(categories.filter((i) => i !== item))
+                      }}
+                    />
+                    {item}
+                  </div>
+                ))}
+            </div>
           </Row>
         </Col>
       </Row>

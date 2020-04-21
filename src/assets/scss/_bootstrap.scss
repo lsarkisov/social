@@ -64,6 +64,11 @@ a {
     transform: 0;
     width: 100%;
   }
+  .dropdown-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 /* Accordion
@@ -106,6 +111,7 @@ a {
 .popup-tabs {
   position: relative;
   top: -31px;
+  left: -15px;
   border: 0;
   text-transform: uppercase;
 

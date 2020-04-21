@@ -149,7 +149,7 @@ export default function ModelEditProfile(props) {
               </Col>
             </Row>
           </Col>
-          <Col sm={12} md={12} lg={4}>
+          <Col sm={12} md={12} lg={4} className="edit-profile__bookins-list">
             {bookings && <IcStars stars={3} />}
             <ul
               className={`edit-profile__bookings ${

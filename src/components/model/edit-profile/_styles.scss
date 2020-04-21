@@ -24,6 +24,14 @@
   }
 
   &__bookings {
+    text-transform: uppercase;
+    color: $primary;
+
+    b {
+      font-weight: normal;
+      color: $gray-3;
+    }
+
     li:nth-child(n + 5) {
       display: none;
     }
@@ -33,5 +41,87 @@
         display: block;
       }
     }
+  }
+}
+
+.edit-profile__bookins-list {
+  .stars {
+    margin-bottom: 2rem;
+  }
+
+  li {
+    margin-bottom: 10px;
+
+    ul {
+      padding-left: 15px;
+    }
+  }
+}
+
+.model-booking {
+  .row {
+    margin-bottom: 10px;
+  }
+
+  .dropdown {
+    width: 90%;
+    margin-right: 2%;
+
+    .btn {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .dropdown-toggle {
+      width: 50px;
+    }
+  }
+
+  .form-label {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .form-group {
+    width: 50%;
+  }
+
+  .tag {
+    height: 30px;
+    margin: 5px 10px;
+    display: inline-block;
+  }
+
+  .direction-column {
+    .form-group {
+      width: 100%;
+    }
+
+    input {
+      width: 90%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .direction-column {
+      margin-left: 5%;
+    }
+  }
+}
+
+.portfolio,
+.profile {
+  .ic-image {
+    border: 1px solid $gray-2;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .thumbnails-text {
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    bottom: -35%;
   }
 }

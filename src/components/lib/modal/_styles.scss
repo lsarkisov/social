@@ -16,11 +16,26 @@
 
     .modal-content {
       border: 0 !important;
+      padding: 0 15px 15px;
+    }
+
+    .tab-content {
+      max-height: calc(100vh - 200px);
+      overflow-y: scroll;
     }
   }
 
+  @include media-breakpoint-down(md) {
+    .nav-item {
+      border-radius: 0 !important;
+    }
+  }
   &__footer {
     display: flex;
     margin-left: auto;
+
+    button {
+      margin-left: 1rem;
+    }
   }
 }

@@ -14,17 +14,19 @@ export default function ModelEditProfileProfile(props) {
   const onDrop = (data) => dispatch(modelImageUpdate(data))
 
   return (
-    <Row>
+    <Row className="profile">
       <Col sm={12} md={12} lg={7}>
         <Row className="edit-profile__thumbnails">
-          <Col sm={12} md={12} lg={5} className="edit-profile__image">
+          <Col sm={12} md={12} lg={8} className="edit-profile__image">
             <IcImage
               drop={true}
               onDrop={onDrop}
               id="main"
               onPreview={onPreview}
             >
-              Drag & drop or click here to brows
+              <div className="thumbnails-text">
+                Drag & drop or click here to brows
+              </div>
             </IcImage>
           </Col>
         </Row>
