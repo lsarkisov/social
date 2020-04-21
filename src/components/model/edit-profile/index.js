@@ -118,7 +118,9 @@ export default function ModelEditProfile(props) {
                         <b>{item.key}: </b>{' '}
                         <ul>
                           {item.value.map((li, k) => (
-                            <li key={k}>{li}</li>
+                            <li className="tag" key={k}>
+                              {li}
+                            </li>
                           ))}
                         </ul>
                       </li>
