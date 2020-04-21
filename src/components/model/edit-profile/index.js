@@ -78,7 +78,8 @@ export default function ModelEditProfile(props) {
                 />
               </Col>
               <Col sm={12} md={12} lg={7}>
-                {bookings && (
+                {console.log(bookings)}
+                {bookings && bookings.length && bookings[0].key === 'name' && (
                   <h1 className="edit-profile__title">{bookings[0].value}</h1>
                 )}
                 <Row className="edit-profile__thumbnails">
@@ -182,7 +183,7 @@ export default function ModelEditProfile(props) {
             >
               {bookings &&
                 bookings.map((item, i) => {
-                  if (i === 0) {
+                  if (item.key === 'name') {
                     return
                   }
                   if (Array.isArray(item.value)) {
@@ -193,8 +194,8 @@ export default function ModelEditProfile(props) {
                       <li key={i}>
                         <b>{item.key}: </b>{' '}
                         <ul>
-                          {item.value.map((li) => (
-                            <li>{li}</li>
+                          {item.value.map((li, k) => (
+                            <li key={k}>{li}</li>
                           ))}
                         </ul>
                       </li>
@@ -202,7 +203,10 @@ export default function ModelEditProfile(props) {
                   }
                   return (
                     <li key={i}>
-                      <b>{item.key}: </b> {item.value}
+                      <b>{item.key}: </b>{' '}
+                      {item.key === 'startDate' && item.value
+                        ? new Date(item.value).toUTCString()
+                        : item.value}
                     </li>
                   )
                 })}

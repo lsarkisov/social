@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import {
   Container,
@@ -35,7 +35,7 @@ function IcDropDown(props) {
 
 export default function ModelEditProfileBooking(props) {
   const [name, setName] = useState(null)
-  const [startDate, setStartDate] = useState(new Date())
+  const [startDate, setStartDate] = useState(null)
   const [gender, setGenger] = useState(null)
   const [age, setAge] = useState(null)
   const [hairColor, setHairColor] = useState(null)
@@ -53,13 +53,68 @@ export default function ModelEditProfileBooking(props) {
 
   const { t } = useTranslation()
 
+  const { bookingInfo } = useSelector((state) => state.modelBooking)
   const dispatch = useDispatch()
+
+  useState(() => {
+    if (!bookingInfo) {
+      return
+    }
+
+    Object.keys(bookingInfo).map((item, i) => {
+      if (item === 'name') {
+        setName(bookingInfo[item])
+      }
+      if (item === 'startDate') {
+        setStartDate(bookingInfo[item])
+      }
+      if (item === 'gender') {
+        setGenger(bookingInfo[item])
+      }
+      if (item === 'age') {
+        setAge(bookingInfo[item])
+      }
+      if (item === 'hairColor') {
+        setHairColor(bookingInfo[item])
+      }
+      if (item === 'hairType') {
+        setHairType(bookingInfo[item])
+      }
+      if (item === 'eyeColor') {
+        setEyeColor(bookingInfo[item])
+      }
+      if (item === 'ethnicity') {
+        setEthnicity(bookingInfo[item])
+      }
+      if (item === 'country') {
+        setCountry(bookingInfo[item])
+      }
+      if (item === 'city') {
+        setCity(bookingInfo[item])
+      }
+      if (item === 'dressSizeEU') {
+        setDressSizeEU(bookingInfo[item])
+      }
+      if (item === 'shoeSizeEU') {
+        setShoeSizeEU(bookingInfo[item])
+      }
+      if (item === 'height') {
+        setHeight(bookingInfo[item])
+      }
+      if (item === 'languages') {
+        setLanguages(bookingInfo[item] || [])
+      }
+      if (item === 'categories') {
+        setCategories(bookingInfo[item] || [])
+      }
+    })
+  }, [bookingInfo])
 
   useEffect(() => {
     dispatch(
       modelBookingInfo({
         name,
-        startDate: startDate.toDateString(),
+        startDate: startDate ? Date.parse(startDate) : startDate,
         gender,
         age,
         hairColor,
@@ -71,8 +126,8 @@ export default function ModelEditProfileBooking(props) {
         dressSizeEU,
         shoeSizeEU,
         height,
-        languages,
-        categories,
+        languages: languages && languages.length ? languages : null,
+        categories: categories && categories.length ? categories : null,
       }),
     )
   }, [
@@ -116,7 +171,7 @@ export default function ModelEditProfileBooking(props) {
             </Row>
             <Row>
               <DatePicker
-                selected={startDate}
+                selected={startDate || new Date()}
                 onChange={(date) => setStartDate(date)}
                 customInput={<ExampleCustomInput />}
               />
@@ -274,7 +329,9 @@ export default function ModelEditProfileBooking(props) {
             <Form.Group>
               <Form.Label>categorie</Form.Label>
               <IcDropDown
-                value={categories[categories.length - 1]}
+                value={
+                  categories ? categories[categories.length - 1] : 'categries'
+                }
                 items={[
                   'Body parts',
                   'Fashion',
