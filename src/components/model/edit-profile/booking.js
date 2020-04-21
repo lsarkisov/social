@@ -49,6 +49,7 @@ export default function ModelEditProfileBooking(props) {
   const [height, setHeight] = useState(null)
 
   const [languages, setLanguages] = useState([])
+  const [categories, setCategories] = useState([])
 
   const { t } = useTranslation()
 
@@ -112,10 +113,7 @@ export default function ModelEditProfileBooking(props) {
             <Row>
               <DatePicker
                 selected={startDate}
-                onChange={(date) => {
-                  console.log('DATE', date)
-                  setStartDate(date)
-                }}
+                onChange={(date) => setStartDate(date)}
                 customInput={<ExampleCustomInput />}
               />
             </Row>
@@ -262,6 +260,43 @@ export default function ModelEditProfileBooking(props) {
                     icon="times"
                     onClick={() => {
                       setLanguages(languages.filter((i) => i !== item))
+                    }}
+                  />
+                  {item}
+                </div>
+              ))}
+          </Row>
+          <Row>
+            <IcDropDown
+              value={categories[categories.length - 1]}
+              items={[
+                'Body parts',
+                'Fashion',
+                'High fashion',
+                'Plus sized',
+                'Senior',
+                'Promotional',
+                'Commercial &amp; Print',
+                'Commercial &amp; Acting',
+                'Nude',
+                'New Faces',
+                'Hijab',
+                'Acting',
+                'Tattoo',
+                'Piercing',
+              ]}
+              callback={(item, e) => {
+                setCategories([...categories, item])
+              }}
+            />
+            {categories &&
+              categories.map((item, i) => (
+                <div className="tag" key={i}>
+                  <FontAwesomeIcon
+                    className="tag__close"
+                    icon="times"
+                    onClick={() => {
+                      setCategories(categories.filter((i) => i !== item))
                     }}
                   />
                   {item}
