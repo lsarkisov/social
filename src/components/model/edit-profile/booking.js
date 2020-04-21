@@ -33,7 +33,7 @@ function IcDropDown(props) {
 
 export default function ModelEditProfileBooking(props) {
   const [name, setName] = useState(null)
-  const [startDate, setStartDate] = useState(null)
+  const [date, setDate] = useState(null)
   const [gender, setGenger] = useState(null)
   const [age, setAge] = useState(null)
   const [hairColor, setHairColor] = useState(null)
@@ -61,8 +61,8 @@ export default function ModelEditProfileBooking(props) {
       if (item === 'name') {
         setName(bookingInfo[item])
       }
-      if (item === 'startDate') {
-        setStartDate(bookingInfo[item])
+      if (item === 'date') {
+        setDate(bookingInfo[item])
       }
       if (item === 'gender') {
         setGenger(bookingInfo[item])
@@ -110,20 +110,17 @@ export default function ModelEditProfileBooking(props) {
     dispatch(
       modelBookingInfo({
         name,
-        startDate:
-          startDate && typeof startDate !== 'number'
-            ? Date.parse(startDate)
-            : startDate,
+        date: date && typeof date !== 'number' ? Date.parse(date) : date,
         gender,
         age,
-        hairColor,
-        hairType,
-        eyeColor,
+        'hair color': hairColor,
+        'hair type': hairType,
+        'eye color': eyeColor,
         ethnicity,
         country,
         city,
-        dressSizeEU,
-        shoeSizeEU,
+        'dress size EU': dressSizeEU,
+        'shoe size EU': shoeSizeEU,
         height,
         languages: languages && languages.length ? languages : null,
         categories: categories && categories.length ? categories : null,
@@ -131,7 +128,7 @@ export default function ModelEditProfileBooking(props) {
     )
   }, [
     name,
-    startDate,
+    date,
     gender,
     age,
     hairColor,
@@ -161,7 +158,7 @@ export default function ModelEditProfileBooking(props) {
           <Container>
             <Row>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>first & last name</Form.Label>
+                <Form.Label>first &amp; last name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder={name}
@@ -173,8 +170,8 @@ export default function ModelEditProfileBooking(props) {
               <Form.Group>
                 <Form.Label>DATE OF BIRTH</Form.Label>
                 <DatePicker
-                  selected={startDate || new Date()}
-                  onChange={(date) => setStartDate(date)}
+                  selected={date || new Date()}
+                  onChange={(date) => setDate(date)}
                   customInput={<ExampleCustomInput />}
                 />
               </Form.Group>

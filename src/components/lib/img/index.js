@@ -26,8 +26,10 @@ export default function IcImage(props) {
   }
 
   const onPreview = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
+    if (!props.dragOnImage) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
     props.onPreview()
   }
 

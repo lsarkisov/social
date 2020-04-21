@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 import { Container, Row, Col } from 'react-bootstrap'
 import { modelImageUpload } from 'actions/model'
 import ModelDashboard from 'components/model'
@@ -9,6 +10,7 @@ import IcStars from 'components/lib/stars'
 import ModelEditProfilePopup from 'components/model/edit-profile/popup'
 
 export default function ModelEditProfile(props) {
+  const { t } = useTranslation()
   const [show, setShow] = useState(false)
   const [images, setImages] = useState(null)
   const [bookings, setBookings] = useState(null)
@@ -75,74 +77,22 @@ export default function ModelEditProfile(props) {
                 />
               </Col>
               <Col sm={12} md={12} lg={7}>
-                {bookings && bookings.length && bookings[0].key === 'name' && (
-                  <h1 className="edit-profile__title">{bookings[0].value}</h1>
-                )}
+                {bookings &&
+                  bookings.length > 0 &&
+                  bookings[0].key === 'name' && (
+                    <h1 className="edit-profile__title">{bookings[0].value}</h1>
+                  )}
                 <Row className="edit-profile__thumbnails">
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="1"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="2"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="3"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="4"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="5"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="6"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="7"
-                      onPreview={onPreview}
-                    />
-                  </Col>
-                  <Col xs={6} md={3} lg={3}>
-                    <IcImage
-                      drop={false}
-                      onDrop={onDrop}
-                      id="8"
-                      onPreview={onPreview}
-                    />
-                  </Col>
+                  {Array.from(Array(8).keys()).map((i) => (
+                    <Col xs={6} md={3} lg={3} key={i}>
+                      <IcImage
+                        drop={false}
+                        onDrop={onDrop}
+                        id={i + 1}
+                        onPreview={onPreview}
+                      />
+                    </Col>
+                  ))}
                 </Row>
               </Col>
             </Row>
@@ -177,7 +127,7 @@ export default function ModelEditProfile(props) {
                   return (
                     <li key={i}>
                       <b>{item.key}: </b>{' '}
-                      {item.key === 'startDate' && item.value
+                      {item.key === 'date' && item.value
                         ? new Date(item.value).toUTCString()
                         : item.value}
                     </li>
@@ -186,7 +136,7 @@ export default function ModelEditProfile(props) {
             </ul>
             {!showMore && bookings && bookings.length > 5 && (
               <div className="show-more__btn" onClick={setShowMore}>
-                MORE
+                {t('profile.more')}
               </div>
             )}
           </Col>
