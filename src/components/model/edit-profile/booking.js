@@ -13,6 +13,7 @@ import {
 } from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
 import { modelBookingInfo } from 'actions/model'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function IcDropDown(props) {
   const { value, items, callback } = props
@@ -46,6 +47,9 @@ export default function ModelEditProfileBooking(props) {
   const [dressSizeEU, setDressSizeEU] = useState(null)
   const [shoeSizeEU, setShoeSizeEU] = useState(null)
   const [height, setHeight] = useState(null)
+
+  const [languages, setLanguages] = useState([])
+
   const { t } = useTranslation()
 
   const dispatch = useDispatch()
@@ -236,7 +240,34 @@ export default function ModelEditProfileBooking(props) {
           </Container>
         </Col>
         <Col sm={12} md={12} lg={5}>
-          TEST 2
+          <Row>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Languages</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder={height}
+                onKeyPress={(e) => {
+                  if (e.which == 13 || e.keyCode == 13) {
+                    setLanguages([...languages, e.target.value])
+                    e.target.value = ''
+                  }
+                }}
+              />
+            </Form.Group>
+            {languages &&
+              languages.map((item, i) => (
+                <div className="tag" key={i}>
+                  <FontAwesomeIcon
+                    className="tag__close"
+                    icon="times"
+                    onClick={() => {
+                      setLanguages(languages.filter((i) => i !== item))
+                    }}
+                  />
+                  {item}
+                </div>
+              ))}
+          </Row>
         </Col>
       </Row>
     </>
