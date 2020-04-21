@@ -8,7 +8,6 @@ import {
   Dropdown,
   ButtonGroup,
   Button,
-  Input,
   Form,
 } from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
@@ -58,7 +57,7 @@ export default function ModelEditProfileBooking(props) {
 
   useState(() => {
     if (!bookingInfo) {
-      return
+      return false
     }
 
     Object.keys(bookingInfo).map((item, i) => {
@@ -149,6 +148,7 @@ export default function ModelEditProfileBooking(props) {
     height,
     languages,
     categories,
+    dispatch,
   ])
 
   const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
@@ -307,7 +307,7 @@ export default function ModelEditProfileBooking(props) {
                 type="text"
                 placeholder={'languages'}
                 onKeyPress={(e) => {
-                  if (e.which == 13 || e.keyCode == 13) {
+                  if (e.which === 13 || e.keyCode === 13) {
                     setLanguages([...languages, e.target.value])
                     e.target.value = ''
                   }

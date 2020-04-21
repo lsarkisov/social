@@ -1,7 +1,6 @@
-import { put, call, takeEvery } from 'redux-saga/effects'
-import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
+import { put, takeEvery } from 'redux-saga/effects'
+import { REQUEST, SUCCESS } from 'const/actions'
 import * as types from 'const/requests'
-import * as services from 'services/api'
 
 function* onBookingUpdateSuccess(data) {
   const { payload } = data

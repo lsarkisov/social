@@ -160,11 +160,11 @@ export default function ModelEditProfile(props) {
               {bookings &&
                 bookings.map((item, i) => {
                   if (item.key === 'name') {
-                    return
+                    return false
                   }
                   if (Array.isArray(item.value)) {
                     if (!item.value.length) {
-                      return
+                      return false
                     }
                     return (
                       <li key={i}>
