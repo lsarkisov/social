@@ -1,4 +1,10 @@
 .edit-profile {
+  &__title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   &__button {
     padding: 24px 15px 7px;
   }

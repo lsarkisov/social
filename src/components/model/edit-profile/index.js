@@ -78,7 +78,9 @@ export default function ModelEditProfile(props) {
                 />
               </Col>
               <Col sm={12} md={12} lg={7}>
-                {bookings && <h1>{bookings[0].value}</h1>}
+                {bookings && (
+                  <h1 className="edit-profile__title">{bookings[0].value}</h1>
+                )}
                 <Row className="edit-profile__thumbnails">
                   <Col xs={6} md={3} lg={3}>
                     <IcImage
