@@ -170,3 +170,20 @@ a {
   background-color: $gray-2;
   border-color: $gray-2;
 }
+
+/* Datepicker
+----------------------------------------*/
+.react-datepicker__triangle {
+  display: none !important;
+}
+.react-datepicker {
+  border-radius: 0 !important;
+  border-color: $gray-2 !important;
+}
+.react-datepicker__header {
+  background: none !important;
+}
+.react-datepicker__day--selected {
+  background-color: $primary !important;
+  border-radius: 0;
+}

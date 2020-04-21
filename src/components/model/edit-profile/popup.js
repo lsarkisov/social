@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Tab, Tabs } from 'react-bootstrap'
 import IcModal from 'components/lib/modal'
+import ModelEditProfileBooking from 'components/model/edit-profile/booking'
 import ModelEditProfilePortfolio from 'components/model/edit-profile/portfolio'
 import ModelEditProfileProfile from 'components/model/edit-profile/profile'
 
@@ -17,7 +18,7 @@ export default function ModelEditProfilePopup(props) {
           id="uncontrolled-tab-example"
         >
           <Tab eventKey="1" title={t('profile.popup.tabs.btn1')}>
-            <h1>TEST 1</h1>
+            <ModelEditProfileBooking />
           </Tab>
           <Tab eventKey="2" title={t('profile.popup.tabs.btn2')}>
             <ModelEditProfilePortfolio />

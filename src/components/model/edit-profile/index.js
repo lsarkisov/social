@@ -11,9 +11,11 @@ import ModelEditProfilePopup from 'components/model/edit-profile/popup'
 export default function ModelEditProfile(props) {
   const [show, setShow] = useState(false)
   const [images, setImages] = useState(null)
+  const [bookings, setBookings] = useState(null)
   const { t } = useTranslation()
 
   const { uploadImage } = useSelector((state) => state.modelImageUpload)
+  const { booking } = useSelector((state) => state.modelBooking)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -28,6 +30,17 @@ export default function ModelEditProfile(props) {
       setImages(result)
     }
   }, [uploadImage])
+
+  useEffect(() => {
+    if (booking) {
+      const result = Object.keys(booking)
+        .filter((item) => booking[item])
+        .map((item) => {
+          return { key: item, value: booking[item] }
+        })
+      setBookings(result)
+    }
+  }, [booking])
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -133,7 +146,14 @@ export default function ModelEditProfile(props) {
             </Row>
           </Col>
           <Col sm={12} md={12} lg={4}>
-            2
+            <ul>
+              {bookings &&
+                bookings.map((item, i) => (
+                  <li key={i}>
+                    <b>{item.key}: </b> {item.value}
+                  </li>
+                ))}
+            </ul>
           </Col>
         </Row>
       </Container>

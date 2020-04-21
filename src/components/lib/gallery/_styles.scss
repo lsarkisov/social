@@ -9,6 +9,11 @@
     width: 60%;
     min-width: 60%;
 
+    @include media-breakpoint-down(sm) {
+      width: 96%;
+      min-width: 96%;
+    }
+
     .modal-content {
       border: 0 !important;
     }
@@ -45,4 +50,9 @@
 
 .image-gallery-icon:hover {
   color: $gray-3;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  height: calc(100vh / 2);
+  display: inline-block;
 }

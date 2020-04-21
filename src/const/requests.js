@@ -36,3 +36,5 @@ export const CHANGE_PASSWORD = createRequestTypes('CHANGE_PASSWORD')
 ----------------------------------------*/
 export const MODEL_IMAGE_UPLOAD = createRequestTypes('MODEL_IMAGE_UPLOAD')
 export const MODEL_IMAGE_UPDATE = 'MODEL_IMAGE_UPDATE'
+export const MODEL_BOOKING_UPDATE = createRequestTypes('MODEL_BOOKING_UPDATE')
+export const MODEL_BOOKING_INFO = 'MODEL_BOOKING_INFO'

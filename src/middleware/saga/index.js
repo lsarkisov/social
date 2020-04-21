@@ -5,7 +5,10 @@ import {
   resetPasswordRequest,
   changePasswordRequest,
 } from 'middleware/saga/onboarding'
-import { onImageUploadRequest } from 'middleware/saga/model'
+import {
+  onImageUploadRequest,
+  onBookingUpdateRequest,
+} from 'middleware/saga/model'
 
 export default function* rootSaga() {
   yield all([
@@ -14,5 +17,6 @@ export default function* rootSaga() {
     resetPasswordRequest(),
     changePasswordRequest(),
     onImageUploadRequest(),
+    onBookingUpdateRequest(),
   ])
 }

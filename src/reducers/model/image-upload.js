@@ -21,6 +21,11 @@ const modelImageUpload = (state = {}, action) => {
         updateImage: { ...state.updateImage, ...action.payload },
       })
 
+    case types.MODEL_BOOKING_INFO:
+      return Object.assign({}, state, {
+        bookingInfo: { ...state.bookingInfo, ...action.payload },
+      })
+
     default:
       return Object.assign({}, state)
   }
