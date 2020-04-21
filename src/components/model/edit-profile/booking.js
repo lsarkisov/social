@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
 import {
   Container,
   Row,
@@ -50,8 +49,6 @@ export default function ModelEditProfileBooking(props) {
   const [languages, setLanguages] = useState([])
   const [categories, setCategories] = useState([])
 
-  const { t } = useTranslation()
-
   const { bookingInfo } = useSelector((state) => state.modelBooking)
   const dispatch = useDispatch()
 
@@ -60,7 +57,7 @@ export default function ModelEditProfileBooking(props) {
       return false
     }
 
-    Object.keys(bookingInfo).map((item, i) => {
+    Object.keys(bookingInfo).forEach((item, i) => {
       if (item === 'name') {
         setName(bookingInfo[item])
       }

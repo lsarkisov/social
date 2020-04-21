@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
 import { Container, Row, Col } from 'react-bootstrap'
 import { modelImageUpload } from 'actions/model'
 import ModelDashboard from 'components/model'
@@ -14,7 +13,6 @@ export default function ModelEditProfile(props) {
   const [images, setImages] = useState(null)
   const [bookings, setBookings] = useState(null)
   const [showMore, setShowMore] = useState(false)
-  const { t } = useTranslation()
 
   const { uploadImage } = useSelector((state) => state.modelImageUpload)
   const { booking } = useSelector((state) => state.modelBooking)
@@ -187,7 +185,9 @@ export default function ModelEditProfile(props) {
                 })}
             </ul>
             {!showMore && bookings && bookings.length > 5 && (
-              <div onClick={setShowMore}>MORE</div>
+              <div className="show-more__btn" onClick={setShowMore}>
+                MORE
+              </div>
             )}
           </Col>
         </Row>

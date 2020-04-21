@@ -1,13 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useTranslation } from 'react-i18next'
 import { Row, Col } from 'react-bootstrap'
 import IcImage from 'components/lib/img'
 import { modelImageUpdate } from 'actions/model'
 
 export default function ModelEditProfilePortfolio(props) {
-  const { t } = useTranslation()
-
   const dispatch = useDispatch()
 
   const onPreview = () => {}

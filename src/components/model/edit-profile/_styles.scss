@@ -44,6 +44,14 @@
   }
 }
 
+.stars,
+.edit-profile__bookings,
+.show-more__btn {
+  @include media-breakpoint-up(md) {
+    margin-left: 1rem;
+  }
+}
+
 .edit-profile__bookins-list {
   .stars {
     margin-bottom: 2rem;
@@ -85,6 +93,10 @@
 
   .form-group {
     width: 50%;
+
+    .btn-light {
+      margin-left: 2px;
+    }
   }
 
   .tag {
@@ -113,9 +125,11 @@
 .portfolio,
 .profile {
   .ic-image {
-    border: 1px solid $gray-2;
-    border-radius: 10px;
-    padding: 5px;
+    & > div {
+      border: 1px solid $gray-2;
+      border-radius: 10px;
+      padding: 5px;
+    }
   }
 
   .thumbnails-text {
@@ -123,5 +137,6 @@
     text-align: center;
     position: relative;
     bottom: -35%;
+    color: $gray-3;
   }
 }
