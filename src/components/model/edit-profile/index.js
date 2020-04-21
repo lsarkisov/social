@@ -6,15 +6,14 @@ import { modelImageUpload } from 'actions/model'
 import ModelDashboard from 'components/model'
 import IcImage from 'components/lib/img'
 import IcImageGallery from 'components/lib/gallery'
+import IcStars from 'components/lib/stars'
 import ModelEditProfilePopup from 'components/model/edit-profile/popup'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function ModelEditProfile(props) {
   const [show, setShow] = useState(false)
   const [images, setImages] = useState(null)
   const [bookings, setBookings] = useState(null)
   const [showMore, setShowMore] = useState(false)
-  const star = 3
   const { t } = useTranslation()
 
   const { uploadImage } = useSelector((state) => state.modelImageUpload)
@@ -152,30 +151,7 @@ export default function ModelEditProfile(props) {
             </Row>
           </Col>
           <Col sm={12} md={12} lg={4}>
-            {bookings && (
-              <div>
-                <FontAwesomeIcon
-                  icon="star"
-                  className={`star ${star >= 1 ? 'star__active' : ''}`}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={`star ${star >= 2 ? 'star__active' : ''}`}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={`star ${star >= 3 ? 'star__active' : ''}`}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={`star ${star >= 4 ? 'star__active' : ''}`}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={`star ${star >= 5 ? 'star__active' : ''}`}
-                />
-              </div>
-            )}
+            {bookings && <IcStars stars={3} />}
             <ul
               className={`edit-profile__bookings ${
                 showMore ? 'edit-profile__bookings-more' : ''
