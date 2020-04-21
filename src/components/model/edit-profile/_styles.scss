@@ -16,4 +16,24 @@
       min-height: calc(100vh / 4);
     }
   }
+
+  &__bookings {
+    li:nth-child(n + 5) {
+      display: none;
+    }
+
+    &-more {
+      li:nth-child(n + 5) {
+        display: block;
+      }
+    }
+  }
+}
+
+.star {
+  color: $gray-3;
+}
+
+.star__active {
+  color: $primary !important;
 }

@@ -7,11 +7,14 @@ import ModelDashboard from 'components/model'
 import IcImage from 'components/lib/img'
 import IcImageGallery from 'components/lib/gallery'
 import ModelEditProfilePopup from 'components/model/edit-profile/popup'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function ModelEditProfile(props) {
   const [show, setShow] = useState(false)
   const [images, setImages] = useState(null)
   const [bookings, setBookings] = useState(null)
+  const [showMore, setShowMore] = useState(false)
+  const star = 3
   const { t } = useTranslation()
 
   const { uploadImage } = useSelector((state) => state.modelImageUpload)
@@ -146,14 +149,62 @@ export default function ModelEditProfile(props) {
             </Row>
           </Col>
           <Col sm={12} md={12} lg={4}>
-            <ul>
+            {bookings && (
+              <div>
+                <FontAwesomeIcon
+                  icon="star"
+                  className={`star ${star >= 1 ? 'star__active' : ''}`}
+                />
+                <FontAwesomeIcon
+                  icon="star"
+                  className={`star ${star >= 2 ? 'star__active' : ''}`}
+                />
+                <FontAwesomeIcon
+                  icon="star"
+                  className={`star ${star >= 3 ? 'star__active' : ''}`}
+                />
+                <FontAwesomeIcon
+                  icon="star"
+                  className={`star ${star >= 4 ? 'star__active' : ''}`}
+                />
+                <FontAwesomeIcon
+                  icon="star"
+                  className={`star ${star >= 5 ? 'star__active' : ''}`}
+                />
+              </div>
+            )}
+            <ul
+              className={`edit-profile__bookings ${
+                showMore ? 'edit-profile__bookings-more' : ''
+              }`}
+            >
               {bookings &&
-                bookings.map((item, i) => (
-                  <li key={i}>
-                    <b>{item.key}: </b> {item.value}
-                  </li>
-                ))}
+                bookings.map((item, i) => {
+                  if (Array.isArray(item.value)) {
+                    if (!item.value.length) {
+                      return
+                    }
+                    return (
+                      <li key={i}>
+                        <b>{item.key}: </b>{' '}
+                        <ul>
+                          {item.value.map((li) => (
+                            <li>{li}</li>
+                          ))}
+                        </ul>
+                      </li>
+                    )
+                  }
+                  return (
+                    <li key={i}>
+                      <b>{item.key}: </b> {item.value}
+                    </li>
+                  )
+                })}
             </ul>
+            {!showMore && bookings && bookings.length > 5 && (
+              <div onClick={setShowMore}>MORE</div>
+            )}
           </Col>
         </Row>
       </Container>

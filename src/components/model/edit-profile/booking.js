@@ -71,6 +71,8 @@ export default function ModelEditProfileBooking(props) {
         dressSizeEU,
         shoeSizeEU,
         height,
+        languages,
+        categories,
       }),
     )
   }, [
@@ -87,6 +89,8 @@ export default function ModelEditProfileBooking(props) {
     dressSizeEU,
     shoeSizeEU,
     height,
+    languages,
+    categories,
   ])
 
   const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
@@ -243,7 +247,7 @@ export default function ModelEditProfileBooking(props) {
               <Form.Label>Languages</Form.Label>
               <Form.Control
                 type="text"
-                placeholder={height}
+                placeholder={'languages'}
                 onKeyPress={(e) => {
                   if (e.which == 13 || e.keyCode == 13) {
                     setLanguages([...languages, e.target.value])
@@ -267,28 +271,31 @@ export default function ModelEditProfileBooking(props) {
               ))}
           </Row>
           <Row>
-            <IcDropDown
-              value={categories[categories.length - 1]}
-              items={[
-                'Body parts',
-                'Fashion',
-                'High fashion',
-                'Plus sized',
-                'Senior',
-                'Promotional',
-                'Commercial &amp; Print',
-                'Commercial &amp; Acting',
-                'Nude',
-                'New Faces',
-                'Hijab',
-                'Acting',
-                'Tattoo',
-                'Piercing',
-              ]}
-              callback={(item, e) => {
-                setCategories([...categories, item])
-              }}
-            />
+            <Form.Group>
+              <Form.Label>categorie</Form.Label>
+              <IcDropDown
+                value={categories[categories.length - 1]}
+                items={[
+                  'Body parts',
+                  'Fashion',
+                  'High fashion',
+                  'Plus sized',
+                  'Senior',
+                  'Promotional',
+                  'Commercial &amp; Print',
+                  'Commercial &amp; Acting',
+                  'Nude',
+                  'New Faces',
+                  'Hijab',
+                  'Acting',
+                  'Tattoo',
+                  'Piercing',
+                ]}
+                callback={(item, e) => {
+                  setCategories([...categories, item])
+                }}
+              />
+            </Form.Group>
             {categories &&
               categories.map((item, i) => (
                 <div className="tag" key={i}>
