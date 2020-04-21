@@ -77,7 +77,6 @@ export default function ModelEditProfile(props) {
                 />
               </Col>
               <Col sm={12} md={12} lg={7}>
-                {console.log(bookings)}
                 {bookings && bookings.length && bookings[0].key === 'name' && (
                   <h1 className="edit-profile__title">{bookings[0].value}</h1>
                 )}
