@@ -506,6 +506,12 @@
       margin: 0 $px15;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    h2 {
+      margin: 3rem auto 1rem;
+    }
+  }
 }
 
 .main-page__how-it {
@@ -617,6 +623,7 @@
 
   @include media-breakpoint-down(md) {
     td:nth-child(1),
+    td:nth-child(3),
     td:nth-child(5) {
       display: none;
     }
