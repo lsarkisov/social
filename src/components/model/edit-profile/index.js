@@ -14,7 +14,7 @@ export default function ModelEditProfile(props) {
   const [show, setShow] = useState(false)
   const [images, setImages] = useState(null)
   const [bookings, setBookings] = useState(null)
-  const [showMore, setShowMore] = useState(false)
+  const [toggle, setToggle] = useState(false)
 
   const { uploadImage } = useSelector((state) => state.modelImageUpload)
   const { booking } = useSelector((state) => state.modelBooking)
@@ -101,7 +101,7 @@ export default function ModelEditProfile(props) {
             {bookings && <IcStars stars={3} />}
             <ul
               className={`edit-profile__bookings ${
-                showMore ? 'edit-profile__bookings-more' : ''
+                toggle ? 'edit-profile__bookings-more' : ''
               }`}
             >
               {bookings &&
@@ -136,9 +136,12 @@ export default function ModelEditProfile(props) {
                   )
                 })}
             </ul>
-            {!showMore && bookings && bookings.length > 5 && (
-              <div className="show-more__btn" onClick={setShowMore}>
-                {t('profile.more')}
+            {bookings && bookings.length >= 5 && (
+              <div
+                className="show-more__btn"
+                onClick={() => setToggle(!toggle)}
+              >
+                {toggle ? t('profile.less') : t('profile.more')}
               </div>
             )}
           </Col>

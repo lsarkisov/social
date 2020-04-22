@@ -1,6 +1,7 @@
 export const profile = {
   button: 'edit profile',
   more: 'more',
+  less: 'less',
   popup: {
     tabs: {
       btn1: 'booking information',
