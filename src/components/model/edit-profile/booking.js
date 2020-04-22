@@ -152,7 +152,7 @@ export default function ModelEditProfileBooking(props) {
   ))
 
   return (
-    <>
+    <Container>
       <Row className="model-booking">
         <Col sm={12} md={12} lg={7}>
           <Container>
@@ -634,6 +634,6 @@ export default function ModelEditProfileBooking(props) {
           </Row>
         </Col>
       </Row>
-    </>
+    </Container>
   )
 }
