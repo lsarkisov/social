@@ -51,7 +51,7 @@ export default function OnboardingModel(props) {
     if (user && user.token && user.role && !disable) {
       setIsPreloader(false)
       setDisable(true)
-      history.push('/onboarding/confirm/email')
+      history.push('/onboarding/congratulation')
     }
 
     // if user with this email was registered
