@@ -95,6 +95,7 @@ a {
 .menu-tabs {
   background-color: $gray-1;
   border-radius: 0.625rem;
+  display: inline-flex;
 
   .nav-link {
     padding: $px12;

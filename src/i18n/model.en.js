@@ -16,3 +16,10 @@ export const profile = {
     },
   },
 }
+
+export const jobs = {
+  menu: {
+    btn1: 'Available jobs',
+    btn2: 'my jobs',
+  },
+}

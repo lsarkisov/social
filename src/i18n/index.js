@@ -10,7 +10,7 @@ import {
 } from './onboarding.en'
 import { error } from './form-validation.en'
 import { dashboard } from './dashboard.en'
-import { profile } from './model.en'
+import { profile, jobs } from './model.en'
 
 export default i18n.use(initReactI18next).init({
   resources: {
@@ -25,6 +25,7 @@ export default i18n.use(initReactI18next).init({
         error,
         dashboard,
         profile,
+        jobs,
       },
     },
   },

@@ -10,7 +10,7 @@ export default function ModelDashboard(props) {
   const { t } = useTranslation()
 
   return (
-    <Container fluid className="dashboard__model">
+    <Container fluid className={`dashboard__model ${props.className}`}>
       <Row>
         <NavBar>
           <IcHamburgerMenu>
