@@ -157,7 +157,7 @@ export default function ModelEditProfileBooking(props) {
         <Col sm={12} md={12} lg={7}>
           <Container>
             <Row>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group>
                 <Form.Label>first &amp; last name</Form.Label>
                 <Form.Control
                   type="text"
@@ -544,7 +544,7 @@ export default function ModelEditProfileBooking(props) {
             </Row>
 
             <Row>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group>
                 <Form.Label>HEIGHT (cm)</Form.Label>
                 <Form.Control
                   type="text"
@@ -557,7 +557,7 @@ export default function ModelEditProfileBooking(props) {
         </Col>
         <Col sm={12} md={12} lg={5}>
           <Row className="direction-column">
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group>
               <Form.Label>Languages</Form.Label>
               <Form.Control
                 type="text"

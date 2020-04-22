@@ -14,22 +14,18 @@ export default function ModelEditProfileProfile(props) {
 
   return (
     <Row className="profile">
-      <Col sm={12} md={12} lg={7}>
-        <Row className="edit-profile__thumbnails">
-          <Col sm={12} md={12} lg={8} className="edit-profile__image">
-            <IcImage
-              id="main"
-              drop={true}
-              onDrop={onDrop}
-              dragOnImage={true}
-              onPreview={onPreview}
-            >
-              <div className="thumbnails-text">
-                {t('profile.popup.portfolio.message1')}
-              </div>
-            </IcImage>
-          </Col>
-        </Row>
+      <Col className="edit-profile__image">
+        <IcImage
+          id="main"
+          drop={true}
+          onDrop={onDrop}
+          dragOnImage={true}
+          onPreview={onPreview}
+        >
+          <div className="thumbnails-text">
+            {t('profile.popup.profile.message1')}
+          </div>
+        </IcImage>
       </Col>
     </Row>
   )

@@ -10,8 +10,6 @@
     @include media-breakpoint-down(md) {
       width: 96%;
       min-width: 96%;
-
-      overflow-y: scroll;
     }
 
     .modal-content {
@@ -25,11 +23,6 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
-    .nav-item {
-      border-radius: 0 !important;
-    }
-  }
   &__footer {
     display: flex;
     margin-left: auto;

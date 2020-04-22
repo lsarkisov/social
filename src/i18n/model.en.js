@@ -11,7 +11,7 @@ export const profile = {
       message1: 'upload from device',
     },
     profile: {
-      message1: 'Drag &amp; drop or click here to brows',
+      message1: 'Drag & drop or click here to brows',
     },
   },
 }

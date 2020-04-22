@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Dropzone from 'react-dropzone'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ReactComponent as Plus } from 'assets/img/icons/plus-symbol.svg'
 
 export default function IcImage(props) {
   const [image, setImage] = useState(null)
@@ -39,7 +39,7 @@ export default function IcImage(props) {
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
             {props.drop && <input {...getInputProps()} />}
-            <FontAwesomeIcon icon={'plus'} />
+            <Plus />
             {props.children}
             {image && (
               <span
