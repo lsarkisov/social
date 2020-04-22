@@ -58,6 +58,7 @@
   text-transform: uppercase;
   color: $gray-3;
   text-align: center;
+  cursor: pointer;
 }
 
 .edit-profile__bookins-list {
@@ -70,7 +71,7 @@
   }
 
   .tag {
-    display: inline-block;
+    display: inline-block !important;
     margin-right: 10px;
   }
 }
