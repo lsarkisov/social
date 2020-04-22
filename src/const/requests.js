@@ -16,6 +16,7 @@ export const ENTITY_NOT_FOUND = 'ENTITY_NOT_FOUND'
 ----------------------------------------*/
 export const ROLE_COMPANY_USER = 'ROLE_COMPANY_USER'
 export const ROLE_MODEL_USER = 'ROLE_MODEL_USER'
+export const ROLE_ADMIN = 'ROLE_ADMIN'
 
 /* Onboarding
 ----------------------------------------*/

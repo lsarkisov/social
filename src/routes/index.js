@@ -32,6 +32,10 @@ import ModelJobs from 'components/model/jobs'
 import ModelMessages from 'components/model/messages'
 import ModelSettings from 'components/model/settings'
 
+// the next 2 pages are just for example
+import AdminDashboardPage1 from 'components/admin/page-1'
+import AdminDashboardPage2 from 'components/admin/page-2'
+
 const routes = [
   { path: '/ui', Component: UIKit },
   { path: '/faq', Component: Faq },
@@ -64,7 +68,12 @@ const privateRoutes = [
   { path: '/dashboard/model/jobs', Component: ModelJobs },
   { path: '/dashboard/model/messages', Component: ModelMessages },
   { path: '/dashboard/model/settings', Component: ModelSettings },
+
   { path: '/dashboard/company/:id', Component: Dashboard },
+
+  // the next 2 pages are just for example
+  { path: '/dashboard/admin/page-1', Component: AdminDashboardPage1 },
+  { path: '/dashboard/admin/page-2', Component: AdminDashboardPage2 },
 ]
 
 function Routes() {
