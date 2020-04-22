@@ -1,9 +1,6 @@
 import * as types from 'const/requests'
 import { REQUEST, SUCCESS, FAILURE } from 'const/actions'
-
-function action(type, payload = {}) {
-  return { type, ...payload }
-}
+import action from 'actions/action'
 
 export const onboardingCommonAction = {
   request: (payload) => action(types.ONBOARDING_COMMON[REQUEST], { payload }),

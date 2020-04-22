@@ -5,7 +5,7 @@ import { REACT_APP_IMAGES_HOSTING } from 'const/api'
 
 export default function OnboardingMainAbout(props) {
   return (
-    <div className="main-page__about">
+    <div className="main-page__about" id="about">
       <ReactScroll.Element name="about">
         <h2 className="center">
           About <span className="sub-text">us</span>

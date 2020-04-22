@@ -8,9 +8,7 @@ export default function OnboardingSocialLogout() {
   const { user, data } = useSelector((state) => state.onboarding)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    console.log('USER', user, data)
-  }, [user, data])
+  useEffect(() => {}, [user, data])
 
   function logOut() {
     sdk[user.provider].logout()

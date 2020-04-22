@@ -9,11 +9,13 @@
     }
   }
 
-  &__active {
+  .active {
     background-color: $primary;
+    color: white;
 
-    a {
-      color: white;
+    .badge {
+      background-color: $gray-2;
+      color: $primary;
     }
   }
 
@@ -25,6 +27,8 @@
     .badge {
       font-size: 13px;
       padding: 3px 9px;
+      background-color: $primary;
+      color: white;
     }
 
     padding: 15px 0;

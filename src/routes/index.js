@@ -27,6 +27,10 @@ import Privacy from 'components/privacy'
 import Policy from 'components/policy'
 import Company from 'components/company'
 import Dashboard from 'components/dashboard'
+import ModelEditProfile from 'components/model/edit-profile'
+import ModelJobs from 'components/model/jobs'
+import ModelMessages from 'components/model/messages'
+import ModelSettings from 'components/model/settings'
 
 const routes = [
   { path: '/ui', Component: UIKit },
@@ -56,8 +60,11 @@ const routes = [
 ]
 
 const privateRoutes = [
-  { path: '/dashboard/model', Component: Dashboard },
-  { path: '/dashboard/company', Component: Dashboard },
+  { path: '/dashboard/model/profile', Component: ModelEditProfile },
+  { path: '/dashboard/model/jobs', Component: ModelJobs },
+  { path: '/dashboard/model/messages', Component: ModelMessages },
+  { path: '/dashboard/model/settings', Component: ModelSettings },
+  { path: '/dashboard/company/:id', Component: Dashboard },
 ]
 
 function Routes() {
