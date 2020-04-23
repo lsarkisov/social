@@ -5,3 +5,5 @@ export const REACT_APP_FACEBOOK_APP_ID = process.env.REACT_APP_FACEBOOK_APP_ID
 export const REACT_APP_INSTAGRAM_CLIENT_ID =
   process.env.REACT_APP_INSTAGRAM_CLIENT_ID
 export const REACT_APP_EMAIL = process.env.REACT_APP_EMAIL
+
+export const AUTHORIZATION_HEADER = 'iconicli-auth'

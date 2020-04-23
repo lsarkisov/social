@@ -1,8 +1,10 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Logo from 'components/logo'
+import { logInAction } from 'actions/onboarding'
 import OnboardingMainPattern from 'components/main/pattern'
 import StickyNav from 'components/sticky-nav'
 import OnboardingContent from 'components/onboarding/content'
@@ -14,6 +16,13 @@ import ScrollTop from 'components/scroll-top'
 
 export default function OnboardingMain(props) {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
+
+  const beforLogin = () => {
+    dispatch(logInAction.failure())
+    localStorage.removeItem('token')
+    localStorage.removeItem('role')
+  }
 
   return (
     <>
@@ -35,7 +44,7 @@ export default function OnboardingMain(props) {
           <Logo />
           <Form>
             <Form.Group>
-              <Link to="/onboarding/login">
+              <Link to="/onboarding/login" onClick={beforLogin}>
                 <Button variant="primary">{t('login.title')}</Button>
               </Link>
             </Form.Group>
